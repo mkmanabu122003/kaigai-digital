@@ -22,7 +22,7 @@ export function generateSeoMetadata({
   const image = ogImage || `${siteConfig.url}/og-default.png`;
 
   return {
-    title: `${title} | ${siteConfig.name}`,
+    title,
     description,
     alternates: {
       canonical: canonical || url,
