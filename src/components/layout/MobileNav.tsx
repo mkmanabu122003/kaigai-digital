@@ -1,20 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import type { NavItem } from "./Header";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  navItems: { label: string; href: string }[];
+  navItems: NavItem[];
 };
 
 export default function MobileNav({ isOpen, onClose, navItems }: Props) {
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      setExpandedItem(null);
     }
     return () => {
       document.body.style.overflow = "";
@@ -26,8 +30,10 @@ export default function MobileNav({ isOpen, onClose, navItems }: Props) {
   return (
     <div className="fixed inset-0 z-50 md:hidden">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
-      <div className="absolute right-0 top-0 h-full w-72 bg-white shadow-xl">
-        <div className="flex h-14 items-center justify-end px-4">
+      <div className="absolute right-0 top-0 h-full w-80 overflow-y-auto bg-white shadow-xl">
+        {/* Header */}
+        <div className="flex h-14 items-center justify-between px-4 border-b border-neutral-200">
+          <span className="text-sm font-bold text-primary-700">メニュー</span>
           <button onClick={onClose} aria-label="メニューを閉じる">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,25 +51,83 @@ export default function MobileNav({ isOpen, onClose, navItems }: Props) {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col px-4">
+
+        {/* Nav items */}
+        <nav className="flex flex-col">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={onClose}
-              className="border-b border-neutral-200 py-4 text-base font-medium text-neutral-900 transition-colors hover:text-primary-700"
-            >
-              {item.label}
-            </Link>
+            <div key={item.label}>
+              {item.children ? (
+                <>
+                  <button
+                    onClick={() =>
+                      setExpandedItem(
+                        expandedItem === item.label ? null : item.label
+                      )
+                    }
+                    className="flex w-full items-center justify-between px-4 py-3.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50"
+                  >
+                    {item.label}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-4 w-4 text-neutral-400 transition-transform ${
+                        expandedItem === item.label ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {expandedItem === item.label && (
+                    <div className="bg-neutral-50 pb-2">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={onClose}
+                          className="block px-6 py-2.5 transition-colors hover:bg-neutral-100"
+                        >
+                          <span className="block text-sm font-medium text-neutral-800">
+                            {child.label}
+                          </span>
+                          {child.description && (
+                            <span className="block text-xs text-neutral-400 mt-0.5">
+                              {child.description}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  className="block px-4 py-3.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50"
+                >
+                  {item.label}
+                </Link>
+              )}
+              <div className="mx-4 border-b border-neutral-200" />
+            </div>
           ))}
+
+          {/* Search */}
           <Link
             href="/search"
             onClick={onClose}
-            className="flex items-center gap-2 py-4 text-base font-medium text-neutral-900 transition-colors hover:text-primary-700"
+            className="flex items-center gap-2 px-4 py-3.5 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-neutral-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -78,6 +142,36 @@ export default function MobileNav({ isOpen, onClose, navItems }: Props) {
             検索
           </Link>
         </nav>
+
+        {/* Popular articles (CV導線) */}
+        <div className="mt-4 border-t border-neutral-200 px-4 pt-4 pb-6">
+          <p className="mb-3 text-xs font-bold uppercase tracking-wider text-neutral-400">
+            人気記事
+          </p>
+          <div className="flex flex-col gap-2">
+            <Link
+              href="/compare/best-vpn"
+              onClick={onClose}
+              className="rounded-lg bg-primary-700 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-600"
+            >
+              🔒 海外おすすめVPN 3選
+            </Link>
+            <Link
+              href="/compare/best-esim"
+              onClick={onClose}
+              className="rounded-lg bg-primary-100 px-4 py-3 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white"
+            >
+              📱 海外おすすめeSIM 5選
+            </Link>
+            <Link
+              href="/compare/overseas-remittance"
+              onClick={onClose}
+              className="rounded-lg bg-primary-100 px-4 py-3 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white"
+            >
+              💸 海外送金サービス比較
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
