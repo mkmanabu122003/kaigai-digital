@@ -41,20 +41,25 @@ function promoteDraft(draftPath: string) {
   );
 
   let destDir: string;
+  let relativeFile: string;
   const category = data.category as string;
 
   if (category === "country") {
     destDir = path.join(process.cwd(), "src/content/countries");
+    // Strip "countries/" prefix from relative path (e.g. "countries/china/net-guide.mdx" → "china/net-guide.mdx")
+    relativeFile = relativeToDrafts.replace(/^countries\//, "");
   } else if (category === "compare") {
     destDir = path.join(process.cwd(), "src/content/compare");
+    relativeFile = relativeToDrafts.replace(/^compare\//, "");
   } else if (category === "guide") {
     destDir = path.join(process.cwd(), "src/content/guide");
+    relativeFile = relativeToDrafts.replace(/^guide\//, "");
   } else {
     console.error(`Unknown category: ${category}`);
     return;
   }
 
-  const destPath = path.join(destDir, relativeToDrafts);
+  const destPath = path.join(destDir, relativeFile);
   const destDirPath = path.dirname(destPath);
 
   if (DRY_RUN) {
