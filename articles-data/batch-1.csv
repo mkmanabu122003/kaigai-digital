@@ -1,0 +1,21 @@
+slug,title,article_type,country,main_keyword,target_affiliate,internal_links
+compare/best-vpn,【2026年】海外旅行・赴任におすすめVPN 3選｜目的別の選び方,compare,,海外 VPN おすすめ,nordvpn;surfshark;kabeneko,compare/best-esim;compare/streaming-vpn
+compare/best-esim,【2026年】海外おすすめeSIM 5選｜国別の選び方と設定手順,compare,,海外 eSIM おすすめ,airalo;saily,compare/best-vpn;compare/best-sim-number
+compare/best-sim-number,海外赴任の番号維持｜おすすめ格安SIM比較【povo・楽天・LIBMO】,compare,,海外赴任 番号維持 格安SIM,,compare/best-vpn;compare/best-esim
+compare/overseas-remittance,海外送金はWise一択？PayPal・銀行送金と徹底比較【2026年】,compare,,海外送金 比較 おすすめ,wise,compare/best-vpn
+compare/streaming-vpn,海外から日本の動画配信を見る方法まとめ｜TVer・ABEMA・Netflix対応VPN,compare,,海外 日本のテレビ 見る方法,nordvpn;surfshark,compare/best-vpn
+china/net-guide,中国のネット環境完全ガイド【2026年】使えないアプリ一覧と対策,country_hub,china,中国 ネット環境 規制,nordvpn;kabeneko,compare/best-vpn;compare/best-esim;china/vpn-comparison;china/esim-comparison
+china/expat-digital-prep,中国赴任のデジタル準備チェックリスト｜VPN・eSIM・番号維持・銀行,guide,china,中国 赴任 ネット 準備,nordvpn;kabeneko;airalo,compare/best-vpn;compare/best-esim;compare/best-sim-number;china/net-guide
+china/esim-comparison,中国おすすめeSIM比較｜VPN不要タイプと通常タイプの違い,country_comparison,china,中国 eSIM おすすめ VPN不要,airalo;saily,compare/best-esim;china/net-guide;china/vpn-comparison
+china/vpn-comparison,中国で使えるVPN比較｜かべネコ・NordVPN・Surfsharkを実測テスト,country_comparison,china,中国 VPN 比較 おすすめ,kabeneko;nordvpn;surfshark,compare/best-vpn;china/net-guide;china/esim-comparison
+china/zoom-teams,中国でZoom・Teamsは使える？ビジネス会議を止めない方法,country_service,china,中国 Zoom 使えない Teams,nordvpn;kabeneko,compare/best-vpn;china/net-guide;china/vpn-comparison
+china/banking-access,中国から日本の銀行サイトにアクセスする方法｜VPN必須の理由,country_service,china,中国 日本 銀行 アクセス VPN,nordvpn;kabeneko,compare/best-vpn;compare/overseas-remittance;china/net-guide
+china/short-trip,中国出張3日間のネット準備ガイド｜最低限やるべきこと,country_service,china,中国 出張 ネット 準備 短期,nordvpn;kabeneko;airalo,compare/best-vpn;compare/best-esim;china/net-guide
+china/free-wifi,中国のフリーWi-Fi事情｜空港・ホテル・カフェの安全性と対策,country_service,china,中国 フリーWi-Fi 安全 危険,nordvpn;kabeneko,compare/best-vpn;china/net-guide;china/vpn-comparison
+uae/whatsapp-line,UAE/ドバイでLINE通話・WhatsApp通話が使えない理由と対策,country_service,uae,UAE ドバイ LINE通話 WhatsApp 規制,nordvpn;surfshark,compare/best-vpn;compare/best-esim
+thailand/net-guide,タイのネット環境完全ガイド【2026年】VPNは必要？eSIMの選び方,country_hub,thailand,タイ ネット環境 VPN 必要,nordvpn;airalo,compare/best-vpn;compare/best-esim
+thailand/netflix-vpn,タイからNetflixの日本コンテンツを見る方法,country_service,thailand,タイ Netflix 日本 見れない VPN,nordvpn;surfshark,compare/streaming-vpn;compare/best-vpn;thailand/net-guide
+vietnam/esim-comparison,ベトナムおすすめeSIM比較【2026年】旅行・出張の容量別ガイド,country_comparison,vietnam,ベトナム eSIM おすすめ,airalo;saily,compare/best-esim;compare/best-vpn
+guide/expat-digital-checklist,海外赴任デジタル準備チェックリスト【完全版】VPN・eSIM・銀行・番号維持,guide,,海外赴任 デジタル 準備 チェックリスト,nordvpn;airalo;wise,compare/best-vpn;compare/best-esim;compare/best-sim-number;compare/overseas-remittance
+guide/hotel-wifi-safety,ホテル・空港のフリーWi-Fiは危険？海外で安全にネットを使う方法,guide,,海外 ホテル Wi-Fi 危険 安全 VPN,nordvpn;surfshark,compare/best-vpn
+guide/japan-streaming-abroad,海外から日本のテレビ番組を見る完全ガイド｜TVer・ABEMA・Netflix・NHK+,guide,,海外 日本 テレビ 見る方法 TVer ABEMA,nordvpn;surfshark,compare/streaming-vpn;compare/best-vpn

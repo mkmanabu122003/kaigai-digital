@@ -1,0 +1,57 @@
+"use client";
+
+import { getServiceById } from "@/lib/affiliates";
+import { trackAffiliateClick } from "@/lib/ga";
+
+type Props = {
+  serviceId: string;
+  text?: string;
+  placement: "top" | "middle" | "bottom";
+  variant?: "a" | "b";
+  articleSlug: string;
+};
+
+export default function AffiliateButton({
+  serviceId,
+  text,
+  placement,
+  variant,
+  articleSlug,
+}: Props) {
+  const service = getServiceById(serviceId);
+  if (!service) return null;
+
+  const buttonText = text || `${service.name}を見る`;
+
+  const handleClick = () => {
+    trackAffiliateClick(service.name, articleSlug, placement, variant);
+  };
+
+  return (
+    <div className="my-6 flex justify-center">
+      <a
+        href={service.url}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        onClick={handleClick}
+        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-8 text-base font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-accent-400 hover:shadow-lg active:translate-y-0 active:bg-accent-600 active:shadow-sm lg:h-[52px] lg:w-auto lg:min-w-[280px] lg:text-lg"
+      >
+        {buttonText}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 7l5 5m0 0l-5 5m5-5H6"
+          />
+        </svg>
+      </a>
+    </div>
+  );
+}
