@@ -174,6 +174,71 @@ h6 {
   color: inherit;
 }
 
+/* Article tables — ComparisonTable の視覚言語を踏襲しつつ CTA なしの中立デザイン */
+.article-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  font-size: 14px;
+  background: white;
+}
+
+.article-content thead {
+  background-color: var(--color-primary-100);
+}
+
+.article-content thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--color-primary-700);
+  border-bottom: 2px solid var(--color-neutral-200);
+  white-space: nowrap;
+}
+
+.article-content tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-neutral-200);
+  color: var(--color-neutral-900);
+  vertical-align: top;
+}
+
+.article-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.article-content tbody tr:nth-child(even) {
+  background-color: var(--color-neutral-50);
+}
+
+.article-content tbody tr:hover {
+  background-color: var(--color-primary-100);
+  transition: background-color 0.15s;
+}
+
+/* ○× のステータスをカラーリング */
+.article-content td:has(> :not(*)) {
+  text-align: center;
+}
+
+/* モバイル: テーブル横スクロール */
+@media (max-width: 767px) {
+  .article-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 13px;
+  }
+  .article-content thead th,
+  .article-content tbody td {
+    padding: 8px 12px;
+  }
+}
+
 /* Scrollbar styling for TOC */
 .toc-sidebar::-webkit-scrollbar {
   width: 4px;
