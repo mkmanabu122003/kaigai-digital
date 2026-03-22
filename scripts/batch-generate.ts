@@ -81,7 +81,8 @@ function loadPromptFile(filePath: string): string {
 }
 
 function buildSystemPrompt(row: ArticleRow): string {
-  const base = loadPromptFile("prompts/system-prompt.md");
+  // v2があればv2を使う、なければv1にフォールバック
+  const base = loadPromptFile("prompts/system-prompt-v2.md") || loadPromptFile("prompts/system-prompt.md");
 
   // Map article_type to prompt file
   const typeMap: Record<string, string> = {

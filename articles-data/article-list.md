@@ -27,7 +27,7 @@
 | 10 | china/zoom-teams | 中国でZoom/Teams | ✅ | #1, #6 |
 | 11 | china/banking-access | 中国から日本の銀行 | ✅ | #1, #4, #6 |
 | 12 | china/short-trip | 中国出張3日間ガイド | ✅ | #1, #2, #6 |
-| 13 | china/free-wifi | 中国フリーWi-Fi事情 | 🔲 | #1, #6 |
+| 13 | china/free-wifi | 中国フリーWi-Fi事情 | ✅ | #1, #6 |
 
 ### 他国（差別化・領域拡大）
 | # | slug | title | ステータス | 依存 |
