@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import BlogMuraBanner from "@/components/ui/BlogMuraBanner";
 
 export default function Footer() {
   return (
@@ -53,7 +54,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-white/20 pt-6 text-center text-xs">
+        <div className="mt-8 flex justify-center">
+          <BlogMuraBanner />
+        </div>
+
+        <div className="mt-4 border-t border-white/20 pt-6 text-center text-xs">
           <p className="mb-2">
             当サイトはアフィリエイト広告を利用しています。
           </p>

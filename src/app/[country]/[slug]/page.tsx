@@ -21,6 +21,7 @@ import {
   BreadcrumbJsonLd,
 } from "@/components/seo/JsonLd";
 import { getServiceById } from "@/lib/affiliates";
+import BlogMuraBanner from "@/components/ui/BlogMuraBanner";
 
 type Props = {
   params: Promise<{ country: string; slug: string }>;
@@ -166,6 +167,10 @@ export default async function CountryArticlePage({ params }: Props) {
               <AuthorBox />
             </div>
 
+            <div className="mt-6">
+              <BlogMuraBanner />
+            </div>
+
             <RelatedArticles articles={relatedArticles.slice(0, 3)} />
           </div>
 
@@ -184,6 +189,7 @@ export default async function CountryArticlePage({ params }: Props) {
                 />
               </div>
             )}
+            <BlogMuraBanner />
           </Sidebar>
         </div>
       </div>

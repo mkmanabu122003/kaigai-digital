@@ -20,6 +20,7 @@ import {
   FaqJsonLd,
   BreadcrumbJsonLd,
 } from "@/components/seo/JsonLd";
+import BlogMuraBanner from "@/components/ui/BlogMuraBanner";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -141,10 +142,15 @@ export default async function ComparePage({ params }: Props) {
             <div className="mt-12">
               <AuthorBox />
             </div>
+
+            <div className="mt-6">
+              <BlogMuraBanner />
+            </div>
           </div>
 
           <Sidebar>
             <TableOfContents variant="sidebar" />
+            <BlogMuraBanner />
           </Sidebar>
         </div>
       </div>
