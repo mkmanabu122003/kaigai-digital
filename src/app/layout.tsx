@@ -38,6 +38,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={notoSansJP.variable}>
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={siteConfig.name}
+          href="/feed"
+        />
+      </head>
       <body
         className={`${notoSansJP.className} flex min-h-screen flex-col pt-14 lg:pt-16`}
       >
