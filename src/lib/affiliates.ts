@@ -47,7 +47,7 @@ export const affiliateLinks: Record<string, AffiliateService> = {
   kabeneko: {
     id: "kabeneko",
     name: "かべネコVPN",
-    url: "https://kabeneko.com/?ref=XXXXX",
+    url: "https://kabeneko.biz/afsys/res.php?i=KA62&t=",
     logo: "/images/services/kabeneko.png",
     price: "月額¥480〜",
     rating: 4.3,

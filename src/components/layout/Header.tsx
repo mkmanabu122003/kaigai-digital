@@ -202,7 +202,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-14 max-w-[1200px] items-center justify-between px-4 lg:h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-accent-400"
