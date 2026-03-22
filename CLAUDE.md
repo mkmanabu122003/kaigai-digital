@@ -52,8 +52,16 @@ npx tsx scripts/quality-check.ts
 # 品質チェック（特定記事）
 npx tsx scripts/quality-check.ts --path "src/content/drafts/china/*.mdx"
 
-# ドラフトを公開
+# ドラフトを公開（公開後にブログ村pingを自動送信）
 npx tsx scripts/promote-draft.ts "src/content/drafts/china/line-vpn.mdx"
+
+# ドラフトを公開（ping送信なし）
+npx tsx scripts/promote-draft.ts "src/content/drafts/china/line-vpn.mdx" --no-ping
+
+# ブログ村ping手動送信
+npx tsx scripts/ping-blogmura.ts
+npx tsx scripts/ping-blogmura.ts --url /china/net-guide
+npx tsx scripts/ping-blogmura.ts --dry-run
 
 # 鮮度チェック
 npx tsx scripts/check-stale-articles.ts

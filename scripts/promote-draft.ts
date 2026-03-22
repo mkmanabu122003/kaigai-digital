@@ -2,8 +2,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { glob } from "glob";
+import { sendPing } from "./ping-blogmura";
 
 const DRY_RUN = process.argv.includes("--dry-run");
+const NO_PING = process.argv.includes("--no-ping");
+
+const promotedSlugs: { slug: string; category: string; country?: string }[] = [];
 
 function updateArticleList(slug: string) {
   const listPath = path.join(process.cwd(), "articles-data/article-list.md");
@@ -77,7 +81,13 @@ function promoteDraft(draftPath: string) {
   const slug = relativeToDrafts.replace(/\.mdx$/, "");
   updateArticleList(slug);
 
-  console.log(`Promoted: ${draftPath} → ${destPath}`);
+  // Track for ping
+  const urlSlug = category === "country"
+    ? `/${relativeFile.replace(/\.mdx$/, "")}`
+    : `/${category}/${relativeFile.replace(/\.mdx$/, "")}`;
+  promotedSlugs.push({ slug, category, country: data.country as string | undefined });
+
+  console.log(`Promoted: ${draftPath} → ${destPath} (URL: ${urlSlug})`);
 }
 
 async function main() {
@@ -104,6 +114,16 @@ async function main() {
         promoteDraft(file);
       }
     }
+  }
+
+  // Send Blog Mura ping after all promotions
+  if (promotedSlugs.length > 0 && !NO_PING && !DRY_RUN) {
+    console.log("\n─── Blog Mura Ping ───");
+    // Send one ping for the site (Blog Mura processes one ping per call)
+    const result = await sendPing();
+    console.log(`Ping: ${result.success ? "✅" : "❌"} ${result.message}`);
+  } else if (DRY_RUN && promotedSlugs.length > 0) {
+    await sendPing(undefined, { dryRun: true });
   }
 }
 
