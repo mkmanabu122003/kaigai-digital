@@ -58,6 +58,9 @@ export default function RootLayout({
                 gtag('js', new Date());
                 gtag('config', '${ga4Id}', {
                   page_path: window.location.pathname,
+                  ${process.env.NODE_ENV === "development" ? "debug_mode: true," : ""}
+                  cookie_flags: 'SameSite=Lax;Secure',
+                  send_page_view: false
                 });
               `}
             </Script>

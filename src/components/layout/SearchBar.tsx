@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Fuse from "fuse.js";
 import type { SearchItem } from "@/lib/search";
+import { trackSiteSearch } from "@/lib/ga";
 
 type Props = {
   items: SearchItem[];
@@ -40,8 +41,10 @@ export default function SearchBar({
     }
     if (fuseRef.current) {
       const res = fuseRef.current.search(query).slice(0, 8);
-      setResults(res.map((r) => r.item));
+      const items = res.map((r) => r.item);
+      setResults(items);
       setIsOpen(true);
+      trackSiteSearch(query, items.length);
     }
   }, [query]);
 
