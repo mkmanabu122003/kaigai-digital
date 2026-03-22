@@ -37,3 +37,27 @@ export function trackAffiliateClick(
     ...(variant && { variant }),
   });
 }
+
+export function trackCtaView(
+  serviceName: string,
+  articleSlug: string,
+  placement: string
+) {
+  event("cta_view", {
+    service_name: serviceName,
+    article_slug: articleSlug,
+    placement,
+  });
+}
+
+export function trackInternalLinkClick(
+  fromSlug: string,
+  toPath: string,
+  anchorText: string
+) {
+  event("internal_link_click", {
+    from_slug: fromSlug,
+    to_path: toPath,
+    anchor_text: anchorText,
+  });
+}

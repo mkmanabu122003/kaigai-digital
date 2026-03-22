@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { siteConfig } from "@/lib/config";
 
 const notoSansJP = Noto_Sans_JP({
@@ -60,6 +61,7 @@ export default function RootLayout({
                 });
               `}
             </Script>
+            <GoogleAnalytics />
           </>
         )}
       </body>

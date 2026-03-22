@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { getServiceById } from "@/lib/affiliates";
-import { trackAffiliateClick } from "@/lib/ga";
+import { trackAffiliateClick, trackCtaView } from "@/lib/ga";
 
 type Props = {
   serviceId: string;
@@ -19,6 +20,25 @@ export default function AffiliateButton({
   articleSlug,
 }: Props) {
   const service = getServiceById(serviceId);
+  const ref = useRef<HTMLDivElement>(null);
+  const tracked = useRef(false);
+
+  useEffect(() => {
+    if (!service || !ref.current || tracked.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !tracked.current) {
+          tracked.current = true;
+          trackCtaView(service.name, articleSlug, placement);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [service, articleSlug, placement]);
+
   if (!service) return null;
 
   const buttonText = text || `${service.name}を見る`;
@@ -28,7 +48,7 @@ export default function AffiliateButton({
   };
 
   return (
-    <div className="my-6 flex justify-center">
+    <div ref={ref} className="my-6 flex justify-center">
       <a
         href={service.url}
         target="_blank"
