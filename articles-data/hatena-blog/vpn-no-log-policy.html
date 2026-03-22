@@ -1,0 +1,114 @@
+<p>VPNを選ぶとき、どのサービスも「ノーログポリシー」を掲げている。ログを一切保存しない、だからプライバシーは安全だ、と。</p>
+
+<p>しかし、IT業界に10年以上いるエンジニアとして率直に言うと、<strong>「ノーログ」という言葉だけでは何も判断できない</strong>。なぜなら、「ログ」の定義がサービスによってバラバラだからだ。</p>
+
+<p>今回は、VPNのノーログポリシーが技術的に何を意味するのか、そしてどこまで信用できるのかをエンジニア視点で解説する。</p>
+
+<h2>そもそも「ノーログ」とは何を指すのか</h2>
+
+<p>VPNが記録し得る「ログ」には大きく3種類ある。これを区別せずに議論しているサイトが非常に多い。</p>
+
+<h3>1. 接続ログ（Connection Logs）</h3>
+
+<p>いつ、どのIPアドレスから、どのサーバーに接続したか。接続時刻、切断時刻、接続元IPアドレスなどが含まれる。</p>
+
+<p>これが残っていると「この日時にこの人がVPNを使った」ということが特定できる。</p>
+
+<h3>2. トラフィックログ（Activity Logs / Usage Logs）</h3>
+
+<p>VPNを通じてどのサイトにアクセスしたか、何をダウンロードしたか。通信の中身そのもの。</p>
+
+<p>これを保存しているVPNサービスは論外だが、まともなサービスであれば保存していないと明言している。</p>
+
+<h3>3. DNSクエリログ</h3>
+
+<p>VPN接続中に名前解決したドメイン名のログ。「google.com」「youtube.com」にアクセスした、といった情報がわかる。</p>
+
+<p>VPNサービスが自社DNSサーバーを運営している場合、ここにログが残る可能性がある。意外と見落とされがちなポイントだ。</p>
+
+<p><strong>つまり「ノーログ」と言ったとき、上記3種類のうちどこまでカバーしているかがサービスによって違う。</strong>「トラフィックログは保存しないが、接続ログは一部保存する」というケースは珍しくない。</p>
+
+<h2>ノーログを検証する3つの方法</h2>
+
+<p>ユーザーがVPNサーバーの中身を直接確認することはできない。では、ノーログポリシーの信頼性をどう判断すればいいのか。現時点で有効な検証方法は3つある。</p>
+
+<h3>方法1：第三者監査（Independent Audit）</h3>
+
+<p>会計監査のように、独立したセキュリティ企業がVPNのサーバーとコードを検査し、ログが保存されていないことを確認する方法。</p>
+
+<p>これが最も信頼性が高い。ただし、監査は「その時点で」ログがなかったことを証明するだけであり、将来にわたってログを取らない保証にはならない。</p>
+
+<h3>方法2：RAMオンリーサーバー（Diskless Infrastructure）</h3>
+
+<p>サーバーのストレージにHDD/SSDを使わず、RAMのみで稼働する方式。サーバーが再起動されるとすべてのデータが消える。</p>
+
+<p>物理的にログが残らない仕組みなので、技術的な裏付けとしては非常に強い。</p>
+
+<h3>方法3：法的事例（Court Cases / Legal Precedents）</h3>
+
+<p>捜査機関がVPNサービスにログの提出を求めたが、「提出するログが存在しなかった」という実例。</p>
+
+<p>実際に法的な場面でノーログが証明されたケースは、ポリシーの文言よりもはるかに信頼できる。</p>
+
+<h2>主要VPN 3社のノーログ対応を比較する</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:center">NordVPN</th>
+<th style="text-align:center">Surfshark</th>
+<th style="text-align:center">ExpressVPN</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>第三者監査</strong></td><td style="text-align:center">○（PwC / Deloitte、複数回）</td><td style="text-align:center">○（Deloitte）</td><td style="text-align:center">○（PwC / KPMG）</td></tr>
+<tr><td><strong>RAMオンリーサーバー</strong></td><td style="text-align:center">○（全サーバー）</td><td style="text-align:center">○（全サーバー）</td><td style="text-align:center">○（TrustedServer）</td></tr>
+<tr><td><strong>法的事例</strong></td><td style="text-align:center">○（2019年サーバー押収事件でログなし確認）</td><td style="text-align:center">△（大きな事例なし）</td><td style="text-align:center">○（2017年トルコ当局の要請でログ提出不能）</td></tr>
+<tr><td><strong>本社所在地</strong></td><td style="text-align:center">パナマ</td><td style="text-align:center">オランダ（BVI登記）</td><td style="text-align:center">BVI（英領ヴァージン諸島）</td></tr>
+<tr><td><strong>接続ログ</strong></td><td style="text-align:center">保存なし</td><td style="text-align:center">保存なし</td><td style="text-align:center">保存なし</td></tr>
+<tr><td><strong>DNS</strong></td><td style="text-align:center">自社DNS（ログなし）</td><td style="text-align:center">自社DNS（ログなし）</td><td style="text-align:center">自社DNS（ログなし）</td></tr>
+</tbody>
+</table>
+
+<p>3社とも第三者監査 + RAMオンリーサーバーを導入しており、技術的な裏付けのレベルは高い。</p>
+
+<p>注目すべきは<strong>本社所在地</strong>。パナマやBVIは、Five Eyes（米英加豪NZ）などの情報共有協定に参加していない。つまり、政府間のデータ共有要請を法的に拒否できる立場にある。これはノーログポリシーの実効性に直結する。</p>
+
+<h2>ITエンジニア的に「ここは信用できる/できない」の判断基準</h2>
+
+<p>IT業界で10年以上、エンジニアとして5年以上の経験から言うと、以下の基準で判断している。</p>
+
+<h3>信用できるサイン</h3>
+
+<ul>
+<li><strong>第三者監査を複数回実施している</strong>（1回だけでなく、定期的に）</li>
+<li><strong>RAMオンリーサーバーを全台に導入している</strong>（一部だけでは意味が薄い）</li>
+<li><strong>バグバウンティプログラムがある</strong>（外部のセキュリティ研究者に脆弱性報告を奨励）</li>
+<li><strong>オープンソースのクライアントアプリ</strong>（コードが公開されていれば検証可能）</li>
+</ul>
+
+<h3>注意が必要なサイン</h3>
+
+<ul>
+<li><strong>「ノーログ」と書いているが監査を受けていない</strong>（言葉だけなら何とでも書ける）</li>
+<li><strong>無料VPN</strong>（サーバー運用コストを何で賄っているのか。データ販売の可能性がある）</li>
+<li><strong>運営会社の情報が不透明</strong>（所在地、経営陣、親会社が不明）</li>
+<li><strong>Five Eyes加盟国に本社がある</strong>（法的にログ提出を強制される可能性）</li>
+</ul>
+
+<h2>結局どれを選ぶべきか？用途別の結論</h2>
+
+<p>ノーログの信頼性だけで選ぶなら、NordVPN・ExpressVPN・Surfsharkの3社はいずれも合格ラインだ。第三者監査 + RAMオンリー + 非Five Eyes所在地の三拍子が揃っている。</p>
+
+<p>あとは用途で選べばいい。</p>
+
+<ul>
+<li><strong>コスパ重視：</strong> Surfshark（同時接続台数無制限）</li>
+<li><strong>速度重視：</strong> NordVPN（独自プロトコルNordLynxが高速）</li>
+<li><strong>実績重視：</strong> ExpressVPN（法的事例でのノーログ証明あり）</li>
+</ul>
+
+<p>各VPNの料金や海外での使い勝手を含めた総合比較は<a href="https://kaigai-digital.com/compare/best-vpn">こちらの記事にまとめた</a>。ノーログだけでなく、速度・料金・対応国なども含めて選びたい人は参考にしてほしい。</p>
+
+<p>「ノーログ」は魔法の言葉ではない。その裏にある技術的な仕組みと、第三者による検証の有無を確認する。それがITプロとしての選び方だ。</p>

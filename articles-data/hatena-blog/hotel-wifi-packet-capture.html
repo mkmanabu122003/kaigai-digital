@@ -1,0 +1,142 @@
+<p>「ホテルのフリーWi-Fiは危険」とよく言われるが、具体的に何がどう危険なのかを技術的に説明しているサイトは少ない。</p>
+
+<p>筆者はIT業界に10年以上身を置き、エンジニアとしても5年以上の経験がある。「危険だ」と言うからには、<strong>実際にパケットキャプチャで何が見えるのかを検証すべきだ</strong>と考え、自宅に検証環境を構築してテストしてみた。</p>
+
+<p>結論から言うと、想像以上に情報が見える。</p>
+
+<h2>検証環境と手法</h2>
+
+<p>本記事の検証は、すべて筆者が自宅に構築したテスト環境で行っている。実際のホテルWi-Fiを盗聴したわけではない。</p>
+
+<h3>構築した環境</h3>
+
+<ul>
+<li><strong>ダミーアクセスポイント（AP）：</strong> Raspberry Piにhostapdを導入し、暗号化なし（Open）のWi-Fiネットワークを構築</li>
+<li><strong>パケットキャプチャツール：</strong> Wireshark（業界標準のネットワーク解析ツール）</li>
+<li><strong>テスト端末：</strong> iPhone（iOS最新版）、Android端末（Pixel）</li>
+<li><strong>テストしたアプリ：</strong> ブラウザ（Safari/Chrome）、メールアプリ、チャットアプリ、地図アプリ</li>
+</ul>
+
+<p>この環境は「ホテルが提供するパスワードなしのフリーWi-Fi」と技術的に同一の条件だ。同じネットワーク上にいる第三者（=筆者のPC）から、接続端末の通信がどこまで見えるかを検証した。</p>
+
+<h2>暗号化なしのWi-Fiで何が見えるのか</h2>
+
+<h3>見えたもの①：DNS クエリ（アクセス先のドメイン名）</h3>
+
+<p>スマホでブラウザを開くたびに、DNSクエリがキャプチャされる。これは<strong>どのサイトにアクセスしようとしているか</strong>がわかるということだ。</p>
+
+<p>例えば、テスト端末でGoogleを開くと以下のようなDNSクエリが平文で流れる。</p>
+
+<pre><code>Query: www.google.com  Type: A
+Query: mail.google.com  Type: A
+Query: maps.google.com  Type: A</code></pre>
+
+<p>HTTPSで暗号化されていても、<strong>DNS クエリは暗号化されない</strong>（DNS over HTTPSやDNS over TLSを明示的に設定していない限り）。つまり、同じWi-Fiにいる攻撃者は「この人がどのサイトを見ているか」のリストを取得できる。</p>
+
+<h3>見えたもの②：接続先のIPアドレスとポート番号</h3>
+
+<p>DNSだけでなく、TCP接続のSYNパケットから接続先のIPアドレスとポート番号も見える。IPアドレスを逆引きすれば、使っているサービスを特定できる。</p>
+
+<h3>見えたもの③：HTTP通信の中身（暗号化なしの場合）</h3>
+
+<p>2026年現在、ほとんどのサイトがHTTPSに対応しているため、通信の中身（ログイン情報やメール本文）が平文で流れるケースは少ない。</p>
+
+<p>しかし、<strong>一部のIoT機器のAPI通信や、古い業務システムのWebインターフェース</strong>はまだHTTPを使っている場合がある。出張先でこういったシステムにアクセスする人は要注意だ。</p>
+
+<h3>見えなかったもの</h3>
+
+<p>HTTPS通信の中身（リクエストボディ、Cookieの値、ログイン情報等）は暗号化されており、見えなかった。これはTLS/SSLが正常に機能している証拠だ。</p>
+
+<p>つまり現代のインターネットでは「通信の中身」は守られているが、<strong>「どこと通信しているか」は丸見え</strong>というのが実態だ。</p>
+
+<h2>HTTPS通信でも漏れる情報がある</h2>
+
+<p>「HTTPSなら安全」と思っている人が多いが、それは半分しか正しくない。HTTPSで暗号化されても以下の情報はキャプチャ可能だ。</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">情報</th>
+<th style="text-align:center">HTTPS未使用</th>
+<th style="text-align:center">HTTPS使用</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>通信の中身（パスワード等）</td><td style="text-align:center">見える</td><td style="text-align:center">見えない</td></tr>
+<tr><td>アクセス先ドメイン名（DNS）</td><td style="text-align:center">見える</td><td style="text-align:center">見える</td></tr>
+<tr><td>接続先IPアドレス</td><td style="text-align:center">見える</td><td style="text-align:center">見える</td></tr>
+<tr><td>TLSハンドシェイクのSNI</td><td style="text-align:center">—</td><td style="text-align:center">見える</td></tr>
+<tr><td>通信のデータ量・タイミング</td><td style="text-align:center">見える</td><td style="text-align:center">見える</td></tr>
+</tbody>
+</table>
+
+<p><strong>SNI（Server Name Indication）</strong>は特に注意すべきだ。HTTPS接続の初期段階（TLSハンドシェイク）で、接続先のドメイン名が平文で送信される。ECH（Encrypted Client Hello）が普及すればこの問題は解消されるが、2026年時点ではまだ広く使われていない。</p>
+
+<p>つまり、ホテルのフリーWi-Fiで作業すると「この人は今、○○銀行のサイトにアクセスした」「転職サイトを見ている」「医療機関のサイトにアクセスした」程度の情報は、同じネットワーク上の第三者に筒抜けになる可能性がある。</p>
+
+<h2>VPNを通すと何が変わるか？Before / After</h2>
+
+<p>同じテスト環境で、VPN接続時のキャプチャ結果と比較した。使用したのはNordVPN（NordLynxプロトコル）。</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">情報</th>
+<th style="text-align:center">VPNなし</th>
+<th style="text-align:center">VPNあり</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>DNSクエリ</td><td style="text-align:center">平文で見える</td><td style="text-align:center">見えない（VPNトンネル内）</td></tr>
+<tr><td>接続先IPアドレス</td><td style="text-align:center">実際のサイトIP</td><td style="text-align:center">VPNサーバーのIPのみ</td></tr>
+<tr><td>SNI</td><td style="text-align:center">見える</td><td style="text-align:center">見えない（トンネル内）</td></tr>
+<tr><td>通信の中身</td><td style="text-align:center">HTTPSで暗号化</td><td style="text-align:center">二重に暗号化</td></tr>
+<tr><td>第三者から見える情報</td><td style="text-align:center">アクセス先のリスト</td><td style="text-align:center">「VPNを使っている」ことだけ</td></tr>
+</tbody>
+</table>
+
+<p>VPNを通すと、第三者から見えるのは<strong>「VPNサーバーとの間で暗号化された通信が流れている」</strong>という事実だけだ。どのサイトにアクセスしたか、どんなデータを送受信したかは一切わからない。</p>
+
+<p>これが「フリーWi-FiではVPNを使え」と言われる技術的な根拠だ。なんとなく「安全になる」のではなく、<strong>メタデータ（通信先情報）を含むすべての通信がVPNトンネル内に隠蔽される</strong>。</p>
+
+<h2>海外ホテルWi-Fiを安全に使うための3つの設定</h2>
+
+<p>パケットキャプチャの検証結果を踏まえ、エンジニアとして推奨する設定は以下の3つだ。</p>
+
+<h3>1. VPNを常時ONにする</h3>
+
+<p>NordVPN・Surfshark・ExpressVPNなどの主要サービスには「自動接続」機能がある。Wi-Fiに繋いだ瞬間に自動でVPNが起動する設定にしておく。</p>
+
+<p>設定方法：アプリの設定 → 自動接続 → 「Wi-Fiネットワーク接続時」をONにする。</p>
+
+<h3>2. DNS over HTTPS（DoH）を有効にする</h3>
+
+<p>VPNを使えない状況でも、DNSクエリだけは暗号化しておきたい。</p>
+
+<ul>
+<li><strong>iPhone：</strong> 設定 → Wi-Fi → 接続中のネットワーク → DNSを手動設定 → 1.1.1.1（Cloudflare）</li>
+<li><strong>Android：</strong> 設定 → ネットワーク → プライベートDNS → 「dns.google」または「1dot1dot1dot1.cloudflare-dns.com」</li>
+</ul>
+
+<h3>3. 自動Wi-Fi接続をOFFにする</h3>
+
+<p>スマホが過去に接続したWi-Fiに自動で繋ぐ機能は便利だが、同名のSSIDを持つ偽APに接続してしまうリスクがある（Evil Twin攻撃）。</p>
+
+<p>特に海外では「Hotel_WiFi」「Free_WiFi」のような汎用的なSSIDが多い。自動接続は切り、都度手動で接続する方が安全だ。</p>
+
+<p>ホテルWi-Fiのリスクと具体的な対策手順は<a href="https://kaigai-digital.com/guide/hotel-wifi-safety">こちらの記事にさらに詳しくまとめた</a>。今回の検証は自宅環境だが、実際のホテルWi-Fiで起き得るリスクとその防ぎ方を網羅的に解説している。</p>
+
+<h2>まとめ</h2>
+
+<p>今回の検証で明らかになったのは以下のことだ。</p>
+
+<ul>
+<li>暗号化なしのフリーWi-Fiでは、<strong>どのサイトにアクセスしたかが第三者に見える</strong></li>
+<li>HTTPSが有効でも、<strong>DNS クエリとSNIは平文で漏れる</strong></li>
+<li>VPNを通すと、<strong>メタデータを含むすべての通信が隠蔽される</strong></li>
+<li>「なんとなく危険」ではなく、<strong>パケットキャプチャで実際に確認できるレベルの問題</strong></li>
+</ul>
+
+<p>「ホテルWi-Fiは危険」は漠然とした警告ではない。技術的に検証可能な、明確なリスクだ。特に海外のホテルでは、ネットワーク管理者がどの程度のセキュリティ対策をしているか不透明なケースが多い。</p>
+
+<p>VPNをONにする。たった一手間で、リスクは劇的に下がる。</p>
