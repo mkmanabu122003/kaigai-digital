@@ -13,6 +13,7 @@ import LastUpdated from "@/components/article/LastUpdated";
 import PromoDisclosure from "@/components/article/PromoDisclosure";
 import AffiliateButton from "@/components/affiliate/AffiliateButton";
 import ComparisonTable from "@/components/affiliate/ComparisonTable";
+import ArticleRenderer from "@/components/article/ArticleRenderer";
 import FAQ from "@/components/ui/FAQ";
 import {
   ArticleJsonLd,
@@ -122,7 +123,7 @@ export default async function CountryArticlePage({ params }: Props) {
 
             {/* Article body */}
             <ArticleBody>
-              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              <ArticleRenderer html={htmlContent} />
             </ArticleBody>
 
             {/* Comparison table */}

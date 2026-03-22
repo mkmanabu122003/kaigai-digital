@@ -23,7 +23,7 @@ export const affiliateLinks: Record<string, AffiliateService> = {
   nordvpn: {
     id: "nordvpn",
     name: "NordVPN",
-    url: "https://nordvpn.com/ja/?ref=XXXXX",
+    url: "https://px.a8.net/svt/ejp?a8mat=3TF1IO+GGEFJU+3YFI+674EQ",
     logo: "/images/services/nordvpn.png",
     price: "月額$3.49〜",
     rating: 4.8,

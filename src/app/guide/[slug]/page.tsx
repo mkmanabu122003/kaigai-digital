@@ -9,6 +9,7 @@ import TableOfContents from "@/components/article/TableOfContents";
 import AuthorBox from "@/components/article/AuthorBox";
 import LastUpdated from "@/components/article/LastUpdated";
 import PromoDisclosure from "@/components/article/PromoDisclosure";
+import ArticleRenderer from "@/components/article/ArticleRenderer";
 import FAQ from "@/components/ui/FAQ";
 import {
   ArticleJsonLd,
@@ -88,7 +89,7 @@ export default async function GuidePage({ params }: Props) {
             </div>
 
             <ArticleBody>
-              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              <ArticleRenderer html={htmlContent} />
             </ArticleBody>
 
             {frontmatter.faq && frontmatter.faq.length > 0 && (

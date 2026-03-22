@@ -12,6 +12,7 @@ import LastUpdated from "@/components/article/LastUpdated";
 import PromoDisclosure from "@/components/article/PromoDisclosure";
 import AffiliateButton from "@/components/affiliate/AffiliateButton";
 import ComparisonTable from "@/components/affiliate/ComparisonTable";
+import ArticleRenderer from "@/components/article/ArticleRenderer";
 import ServiceCard from "@/components/affiliate/ServiceCard";
 import FAQ from "@/components/ui/FAQ";
 import {
@@ -104,7 +105,7 @@ export default async function ComparePage({ params }: Props) {
             </div>
 
             <ArticleBody>
-              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              <ArticleRenderer html={htmlContent} />
             </ArticleBody>
 
             {/* Service cards */}
