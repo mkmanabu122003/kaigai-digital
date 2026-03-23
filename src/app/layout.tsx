@@ -45,6 +45,10 @@ export default function RootLayout({
           title={siteConfig.name}
           href="/feed"
         />
+      </head>
+      <body
+        className={`${notoSansJP.className} flex min-h-screen flex-col pt-14 lg:pt-16`}
+      >
         <Script id="clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -54,10 +58,6 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "w0ajhfx9kb");
           `}
         </Script>
-      </head>
-      <body
-        className={`${notoSansJP.className} flex min-h-screen flex-col pt-14 lg:pt-16`}
-      >
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
