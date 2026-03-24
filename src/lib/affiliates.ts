@@ -71,11 +71,11 @@ export const affiliateLinks: Record<string, AffiliateService> = {
   wise: {
     id: "wise",
     name: "Wise",
-    url: "https://wise.com/?ref=XXXXX",
+    url: "https://wise.com/invite/dic/vsnmxhi",
     logo: "/images/services/wise.png",
     price: "送金手数料0.5%〜",
     rating: 4.7,
-    features: ["実質為替レート", "50通貨以上対応", "マルチカレンシー口座"],
+    features: ["実質為替レート", "50通貨以上対応", "マルチカレンシー口座", "紹介で最大¥11,000獲得"],
     bestFor: "海外送金の手数料を最安に抑えたい人",
     category: "remittance",
     rank: 1,
