@@ -5,17 +5,30 @@ import { siteConfig } from "@/lib/config";
 export async function GET() {
   const slugs = getAllSlugs();
 
+  const sitePublishedAt = "2026-03-22";
+
   const staticPages = [
-    { url: "", lastmod: new Date().toISOString() },
-    { url: "/search", lastmod: new Date().toISOString() },
-    { url: "/privacy-policy", lastmod: new Date().toISOString() },
-    { url: "/disclaimer", lastmod: new Date().toISOString() },
+    { url: "", lastmod: sitePublishedAt },
+    { url: "/search", lastmod: sitePublishedAt },
+    { url: "/privacy-policy", lastmod: sitePublishedAt },
+    { url: "/disclaimer", lastmod: sitePublishedAt },
   ];
 
-  const countryPages = countries.map((c) => ({
-    url: `/${c.id}`,
-    lastmod: new Date().toISOString(),
-  }));
+  const countryPages = countries.map((c) => {
+    // Use the latest updatedAt from articles in this country
+    const countryArticles = slugs.filter(
+      (s) => s.category === "country" && s.slug.startsWith(`${c.id}/`)
+    );
+    const latestDate = countryArticles.reduce((latest, article) => {
+      const date = article.updatedAt || article.publishedAt || sitePublishedAt;
+      return date > latest ? date : latest;
+    }, sitePublishedAt);
+
+    return {
+      url: `/${c.id}`,
+      lastmod: latestDate,
+    };
+  });
 
   const articlePages = slugs.map((s) => {
     let url: string;
@@ -24,7 +37,10 @@ export async function GET() {
     } else {
       url = `/${s.category}/${s.slug}`;
     }
-    return { url, lastmod: new Date().toISOString() };
+    return {
+      url,
+      lastmod: s.updatedAt || s.publishedAt || sitePublishedAt,
+    };
   });
 
   const allPages = [...staticPages, ...countryPages, ...articlePages];

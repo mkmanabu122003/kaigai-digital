@@ -127,8 +127,18 @@ export function getArticlesByCountry(countryId: string): Article[] {
   });
 }
 
-export function getAllSlugs(): { category: string; slug: string }[] {
-  const slugs: { category: string; slug: string }[] = [];
+export function getAllSlugs(): {
+  category: string;
+  slug: string;
+  updatedAt?: string;
+  publishedAt?: string;
+}[] {
+  const slugs: {
+    category: string;
+    slug: string;
+    updatedAt?: string;
+    publishedAt?: string;
+  }[] = [];
 
   // Countries
   const countriesDir = path.join(CONTENT_DIR, "countries");
@@ -137,7 +147,13 @@ export function getAllSlugs(): { category: string; slug: string }[] {
       const rel = path.relative(countriesDir, file).replace(/\.mdx$/, "");
       const parts = rel.split(path.sep);
       if (parts.length === 2) {
-        slugs.push({ category: "country", slug: rel });
+        const { data } = matter(fs.readFileSync(file, "utf-8"));
+        slugs.push({
+          category: "country",
+          slug: rel,
+          updatedAt: data.updatedAt,
+          publishedAt: data.publishedAt,
+        });
       }
     }
   }
@@ -148,7 +164,13 @@ export function getAllSlugs(): { category: string; slug: string }[] {
     if (fs.existsSync(dir)) {
       for (const file of getMdxFiles(dir)) {
         const slug = path.relative(dir, file).replace(/\.mdx$/, "");
-        slugs.push({ category: cat, slug });
+        const { data } = matter(fs.readFileSync(file, "utf-8"));
+        slugs.push({
+          category: cat,
+          slug,
+          updatedAt: data.updatedAt,
+          publishedAt: data.publishedAt,
+        });
       }
     }
   }
