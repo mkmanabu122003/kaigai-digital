@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/layout/Breadcrumb";
 import ArticleCard from "@/components/article/ArticleCard";
 import CountryFlag from "@/components/ui/CountryFlag";
 import StarRating from "@/components/ui/StarRating";
+import AffiliateButton from "@/components/affiliate/AffiliateButton";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 type Props = {
@@ -59,6 +60,24 @@ export default async function CountryPage({ params }: Props) {
             {country.description}
           </p>
         </div>
+
+        {/* VPN recommendation for high-restriction countries */}
+        {country.internetRestriction >= 4 && (
+          <section className="mb-8 rounded-xl border border-accent-200 bg-accent-50 p-6">
+            <h2 className="text-lg font-bold text-primary-700">
+              {country.name}ではVPNが必須
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+              {country.name}ではLINE・Google・YouTubeなどが規制されている。渡航前にVPNを準備しよう。かべネコVPNなら21日間無料で試せる（クレカ不要・自動課金なし）。
+            </p>
+            <AffiliateButton
+              serviceId="kabeneko"
+              placement="top"
+              text="かべネコVPNを21日間無料で試す（クレカ不要）"
+              articleSlug={countryId}
+            />
+          </section>
+        )}
 
         {articles.length > 0 ? (
           <section className="pb-12">

@@ -104,6 +104,15 @@ export function parseArticleContent(html: string): Segment[] {
   return segments;
 }
 
+function getAbVariant(): "a" | "b" {
+  if (typeof window === "undefined") return "a";
+  const stored = sessionStorage.getItem("cta_variant");
+  if (stored === "a" || stored === "b") return stored;
+  const variant = Math.random() < 0.5 ? "a" : "b";
+  sessionStorage.setItem("cta_variant", variant);
+  return variant;
+}
+
 type Props = {
   html: string;
   articleSlug: string;
@@ -111,6 +120,7 @@ type Props = {
 
 export default function ArticleRenderer({ html, articleSlug }: Props) {
   const segments = parseArticleContent(html);
+  const variant = getAbVariant();
 
   return (
     <>
@@ -130,6 +140,7 @@ export default function ArticleRenderer({ html, articleSlug }: Props) {
               serviceId={segment.props.service}
               placement={segment.props.placement}
               text={segment.props.text}
+              variant={variant}
               articleSlug={articleSlug}
             />
           );
