@@ -79,6 +79,11 @@ npx tsx scripts/request-indexing.ts --since 2026-03-31
 npx tsx scripts/request-indexing.ts --urls https://kaigai-digital.com/china/line-vpn
 npx tsx scripts/request-indexing.ts --since 2026-03-31 --dry-run
 
+# アフィリエイトレポート（GA4 Data API）
+npx tsx scripts/affiliate-report.ts
+npx tsx scripts/affiliate-report.ts --days 7
+npx tsx scripts/affiliate-report.ts --service "かべネコVPN"
+
 # 鮮度チェック
 npx tsx scripts/check-stale-articles.ts
 
