@@ -91,6 +91,7 @@ function buildSystemPrompt(row: ArticleRow): string {
     country_service: "prompts/article-types/country-service.md",
     country_comparison: "prompts/article-types/country-comparison.md",
     guide: "prompts/article-types/guide.md",
+    chiebukuro: "prompts/article-types/chiebukuro.md",
   };
 
   const typePrompt = loadPromptFile(typeMap[row.article_type] || "");
