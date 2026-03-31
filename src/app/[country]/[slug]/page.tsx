@@ -108,15 +108,6 @@ export default async function CountryArticlePage({ params }: Props) {
               <PromoDisclosure />
             </div>
 
-            {/* CTA top */}
-            {affiliateServices[0] && (
-              <AffiliateButton
-                serviceId={affiliateServices[0].id}
-                placement="top"
-                articleSlug={`${country}/${slug}`}
-              />
-            )}
-
             {/* Mobile TOC */}
             <div className="mt-6">
               <TableOfContents variant="mobile" />
@@ -124,22 +115,13 @@ export default async function CountryArticlePage({ params }: Props) {
 
             {/* Article body */}
             <ArticleBody>
-              <ArticleRenderer html={htmlContent} />
+              <ArticleRenderer html={htmlContent} articleSlug={`${country}/${slug}`} />
             </ArticleBody>
 
             {/* Comparison table */}
             {affiliateServices.length > 1 && (
               <ComparisonTable
                 services={affiliateServices}
-                articleSlug={`${country}/${slug}`}
-              />
-            )}
-
-            {/* CTA middle */}
-            {affiliateServices[0] && (
-              <AffiliateButton
-                serviceId={affiliateServices[0].id}
-                placement="middle"
                 articleSlug={`${country}/${slug}`}
               />
             )}
@@ -152,15 +134,6 @@ export default async function CountryArticlePage({ params }: Props) {
                 </h2>
                 <FAQ items={frontmatter.faq} />
               </section>
-            )}
-
-            {/* CTA bottom */}
-            {affiliateServices[0] && (
-              <AffiliateButton
-                serviceId={affiliateServices[0].id}
-                placement="bottom"
-                articleSlug={`${country}/${slug}`}
-              />
             )}
 
             <div className="mt-12">

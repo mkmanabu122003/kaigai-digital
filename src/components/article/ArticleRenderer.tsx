@@ -1,6 +1,7 @@
 "use client";
 
 import ServiceAvailabilityTable from "./ServiceAvailabilityTable";
+import AffiliateButton from "@/components/affiliate/AffiliateButton";
 
 type ServiceEntry = {
   category: string;
@@ -15,32 +16,78 @@ type TableProps = {
   vpnCompareLink?: string;
 };
 
+type CtaProps = {
+  service: string;
+  placement: "top" | "middle" | "bottom";
+  text?: string;
+};
+
 type Segment =
   | { type: "html"; content: string }
-  | { type: "serviceTable"; props: TableProps };
+  | { type: "serviceTable"; props: TableProps }
+  | { type: "cta"; props: CtaProps };
+
+const SAT_REGEX = /<!--\s*SAT:([\s\S]*?)\s*-->/g;
+const CTA_REGEX = /<CTA\s+([^>]*?)\/?\s*>/gi;
+
+function parseCtaAttributes(attrString: string): CtaProps | null {
+  const serviceMatch = attrString.match(/service="([^"]+)"/);
+  const placementMatch = attrString.match(/placement="([^"]+)"/);
+  const textMatch = attrString.match(/text="([^"]+)"/);
+
+  if (!serviceMatch || !placementMatch) return null;
+
+  const placement = placementMatch[1];
+  if (placement !== "top" && placement !== "middle" && placement !== "bottom")
+    return null;
+
+  return {
+    service: serviceMatch[1],
+    placement,
+    text: textMatch?.[1],
+  };
+}
 
 /**
- * Parse HTML content string, extract <!-- SAT:{...} --> comment markers,
+ * Parse HTML content string, extract <!-- SAT:{...} --> and <CTA ... /> markers,
  * and return an array of segments for rendering.
  */
 export function parseArticleContent(html: string): Segment[] {
-  const MARKER_REGEX = /<!--\s*SAT:([\s\S]*?)\s*-->/g;
+  const COMBINED_REGEX = new RegExp(
+    `(${SAT_REGEX.source})|(${CTA_REGEX.source})`,
+    "gi"
+  );
 
   const segments: Segment[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
-  while ((match = MARKER_REGEX.exec(html)) !== null) {
+  while ((match = COMBINED_REGEX.exec(html)) !== null) {
     if (match.index > lastIndex) {
-      segments.push({ type: "html", content: html.slice(lastIndex, match.index) });
+      segments.push({
+        type: "html",
+        content: html.slice(lastIndex, match.index),
+      });
     }
 
-    try {
-      const props: TableProps = JSON.parse(match[1]);
-      segments.push({ type: "serviceTable", props });
-    } catch {
-      // If JSON parse fails, keep as HTML
-      segments.push({ type: "html", content: match[0] });
+    if (match[1]) {
+      // SAT marker
+      const jsonStr = match[0].replace(/<!--\s*SAT:/, "").replace(/\s*-->/, "");
+      try {
+        const props: TableProps = JSON.parse(jsonStr);
+        segments.push({ type: "serviceTable", props });
+      } catch {
+        segments.push({ type: "html", content: match[0] });
+      }
+    } else {
+      // CTA tag
+      const attrString = match[0]
+        .replace(/<CTA\s+/i, "")
+        .replace(/\/?\s*>$/, "");
+      const ctaProps = parseCtaAttributes(attrString);
+      if (ctaProps) {
+        segments.push({ type: "cta", props: ctaProps });
+      }
     }
 
     lastIndex = match.index + match[0].length;
@@ -59,9 +106,10 @@ export function parseArticleContent(html: string): Segment[] {
 
 type Props = {
   html: string;
+  articleSlug: string;
 };
 
-export default function ArticleRenderer({ html }: Props) {
+export default function ArticleRenderer({ html, articleSlug }: Props) {
   const segments = parseArticleContent(html);
 
   return (
@@ -72,6 +120,17 @@ export default function ArticleRenderer({ html }: Props) {
             <div
               key={i}
               dangerouslySetInnerHTML={{ __html: segment.content }}
+            />
+          );
+        }
+        if (segment.type === "cta") {
+          return (
+            <AffiliateButton
+              key={i}
+              serviceId={segment.props.service}
+              placement={segment.props.placement}
+              text={segment.props.text}
+              articleSlug={articleSlug}
             />
           );
         }

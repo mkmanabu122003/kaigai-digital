@@ -106,7 +106,7 @@ export default async function ComparePage({ params }: Props) {
             </div>
 
             <ArticleBody>
-              <ArticleRenderer html={htmlContent} />
+              <ArticleRenderer html={htmlContent} articleSlug={`compare/${slug}`} />
             </ArticleBody>
 
             {/* Service cards */}
@@ -128,15 +128,6 @@ export default async function ComparePage({ params }: Props) {
                 </h2>
                 <FAQ items={frontmatter.faq} />
               </section>
-            )}
-
-            {/* CTA bottom */}
-            {affiliateServices[0] && (
-              <AffiliateButton
-                serviceId={affiliateServices[0].id}
-                placement="bottom"
-                articleSlug={`compare/${slug}`}
-              />
             )}
 
             <div className="mt-12">

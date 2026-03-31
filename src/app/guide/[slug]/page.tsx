@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: Props) {
             </div>
 
             <ArticleBody>
-              <ArticleRenderer html={htmlContent} />
+              <ArticleRenderer html={htmlContent} articleSlug={`guide/${slug}`} />
             </ArticleBody>
 
             {frontmatter.faq && frontmatter.faq.length > 0 && (
