@@ -105,6 +105,65 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
   );
 }
 
+type ProductJsonLdProps = {
+  name: string;
+  description: string;
+  rating: number;
+  ratingCount: number;
+  price: string;
+  priceCurrency: string;
+  url: string;
+};
+
+export function ProductJsonLd({
+  name,
+  description,
+  rating,
+  ratingCount,
+  price,
+  priceCurrency,
+  url,
+}: ProductJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description,
+    review: {
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: rating,
+        bestRating: 5,
+      },
+      author: {
+        "@type": "Organization",
+        name: siteConfig.name,
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: rating,
+      bestRating: 5,
+      ratingCount,
+    },
+    offers: {
+      "@type": "Offer",
+      price,
+      priceCurrency,
+      availability: "https://schema.org/InStock",
+      url,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export function WebSiteJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",

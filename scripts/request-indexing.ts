@@ -3,6 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import { glob } from "glob";
 import { google } from "googleapis";
+import { config } from "dotenv";
+
+config({ path: path.join(process.cwd(), ".env.local") });
 
 const DRY_RUN = process.argv.includes("--dry-run");
 
@@ -77,12 +80,13 @@ async function requestIndexing(urls: string[]) {
     return;
   }
 
-  const keyFile = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
-  if (!keyFile) {
+  const rawKeyFile = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
+  if (!rawKeyFile) {
     console.error("Error: GOOGLE_SERVICE_ACCOUNT_KEY environment variable not set.");
     console.error("Set it to the path of your service account JSON key file.");
     process.exit(1);
   }
+  const keyFile = rawKeyFile.replace(/^~/, process.env.HOME || "");
 
   const auth = new google.auth.GoogleAuth({
     keyFile,

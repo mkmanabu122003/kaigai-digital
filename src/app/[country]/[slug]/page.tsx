@@ -19,6 +19,7 @@ import {
   ArticleJsonLd,
   FaqJsonLd,
   BreadcrumbJsonLd,
+  ProductJsonLd,
 } from "@/components/seo/JsonLd";
 import { getServiceById } from "@/lib/affiliates";
 import BlogMuraBanner from "@/components/ui/BlogMuraBanner";
@@ -89,6 +90,17 @@ export default async function CountryArticlePage({ params }: Props) {
       />
       {frontmatter.faq && <FaqJsonLd faqs={frontmatter.faq} />}
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      {frontmatter.productReview && (
+        <ProductJsonLd
+          name={frontmatter.productReview.name}
+          description={frontmatter.productReview.description}
+          rating={frontmatter.productReview.rating}
+          ratingCount={frontmatter.productReview.ratingCount}
+          price={frontmatter.productReview.price}
+          priceCurrency={frontmatter.productReview.priceCurrency}
+          url={`${siteConfig.url}/${country}/${slug}`}
+        />
+      )}
 
       <div className="mx-auto max-w-[1200px] px-4">
         <Breadcrumb items={breadcrumbItems} />

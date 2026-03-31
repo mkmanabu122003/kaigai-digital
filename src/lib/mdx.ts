@@ -23,6 +23,14 @@ export type ArticleFrontmatter = {
     canonical?: string;
     noindex?: boolean;
   };
+  productReview?: {
+    name: string;
+    description: string;
+    rating: number;
+    ratingCount: number;
+    price: string;
+    priceCurrency: string;
+  };
 };
 
 export type Article = {
