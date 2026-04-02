@@ -84,6 +84,9 @@ npx tsx scripts/affiliate-report.ts
 npx tsx scripts/affiliate-report.ts --days 7
 npx tsx scripts/affiliate-report.ts --service "かべネコVPN"
 
+# SEO分析レポート（GSC + GA4、GitHub Actionsで毎日7:00 JST自動実行）
+npx tsx scripts/seo-analysis.ts --dry-run
+
 # 鮮度チェック
 npx tsx scripts/check-stale-articles.ts
 
