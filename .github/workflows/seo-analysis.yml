@@ -41,7 +41,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git checkout -b "$BRANCH"
-          git add reports/
+          git add -f reports/
           git commit -m "SEO analysis report: ${DATE}"
           git push origin "$BRANCH"
 
