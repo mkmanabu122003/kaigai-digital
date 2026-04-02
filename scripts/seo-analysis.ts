@@ -364,72 +364,123 @@ function generateReport(
     md += `課題は検出されませんでした。\n`;
   }
 
-  // Action prompts
-  md += `\n## 改善プロンプト（Claude Codeにコピペで実行可能）\n\n`;
+  // Action prompts — multi-perspective
+  md += `\n## 改善アクション（Claude Codeにコピペで実行可能）\n\n`;
 
   const ctrIssues = issues.filter((i) => i.type === "ctr_low");
   const rankIssues = issues.filter((i) => i.type === "rank_opportunity");
   const staleIss = issues.filter((i) => i.type === "stale");
   const noClickIss = issues.filter((i) => i.type === "no_clicks");
-
-  if (ctrIssues.length > 0) {
-    const pages = ctrIssues.map((i) => i.page).join(", ");
-    md += `### CTR改善\n\n`;
-    md += "```\n";
-    md += `以下のページのtitleとdescriptionを最適化してください。GSCデータでCTRが低い（表示されているがクリックされていない）ページです。\n\n`;
-    md += `対象ページ: ${pages}\n\n`;
-    md += `検索クエリとの関連性を高め、ユーザーの検索意図に合ったtitleに変更してください。\n`;
-    md += `titleは60字以内、descriptionは120字以内。変更後にquality-check.tsを実行してください。\n`;
-    md += "```\n\n";
-  }
-
-  if (rankIssues.length > 0) {
-    const pages = rankIssues.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
-    md += `### 順位改善\n\n`;
-    md += "```\n";
-    md += `以下のページは平均順位5〜20位で上位表示の可能性があります。コンテンツを強化してください。\n\n`;
-    md += `対象:\n  - ${pages}\n\n`;
-    md += `具体的には: h2見出しの追加、情報の最新化、内部リンクの追加、FAQ の充実を検討してください。\n`;
-    md += `変更後にquality-check.tsとcheck-internal-links.tsを実行してください。\n`;
-    md += "```\n\n";
-  }
-
-  if (noClickIss.length > 0) {
-    const pages = noClickIss.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
-    md += `### クリック0ページの改善\n\n`;
-    md += "```\n";
-    md += `以下のページは表示されているがクリックが0です。titleの訴求力を改善してください。\n\n`;
-    md += `対象:\n  - ${pages}\n\n`;
-    md += `GSCの検索クエリを参考に、ユーザーが求めている情報をtitleに反映してください。\n`;
-    md += `【2026年最新】や具体的な数字を含めるとCTRが向上する傾向があります。\n`;
-    md += "```\n\n";
-  }
-
-  if (staleIss.length > 0) {
-    const pages = staleIss.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
-    md += `### 鮮度更新\n\n`;
-    md += "```\n";
-    md += `以下のページは90日以上更新されていません。内容を確認し、updatedAtを今日の日付に更新してください。\n\n`;
-    md += `対象:\n  - ${pages}\n\n`;
-    md += `料金・サービス内容に変更がないか確認し、必要に応じて本文も更新してください。\n`;
-    md += "```\n\n";
-  }
-
-  // Top queries insight
   const highImpLowClick = topQueries
     .filter((q) => q.impressions >= 5 && q.clicks === 0)
     .slice(0, 5);
+
+  // --- CEO: Growth Strategy ---
+  md += `### CEO視点: 成長戦略\n\n`;
+  md += "```\n";
   if (highImpLowClick.length > 0) {
-    md += `### 未獲得クエリの記事作成\n\n`;
-    md += "```\n";
-    md += `以下の検索クエリは表示されているがクリックを獲得できていません。\n`;
-    md += `既存記事の最適化、または新規記事の作成を検討してください。\n\n`;
+    md += `【市場機会】以下の検索クエリでユーザーがサイトを発見しているが、クリックに至っていない。\n`;
+    md += `これらは「需要があるのに獲得できていない市場」。新規記事作成 or 既存記事の最適化で取りに行く。\n\n`;
     for (const q of highImpLowClick) {
       md += `- 「${q.query}」→ ${q.page}（${q.impressions}imp, 順位${q.position.toFixed(1)}）\n`;
     }
-    md += "\n記事を書く場合はCLAUDE.mdの手順に従ってください。\n";
-    md += "```\n";
+    md += `\n`;
   }
+  const totalClicks2 = gscPages.reduce((s, p) => s + p.clicks, 0);
+  const totalImpressions2 = gscPages.reduce((s, p) => s + p.impressions, 0);
+  md += `【KPI】クリック${totalClicks2} / 表示${totalImpressions2} = CTR${totalImpressions2 > 0 ? ((totalClicks2 / totalImpressions2) * 100).toFixed(1) : 0}%\n`;
+  md += `目標: CTR 5%以上。表示回数が増えているならSEOは機能している。CTRの改善が次の成長レバー。\n`;
+  md += "```\n\n";
+
+  // --- CTO: Technical SEO ---
+  md += `### CTO視点: テクニカルSEO\n\n`;
+  md += "```\n";
+  if (staleIss.length > 0) {
+    md += `【鮮度シグナル】${staleIss.length}ページが90日以上未更新。Googleは鮮度を重視するため、updatedAtを更新しコンテンツを最新化せよ。\n\n`;
+    for (const i of staleIss) {
+      md += `  - ${i.page}（${i.detail}）\n`;
+    }
+    md += `\n実行: 各ファイルのupdatedAtを今日の日付に更新し、料金・サービス情報を最新化。\n`;
+    md += `確認: npx tsx scripts/quality-check.ts && npx tsx scripts/check-internal-links.ts\n`;
+  } else {
+    md += `鮮度に問題なし。全記事が90日以内に更新されている。\n`;
+  }
+  md += `\n【構造化データ】Product schemaが適用されている記事のリッチリザルト表示をGoogle Rich Results Testで確認せよ。\n`;
+  md += `【Core Web Vitals】Vercelダッシュボードでページ速度を確認。TTFB 200ms以下を維持。\n`;
+  md += "```\n\n";
+
+  // --- CMO: Content & Conversion ---
+  md += `### CMO視点: コンテンツ & コンバージョン\n\n`;
+  md += "```\n";
+  if (ctrIssues.length > 0) {
+    md += `【CTR改善】${ctrIssues.length}ページが表示されているのにクリックされていない。titleの訴求力を改善する。\n\n`;
+    for (const i of ctrIssues) {
+      md += `  - ${i.page}: ${i.detail}\n`;
+    }
+    md += `\n対応: 各ページのtitleとdescriptionを最適化。\n`;
+    md += `- titleに【2026年最新】や具体的数字（「3選」「5ステップ」等）を含める\n`;
+    md += `- descriptionにユーザーのペイン（「使えない」「困った」）を反映\n`;
+    md += `- titleは60字以内、descriptionは120字以内\n`;
+  }
+  if (noClickIss.length > 0) {
+    md += `\n【ゼロクリック】以下は表示されているがクリック0。titleが検索意図と合っていない可能性。\n\n`;
+    for (const i of noClickIss) {
+      md += `  - ${i.page}: ${i.detail}\n`;
+    }
+  }
+  md += `\n確認: npx tsx scripts/quality-check.ts\n`;
+  md += "```\n\n";
+
+  // --- CSO (Chief Strategy Officer): Competitive & SEO ---
+  md += `### CSO視点: SEO戦略 & 競合\n\n`;
+  md += "```\n";
+  if (rankIssues.length > 0) {
+    md += `【順位改善チャンス】${rankIssues.length}ページが5〜20位圏内。コンテンツ強化で1ページ目上位を狙える。\n\n`;
+    for (const i of rankIssues) {
+      md += `  - ${i.page}: ${i.detail}\n`;
+    }
+    md += `\n対応:\n`;
+    md += `- h2見出しにターゲットKWを追加\n`;
+    md += `- 内部リンクを2〜3本追加（被リンクが多い記事から）\n`;
+    md += `- FAQを1〜2個追加（People Also Askを参考に）\n`;
+    md += `- 文字数が2,000字未満なら加筆\n`;
+  } else {
+    md += `5〜20位圏内のページなし。新規コンテンツの投入フェーズ。\n`;
+  }
+  md += `\n確認: npx tsx scripts/check-internal-links.ts（孤立ページが0であること）\n`;
+  md += "```\n\n";
+
+  // --- Top Affiliate Marketer ---
+  md += `### トップアフィリエイター視点: CV最適化\n\n`;
+  md += "```\n";
+  // Analyze affiliate performance
+  const kabenekoCicks = ga4Clicks.find((r) => r.dimension.includes("かべネコ"));
+  const kabenekoViews = ga4Views.find((r) => r.dimension.includes("かべネコ"));
+  const kClicks = kabenekoCicks?.count || 0;
+  const kViews = kabenekoViews?.count || 0;
+  const kCtr = kViews > 0 ? ((kClicks / kViews) * 100).toFixed(1) : "N/A";
+
+  md += `【かべネコVPN CTA実績】表示${kViews}回 → クリック${kClicks}回（CTR: ${kCtr}%）\n\n`;
+
+  if (kViews > 0 && kClicks === 0) {
+    md += `CTAが表示されているがクリック0。CTA文言のA/Bテストを検討。\n`;
+    md += `現在の文言: 「かべネコVPNを21日間無料で試す（クレカ不要）」\n`;
+    md += `テスト候補: 「中国VPNを無料で21日間試す」「クレカ不要・21日間無料トライアル」\n\n`;
+  }
+
+  // Top converting pages
+  const pagesWithClicks = gscPages.filter((p) => p.clicks > 0).sort((a, b) => b.clicks - a.clicks);
+  if (pagesWithClicks.length > 0) {
+    md += `【CV導線の強化】最もクリックされている記事:\n`;
+    for (const p of pagesWithClicks.slice(0, 5)) {
+      md += `  - ${p.page}（${p.clicks}clicks, CTR${(p.ctr * 100).toFixed(1)}%）\n`;
+    }
+    md += `\nこれらの記事のCTA配置を見直し、かべネコCTAが適切な位置にあるか確認。\n`;
+    md += `特にbottom CTAがかべネコになっているか、kabeneko-setupへの内部リンクがあるか確認せよ。\n`;
+  }
+
+  md += `\n【季節性】4月は赴任シーズン。china/expat-digital-prep, china/vpn-free-trialの露出を強化。\n`;
+  md += "```\n";
 
   return md;
 }

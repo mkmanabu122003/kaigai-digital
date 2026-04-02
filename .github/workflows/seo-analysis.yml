@@ -30,6 +30,7 @@ jobs:
         run: npx tsx scripts/seo-analysis.ts
 
       - name: Create PR if issues found
+        id: create_pr
         if: steps.analysis.outputs.has_issues == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,16 +49,19 @@ jobs:
 
           REPORT_FILE="reports/seo-${DATE}.md"
 
-          gh pr create \
+          PR_URL=$(gh pr create \
             --title "SEO分析レポート: ${DATE}" \
             --body-file "$REPORT_FILE" \
             --base main \
-            --head "$BRANCH"
+            --head "$BRANCH" 2>&1 | grep "https://")
+
+          echo "pr_url=${PR_URL}" >> $GITHUB_OUTPUT
 
       - name: Notify Slack
         if: always() && steps.analysis.conclusion == 'success'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=$(date +%Y-%m-%d)
           REPORT_FILE="reports/seo-${DATE}.md"
@@ -67,25 +71,30 @@ jobs:
             exit 0
           fi
 
-          # Extract summary section (first 30 lines)
-          SUMMARY=$(head -40 "$REPORT_FILE" | sed 's/"/\\"/g' | tr '\n' '\\' | sed 's/\\/\\n/g')
+          PR_URL="${{ steps.create_pr.outputs.pr_url }}"
+          ACTIONS_URL="https://github.com/mkmanabu122003/kaigai-digital/actions/runs/${{ github.run_id }}"
 
-          ISSUE_COUNT=$(grep -c "^|" "$REPORT_FILE" | tail -1 || echo "0")
-          PR_URL=""
-          if [ "${{ steps.analysis.outputs.has_issues }}" = "true" ]; then
-            PR_URL=$(gh pr list --repo mkmanabu122003/kaigai-digital --state open --search "SEO分析レポート: ${DATE}" --json url --jq '.[0].url' 2>/dev/null || echo "")
-          fi
+          # Build summary from report
+          TOTAL_CLICKS=$(grep '総クリック数' "$REPORT_FILE" | grep -oE '[0-9]+' || echo "0")
+          TOTAL_IMP=$(grep '総表示回数' "$REPORT_FILE" | grep -oE '[0-9]+' || echo "0")
+          AVG_CTR=$(grep '平均CTR' "$REPORT_FILE" | grep -oE '[0-9.]+%' || echo "N/A")
+          ISSUE_COUNT=$(grep '検出した課題' "$REPORT_FILE" | grep -oE '[0-9]+件' | head -1 || echo "0件")
 
-          PR_LINK=""
+          # Build Slack message
+          MSG="🔍 *SEO分析レポート: ${DATE}*\n\n"
+          MSG+="*サマリー（過去28日間）*\n"
+          MSG+="• クリック: ${TOTAL_CLICKS} | 表示: ${TOTAL_IMP} | CTR: ${AVG_CTR}\n"
+          MSG+="• 検出した課題: ${ISSUE_COUNT}\n"
+
           if [ -n "$PR_URL" ]; then
-            PR_LINK="\n\n📎 *PR:* ${PR_URL}"
+            MSG+="\n📎 *改善PR:* ${PR_URL}\n"
           fi
+
+          MSG+="\n📊 *詳細レポート:* ${ACTIONS_URL}"
 
           curl -s -X POST "$SLACK_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"text\": \"🔍 *SEO分析レポート: ${DATE}*\n\n$(head -20 "$REPORT_FILE" | grep -E '^\|' | head -8 | sed 's/"/\\"/g' | tr '\n' '\\' | sed 's/\\/\\n/g')${PR_LINK}\n\n📊 詳細はGitHub Actionsのartifactを確認\"
-            }"
+            -d "$(printf '{"text": "%s"}' "$MSG")"
 
       - name: Upload report as artifact
         if: always()
