@@ -364,6 +364,73 @@ function generateReport(
     md += `課題は検出されませんでした。\n`;
   }
 
+  // Action prompts
+  md += `\n## 改善プロンプト（Claude Codeにコピペで実行可能）\n\n`;
+
+  const ctrIssues = issues.filter((i) => i.type === "ctr_low");
+  const rankIssues = issues.filter((i) => i.type === "rank_opportunity");
+  const staleIss = issues.filter((i) => i.type === "stale");
+  const noClickIss = issues.filter((i) => i.type === "no_clicks");
+
+  if (ctrIssues.length > 0) {
+    const pages = ctrIssues.map((i) => i.page).join(", ");
+    md += `### CTR改善\n\n`;
+    md += "```\n";
+    md += `以下のページのtitleとdescriptionを最適化してください。GSCデータでCTRが低い（表示されているがクリックされていない）ページです。\n\n`;
+    md += `対象ページ: ${pages}\n\n`;
+    md += `検索クエリとの関連性を高め、ユーザーの検索意図に合ったtitleに変更してください。\n`;
+    md += `titleは60字以内、descriptionは120字以内。変更後にquality-check.tsを実行してください。\n`;
+    md += "```\n\n";
+  }
+
+  if (rankIssues.length > 0) {
+    const pages = rankIssues.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
+    md += `### 順位改善\n\n`;
+    md += "```\n";
+    md += `以下のページは平均順位5〜20位で上位表示の可能性があります。コンテンツを強化してください。\n\n`;
+    md += `対象:\n  - ${pages}\n\n`;
+    md += `具体的には: h2見出しの追加、情報の最新化、内部リンクの追加、FAQ の充実を検討してください。\n`;
+    md += `変更後にquality-check.tsとcheck-internal-links.tsを実行してください。\n`;
+    md += "```\n\n";
+  }
+
+  if (noClickIss.length > 0) {
+    const pages = noClickIss.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
+    md += `### クリック0ページの改善\n\n`;
+    md += "```\n";
+    md += `以下のページは表示されているがクリックが0です。titleの訴求力を改善してください。\n\n`;
+    md += `対象:\n  - ${pages}\n\n`;
+    md += `GSCの検索クエリを参考に、ユーザーが求めている情報をtitleに反映してください。\n`;
+    md += `【2026年最新】や具体的な数字を含めるとCTRが向上する傾向があります。\n`;
+    md += "```\n\n";
+  }
+
+  if (staleIss.length > 0) {
+    const pages = staleIss.map((i) => `${i.page}（${i.detail}）`).join("\n  - ");
+    md += `### 鮮度更新\n\n`;
+    md += "```\n";
+    md += `以下のページは90日以上更新されていません。内容を確認し、updatedAtを今日の日付に更新してください。\n\n`;
+    md += `対象:\n  - ${pages}\n\n`;
+    md += `料金・サービス内容に変更がないか確認し、必要に応じて本文も更新してください。\n`;
+    md += "```\n\n";
+  }
+
+  // Top queries insight
+  const highImpLowClick = topQueries
+    .filter((q) => q.impressions >= 5 && q.clicks === 0)
+    .slice(0, 5);
+  if (highImpLowClick.length > 0) {
+    md += `### 未獲得クエリの記事作成\n\n`;
+    md += "```\n";
+    md += `以下の検索クエリは表示されているがクリックを獲得できていません。\n`;
+    md += `既存記事の最適化、または新規記事の作成を検討してください。\n\n`;
+    for (const q of highImpLowClick) {
+      md += `- 「${q.query}」→ ${q.page}（${q.impressions}imp, 順位${q.position.toFixed(1)}）\n`;
+    }
+    md += "\n記事を書く場合はCLAUDE.mdの手順に従ってください。\n";
+    md += "```\n";
+  }
+
   return md;
 }
 
