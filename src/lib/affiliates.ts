@@ -35,7 +35,7 @@ export const affiliateLinks: Record<string, AffiliateService> = {
   surfshark: {
     id: "surfshark",
     name: "Surfshark",
-    url: "https://surfshark.com/ja/?ref=XXXXX",
+    url: "https://get.surfshark.net/aff_c?offer_id=926&aff_id=45656",
     logo: "/images/services/surfshark.png",
     price: "月額$1.99〜",
     rating: 4.6,

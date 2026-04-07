@@ -81,6 +81,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 比較・まとめガイド */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
+        <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
+          比較・まとめガイド
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              href: "/compare/best-vpn",
+              title: "海外おすすめVPN 3選",
+              desc: "NordVPN・Surfshark・かべネコを料金・速度・使いやすさで徹底比較",
+            },
+            {
+              href: "/compare/best-esim",
+              title: "海外eSIMおすすめ5選",
+              desc: "10カ国で実測比較。料金・速度ランキングと失敗しない選び方",
+            },
+            {
+              href: "/compare/streaming-vpn",
+              title: "海外から日本の動画を見る方法",
+              desc: "TVer・ABEMA・Netflix対応VPNを実際に検証",
+            },
+            {
+              href: "/compare/overseas-remittance",
+              title: "海外送金 手数料比較",
+              desc: "Wise vs PayPal vs 銀行。手数料を最大91%安くする方法",
+            },
+            {
+              href: "/compare/best-sim-number",
+              title: "海外赴任の番号維持",
+              desc: "povo・楽天・LIBMOを比較。最安で日本の番号をキープ",
+            },
+            {
+              href: "/compare/rakuten-mobile-overseas",
+              title: "楽天モバイル海外利用ガイド",
+              desc: "無料2GBの活用法と足りない時の対策",
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-md"
+            >
+              <h3 className="font-bold text-neutral-900 group-hover:text-primary-700">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm text-neutral-600 line-clamp-2">
+                {item.desc}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* 最新記事 */}
       {articles.length > 0 && (
         <section className="mx-auto max-w-[1200px] px-4 pb-12 lg:pb-16">
