@@ -14,23 +14,33 @@ export default function HomePage() {
       <WebSiteJsonLd />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-800 py-12 text-white lg:py-20">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="relative overflow-hidden bg-primary-800 py-12 text-white lg:py-20">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+          aria-hidden="true"
+        />
+        {/* Gradient overlay for readability */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-primary-800/80 to-primary-700/75"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-[1200px] px-4">
           <div className="text-center">
             {/* Pre-headline badge */}
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-medium text-white/90 ring-1 ring-white/20 lg:text-sm">
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-medium text-white/90 ring-1 ring-white/20 backdrop-blur lg:text-sm">
               口コミ・レビューを横断分析する独立メディア
             </span>
 
             {/* Main headline */}
-            <h1 className="mt-4 text-2xl font-bold leading-tight text-white lg:mt-5 lg:text-5xl">
-              海外で「ネット繋がらない」<br className="sm:hidden" />
-              「LINE使えない」<br />
-              を出発前に解決
+            <h1 className="mt-4 text-2xl font-bold leading-tight text-white drop-shadow-lg lg:mt-5 lg:text-5xl">
+              海外渡航のネット・デジタル準備、<br className="sm:hidden" />
+              これ1サイトで。
             </h1>
 
             {/* Subheadline */}
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-white/85 lg:mt-6 lg:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-white/90 drop-shadow lg:mt-6 lg:text-lg">
               VPN・eSIM・海外送金の口コミとレビューを横断比較し、編集部が独自の見解で整理。
               <br className="hidden sm:block" />
               渡航先と用途で最適なサービスがすぐ見つかる、海外渡航者のための完全ガイド。
