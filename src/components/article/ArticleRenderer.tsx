@@ -2,6 +2,7 @@
 
 import ServiceAvailabilityTable from "./ServiceAvailabilityTable";
 import AffiliateButton from "@/components/affiliate/AffiliateButton";
+import KabenekoHero from "@/components/affiliate/KabenekoHero";
 
 type ServiceEntry = {
   category: string;
@@ -25,10 +26,12 @@ type CtaProps = {
 type Segment =
   | { type: "html"; content: string }
   | { type: "serviceTable"; props: TableProps }
-  | { type: "cta"; props: CtaProps };
+  | { type: "cta"; props: CtaProps }
+  | { type: "kabenekoHero" };
 
 const SAT_REGEX = /<!--\s*SAT:([\s\S]*?)\s*-->/g;
 const CTA_REGEX = /<CTA\s+([^>]*?)\/?\s*>/gi;
+const KABENEKO_HERO_REGEX = /<KabenekoHero\s*\/?\s*>/gi;
 
 function parseCtaAttributes(attrString: string): CtaProps | null {
   const serviceMatch = attrString.match(/service="([^"]+)"/);
@@ -54,7 +57,7 @@ function parseCtaAttributes(attrString: string): CtaProps | null {
  */
 export function parseArticleContent(html: string): Segment[] {
   const COMBINED_REGEX = new RegExp(
-    `(${SAT_REGEX.source})|(${CTA_REGEX.source})`,
+    `(${SAT_REGEX.source})|(${CTA_REGEX.source})|(${KABENEKO_HERO_REGEX.source})`,
     "gi"
   );
 
@@ -79,6 +82,9 @@ export function parseArticleContent(html: string): Segment[] {
       } catch {
         segments.push({ type: "html", content: match[0] });
       }
+    } else if (/<KabenekoHero/i.test(match[0])) {
+      // KabenekoHero tag
+      segments.push({ type: "kabenekoHero" });
     } else {
       // CTA tag
       const attrString = match[0]
@@ -144,6 +150,9 @@ export default function ArticleRenderer({ html, articleSlug }: Props) {
               articleSlug={articleSlug}
             />
           );
+        }
+        if (segment.type === "kabenekoHero") {
+          return <KabenekoHero key={i} />;
         }
         return (
           <ServiceAvailabilityTable
