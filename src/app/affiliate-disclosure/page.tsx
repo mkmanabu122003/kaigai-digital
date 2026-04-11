@@ -45,7 +45,7 @@ export default function AffiliateDisclosurePage() {
           <li>NordVPN（VPN）</li>
           <li>Surfshark（VPN）</li>
           <li>かべネコVPN（VPN）</li>
-          <li>Airalo（eSIM）</li>
+          <li>トリファ（eSIM）</li>
           <li>Wise（海外送金）</li>
         </ul>
 

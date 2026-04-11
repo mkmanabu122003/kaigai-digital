@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
       {
         label: "eSIM比較",
         href: "/compare/best-esim",
-        description: "Airalo・Saily・trifa等おすすめ5選",
+        description: "トリファ・Airalo・Saily等おすすめ5選",
       },
       {
         label: "海外送金比較",

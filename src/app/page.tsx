@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { countries } from "@/lib/countries";
 import { getAllArticles } from "@/lib/mdx";
@@ -15,32 +16,33 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary-800 py-12 text-white lg:py-20">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        {/* Background image (Next.js optimized) */}
+        <Image
+          src="/images/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
           aria-hidden="true"
         />
         {/* Gradient overlay for readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-primary-800/80 to-primary-700/75"
+          className="absolute inset-0 bg-gradient-to-br from-primary-900/55 via-primary-800/45 to-primary-700/40"
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-[1200px] px-4">
           <div className="text-center">
+            {/* SR-only h1 for SEO */}
+            <h1 className="sr-only">Kaigai Digital — 海外渡航者のためのネット・デジタル情報メディア</h1>
+
             {/* Pre-headline badge */}
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-medium text-white/90 ring-1 ring-white/20 backdrop-blur lg:text-sm">
+            <span className="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-medium text-white ring-1 ring-white/30 backdrop-blur lg:text-sm">
               口コミ・レビューを横断分析する独立メディア
             </span>
 
-            {/* Main headline */}
-            <h1 className="mt-4 text-2xl font-bold leading-tight text-white drop-shadow-lg lg:mt-5 lg:text-5xl">
-              海外渡航のネット・デジタル準備、<br className="sm:hidden" />
-              これ1サイトで。
-            </h1>
-
             {/* Subheadline */}
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-white/90 drop-shadow lg:mt-6 lg:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-sm text-white drop-shadow-lg lg:mt-8 lg:text-lg">
               VPN・eSIM・海外送金の口コミとレビューを横断比較し、編集部が独自の見解で整理。
               <br className="hidden sm:block" />
               渡航先と用途で最適なサービスがすぐ見つかる、海外渡航者のための完全ガイド。
