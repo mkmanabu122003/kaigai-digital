@@ -41,18 +41,18 @@ export default function HomePage() {
 
             {/* Main headline (H1) */}
             <h1 className="mt-5 text-2xl font-bold leading-tight text-white drop-shadow-lg sm:text-3xl lg:mt-6 lg:text-5xl">
-              海外で「ネット繋がらない」
+              旅行・出張・赴任の
               <br className="sm:hidden" />
-              「LINE使えない」
+              「海外デジタル」
               <br />
-              を出発前に解決
+              まるごとガイド
             </h1>
 
             {/* Subheadline */}
             <p className="mx-auto mt-4 max-w-2xl text-sm text-white drop-shadow-lg lg:mt-6 lg:text-lg">
-              VPN・eSIM・海外送金の口コミとレビューを横断比較し、編集部が独自の見解で整理。
+              ネット・通信・送金・銀行・番号維持まで、渡航者のデジタル準備を国別・用途別に整理。
               <br className="hidden sm:block" />
-              渡航先と用途で最適なサービスがすぐ見つかる、海外渡航者のための完全ガイド。
+              口コミとレビューを横断比較して、編集部が独自の見解でまとめた完全ガイド。
             </p>
 
             {/* Intent-based CTA cards */}
@@ -63,28 +63,44 @@ export default function HomePage() {
                   icon: "shield" as const,
                   title: "VPNを選ぶ",
                   sub: "中国・地域制限対策",
+                  primary: true,
                 },
                 {
                   href: "/compare/best-esim",
                   icon: "mobile" as const,
                   title: "eSIMを選ぶ",
                   sub: "200カ国対応・約500円〜",
+                  primary: false,
                 },
                 {
                   href: "/compare/overseas-remittance",
                   icon: "currency" as const,
                   title: "送金を比較",
                   sub: "Wise vs PayPal vs 銀行",
+                  primary: false,
                 },
               ].map((c) => (
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
+                  className={
+                    c.primary
+                      ? "group flex flex-col items-center gap-2 rounded-xl bg-accent-500 p-5 shadow-lg ring-1 ring-accent-400 transition-all hover:-translate-y-0.5 hover:bg-accent-600 hover:shadow-xl"
+                      : "group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
+                  }
                 >
-                  <Icon name={c.icon} className="h-7 w-7 text-accent-400" />
+                  <Icon
+                    name={c.icon}
+                    className={
+                      c.primary ? "h-7 w-7 text-white" : "h-7 w-7 text-accent-400"
+                    }
+                  />
                   <span className="font-bold text-white">{c.title}</span>
-                  <span className="text-xs text-white/70">{c.sub}</span>
+                  <span
+                    className={c.primary ? "text-xs text-white/90" : "text-xs text-white/70"}
+                  >
+                    {c.sub}
+                  </span>
                 </Link>
               ))}
             </div>

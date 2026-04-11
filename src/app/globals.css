@@ -69,16 +69,18 @@ body {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--color-primary-700);
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-primary-700);
+  }
 }
 
 /* Article content styles */
@@ -128,13 +130,13 @@ h6 {
   margin-bottom: 8px;
 }
 
-.article-content a {
+.article-content :where(a:not([class*="bg-"])) {
   color: var(--color-info);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.article-content a:hover {
+.article-content :where(a:not([class*="bg-"]):hover) {
   color: var(--color-primary-700);
 }
 
