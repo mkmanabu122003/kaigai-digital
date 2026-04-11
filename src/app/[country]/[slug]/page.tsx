@@ -113,7 +113,7 @@ export default async function CountryArticlePage({ params }: Props) {
             </h1>
 
             <div className="mt-3 flex items-center gap-4">
-              <LastUpdated date={frontmatter.updatedAt} />
+              <LastUpdated date={frontmatter.updatedAt} publishedAt={frontmatter.publishedAt} />
             </div>
 
             <div className="mt-4">

@@ -70,6 +70,19 @@ export default function ComparisonTable({ services, articleSlug }: Props) {
                 </td>
               ))}
             </tr>
+            <tr className="border-t border-neutral-200 bg-amber-50">
+              <td className="px-4 py-3 font-medium text-neutral-900">
+                編集部の利用実績
+              </td>
+              {services.map((s) => (
+                <td
+                  key={s.id}
+                  className="px-4 py-3 text-center text-xs text-neutral-700"
+                >
+                  {s.editorUsage || "—"}
+                </td>
+              ))}
+            </tr>
             <tr className="border-t border-neutral-200">
               <td className="px-4 py-3" />
               {services.map((s) => (
@@ -117,6 +130,11 @@ export default function ComparisonTable({ services, articleSlug }: Props) {
               ))}
             </dl>
             <p className="mt-3 text-xs text-neutral-700">{s.bestFor}</p>
+            {s.editorUsage && (
+              <p className="mt-2 rounded bg-amber-50 px-2 py-1 text-xs text-neutral-700">
+                <span className="font-medium">編集部:</span> {s.editorUsage}
+              </p>
+            )}
             <AffiliateButton
               serviceId={s.id}
               placement="middle"

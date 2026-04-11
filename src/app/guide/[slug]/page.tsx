@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: Props) {
             </h1>
 
             <div className="mt-3">
-              <LastUpdated date={frontmatter.updatedAt} />
+              <LastUpdated date={frontmatter.updatedAt} publishedAt={frontmatter.publishedAt} />
             </div>
 
             <div className="mt-4">
