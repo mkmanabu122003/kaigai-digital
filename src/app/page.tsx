@@ -97,7 +97,7 @@ export default function HomePage() {
                   />
                 </svg>
                 <span className="font-bold text-white">eSIMを選ぶ</span>
-                <span className="text-xs text-white/70">200カ国対応・$3.50〜</span>
+                <span className="text-xs text-white/70">200カ国対応・約500円〜</span>
               </Link>
 
               <Link
@@ -119,7 +119,7 @@ export default function HomePage() {
                   />
                 </svg>
                 <span className="font-bold text-white">送金を比較</span>
-                <span className="text-xs text-white/70">手数料を最大91%削減</span>
+                <span className="text-xs text-white/70">Wise vs PayPal vs 銀行</span>
               </Link>
             </div>
 
@@ -143,6 +143,39 @@ export default function HomePage() {
                 </svg>
                 独立メディア・忖度なし
               </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 中国渡航者向け専用導線 */}
+      <section className="border-b border-red-100 bg-gradient-to-r from-red-50 to-orange-50 py-8 lg:py-10">
+        <div className="mx-auto max-w-[1200px] px-4">
+          <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-3">
+              <span className="text-3xl" aria-hidden="true">🇨🇳</span>
+              <div>
+                <h2 className="text-lg font-bold text-neutral-900 lg:text-xl">
+                  中国渡航の方へ — LINE・Google・Instagramは繋がりません
+                </h2>
+                <p className="mt-1 text-sm text-neutral-700">
+                  出発前にVPN準備が必須。用途別に最適なサービスと設定方法をまとめました。
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/china/net-guide"
+                className="inline-flex items-center gap-1 rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white shadow-sm transition-colors hover:bg-red-700"
+              >
+                中国ネット環境ガイド →
+              </Link>
+              <Link
+                href="/china/line-vpn"
+                className="inline-flex items-center gap-1 rounded-lg bg-white px-4 py-2 text-sm font-bold text-red-700 ring-1 ring-red-200 transition-colors hover:bg-red-50"
+              >
+                LINEを使うVPN →
+              </Link>
             </div>
           </div>
         </div>
@@ -185,68 +218,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 比較・まとめガイド */}
-      <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
-        <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
-          比較・まとめガイド
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              href: "/compare/best-vpn",
-              title: "海外おすすめVPN 3選",
-              desc: "NordVPN・Surfshark・かべネコを料金・速度・使いやすさで徹底比較",
-            },
-            {
-              href: "/compare/best-esim",
-              title: "海外eSIMおすすめ5選",
-              desc: "公式情報と口コミを横断比較。料金・速度ランキングと失敗しない選び方",
-            },
-            {
-              href: "/compare/streaming-vpn",
-              title: "海外から日本の動画を見る方法",
-              desc: "TVer・ABEMA・Netflix対応VPNを実際に検証",
-            },
-            {
-              href: "/compare/overseas-remittance",
-              title: "海外送金 手数料比較",
-              desc: "Wise vs PayPal vs 銀行。手数料を最大91%安くする方法",
-            },
-            {
-              href: "/compare/best-sim-number",
-              title: "海外赴任の番号維持",
-              desc: "povo・楽天・LIBMOを比較。最安で日本の番号をキープ",
-            },
-            {
-              href: "/compare/rakuten-mobile-overseas",
-              title: "楽天モバイル海外利用ガイド",
-              desc: "無料2GBの活用法と足りない時の対策",
-            },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-md"
-            >
-              <h3 className="font-bold text-neutral-900 group-hover:text-primary-700">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-neutral-600 line-clamp-2">
-                {item.desc}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* 最新記事 */}
       {articles.length > 0 && (
-        <section className="mx-auto max-w-[1200px] px-4 pb-12 lg:pb-16">
-          <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
-            最新記事
-          </h2>
+        <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
+          <div className="mb-8 flex items-end justify-between">
+            <h2 className="text-xl font-bold text-primary-700 lg:text-2xl">
+              最新記事
+            </h2>
+            <Link
+              href="/articles"
+              className="text-sm font-medium text-primary-700 hover:underline"
+            >
+              すべての記事を見る →
+            </Link>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {articles.slice(0, 24).map((article) => (
+            {articles.slice(0, 6).map((article) => (
               <ArticleCard
                 key={article.slug}
                 slug={article.slug}
@@ -256,87 +243,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
-      {/* すべての記事一覧（カテゴリ別） */}
-      <section className="mx-auto max-w-[1200px] px-4 pb-12 lg:pb-16">
-        <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
-          すべての記事
-        </h2>
-
-        {/* 国別記事 */}
-        {countries.map((country) => {
-          const countryArticles = articles.filter(
-            (a) => a.frontmatter.category === "country" && a.slug.startsWith(`${country.id}/`)
-          );
-          if (countryArticles.length === 0) return null;
-          return (
-            <div key={country.id} className="mb-8">
-              <h3 className="mb-3 flex items-center gap-2 text-base font-bold text-neutral-900">
-                <CountryFlag flag={country.flag} name={country.name} size="sm" />
-                {country.name}
-              </h3>
-              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-                {countryArticles.map((article) => (
-                  <li key={article.slug}>
-                    <Link
-                      href={`/${article.slug}`}
-                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
-                    >
-                      → {article.frontmatter.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-
-        {/* 比較記事 */}
-        {(() => {
-          const compareArticles = articles.filter((a) => a.frontmatter.category === "compare");
-          if (compareArticles.length === 0) return null;
-          return (
-            <div className="mb-8">
-              <h3 className="mb-3 text-base font-bold text-neutral-900">比較・ランキング</h3>
-              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-                {compareArticles.map((article) => (
-                  <li key={article.slug}>
-                    <Link
-                      href={`/compare/${article.slug}`}
-                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
-                    >
-                      → {article.frontmatter.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })()}
-
-        {/* ガイド記事 */}
-        {(() => {
-          const guideArticles = articles.filter((a) => a.frontmatter.category === "guide");
-          if (guideArticles.length === 0) return null;
-          return (
-            <div className="mb-8">
-              <h3 className="mb-3 text-base font-bold text-neutral-900">ガイド</h3>
-              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-                {guideArticles.map((article) => (
-                  <li key={article.slug}>
-                    <Link
-                      href={`/guide/${article.slug}`}
-                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
-                    >
-                      → {article.frontmatter.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })()}
-      </section>
     </>
   );
 }
