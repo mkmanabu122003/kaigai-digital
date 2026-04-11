@@ -33,16 +33,22 @@ export default function HomePage() {
         />
         <div className="relative mx-auto max-w-[1200px] px-4">
           <div className="text-center">
-            {/* SR-only h1 for SEO */}
-            <h1 className="sr-only">Kaigai Digital — 海外渡航者のためのネット・デジタル情報メディア</h1>
-
             {/* Pre-headline badge */}
             <span className="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-medium text-white ring-1 ring-white/30 backdrop-blur lg:text-sm">
               口コミ・レビューを横断分析する独立メディア
             </span>
 
+            {/* Main headline (H1) */}
+            <h1 className="mt-5 text-2xl font-bold leading-tight text-white drop-shadow-lg sm:text-3xl lg:mt-6 lg:text-5xl">
+              海外で「ネット繋がらない」
+              <br className="sm:hidden" />
+              「LINE使えない」
+              <br />
+              を出発前に解決
+            </h1>
+
             {/* Subheadline */}
-            <p className="mx-auto mt-6 max-w-2xl text-sm text-white drop-shadow-lg lg:mt-8 lg:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-white drop-shadow-lg lg:mt-6 lg:text-lg">
               VPN・eSIM・海外送金の口コミとレビューを横断比較し、編集部が独自の見解で整理。
               <br className="hidden sm:block" />
               渡航先と用途で最適なサービスがすぐ見つかる、海外渡航者のための完全ガイド。
@@ -147,20 +153,24 @@ export default function HomePage() {
         id="countries"
         className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16"
       >
-        <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
+        <h2 className="mb-2 text-xl font-bold text-primary-700 lg:text-2xl">
           国別ガイド
         </h2>
+        <p className="mb-8 text-sm text-neutral-700">
+          渡航先別にネット環境・VPN・eSIM・決済の対応状況をまとめた完全ガイド
+        </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {countries.map((country) => (
             <Link
               key={country.id}
               href={`/${country.id}`}
+              aria-label={`${country.name}のネット環境・VPN・eSIM完全ガイド`}
               className="group flex items-start gap-4 rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-md"
             >
               <CountryFlag flag={country.flag} name={country.name} size="lg" />
               <div>
                 <h3 className="font-bold text-neutral-900 group-hover:text-primary-700">
-                  {country.name}
+                  {country.name}のネット環境ガイド
                 </h3>
                 <div className="mt-1 flex items-center gap-1 text-xs text-neutral-700">
                   <span>ネット規制:</span>
