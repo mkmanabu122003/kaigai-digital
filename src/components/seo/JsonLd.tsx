@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/config";
 import type { BreadcrumbItem } from "@/components/layout/Breadcrumb";
+import { defaultAuthor } from "@/lib/authors";
 
 type ArticleJsonLdProps = {
   title: string;
@@ -20,6 +21,18 @@ export function ArticleJsonLd({
   url,
   image,
 }: ArticleJsonLdProps) {
+  // Use the structured author from authors.ts as Person reference
+  const authorObj = {
+    "@type": "Person",
+    "@id": `${siteConfig.url}${defaultAuthor.url}#person`,
+    name: defaultAuthor.displayName,
+    url: `${siteConfig.url}${defaultAuthor.url}`,
+    jobTitle: defaultAuthor.jobTitle,
+  };
+
+  // Suppress unused warning for legacy author param
+  void author;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -27,12 +40,10 @@ export function ArticleJsonLd({
     description,
     datePublished: publishedAt,
     dateModified: updatedAt,
-    author: {
-      "@type": "Person",
-      name: author,
-    },
+    author: authorObj,
     publisher: {
       "@type": "Organization",
+      "@id": `${siteConfig.url}#organization`,
       name: siteConfig.name,
       url: siteConfig.url,
     },
@@ -168,14 +179,45 @@ export function WebSiteJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}#website`,
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
+    publisher: {
+      "@id": `${siteConfig.url}#organization`,
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: `${siteConfig.url}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+export function OrganizationJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteConfig.url}#organization`,
+    name: siteConfig.name,
+    alternateName: siteConfig.nameJa,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    foundingDate: "2026-03-22",
+    knowsAbout: [
+      "海外VPN",
+      "海外eSIM",
+      "海外送金",
+      "海外赴任のITインフラ",
+      "海外旅行のネット環境",
+    ],
   };
 
   return (

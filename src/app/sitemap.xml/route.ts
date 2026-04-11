@@ -8,7 +8,12 @@ export async function GET() {
   const sitePublishedAt = "2026-03-22";
 
   const staticPages = [
-    { url: "", lastmod: sitePublishedAt },
+    { url: "", lastmod: "2026-04-11" },
+    { url: "/about", lastmod: "2026-04-11" },
+    { url: "/editorial-policy", lastmod: "2026-04-11" },
+    { url: "/affiliate-disclosure", lastmod: "2026-04-11" },
+    { url: "/contact", lastmod: "2026-04-11" },
+    { url: "/authors/k", lastmod: "2026-04-11" },
     { url: "/privacy-policy", lastmod: sitePublishedAt },
     { url: "/disclaimer", lastmod: sitePublishedAt },
   ];

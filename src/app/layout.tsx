@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/config";
 
 const notoSansJP = Noto_Sans_JP({
@@ -58,6 +59,7 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "w0ajhfx9kb");
           `}
         </Script>
+        <OrganizationJsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

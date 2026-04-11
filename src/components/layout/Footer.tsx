@@ -41,6 +41,26 @@ export default function Footer() {
             <h3 className="mb-3 text-sm font-bold text-white">サイト情報</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/about" className="hover:text-white">
+                  運営者情報
+                </Link>
+              </li>
+              <li>
+                <Link href="/editorial-policy" className="hover:text-white">
+                  編集ポリシー
+                </Link>
+              </li>
+              <li>
+                <Link href="/affiliate-disclosure" className="hover:text-white">
+                  アフィリエイト開示
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white">
+                  お問い合わせ
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy-policy" className="hover:text-white">
                   プライバシーポリシー
                 </Link>
@@ -60,7 +80,7 @@ export default function Footer() {
 
         <div className="mt-4 border-t border-white/20 pt-6 text-center text-xs">
           <p className="mb-2">
-            当サイトはアフィリエイト広告を利用しています。
+            当サイトは<Link href="/affiliate-disclosure" className="underline hover:text-white">アフィリエイト広告</Link>を利用しています。記事の執筆方針は<Link href="/editorial-policy" className="underline hover:text-white">編集ポリシー</Link>をご覧ください。
           </p>
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights

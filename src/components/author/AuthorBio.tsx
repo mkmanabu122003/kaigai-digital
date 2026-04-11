@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { defaultAuthor } from "@/lib/authors";
-import AuthorAvatar from "@/components/author/AuthorAvatar";
+import type { Author } from "@/lib/authors";
+import AuthorAvatar from "./AuthorAvatar";
 
-export default function AuthorBox() {
-  const author = defaultAuthor;
+type Props = {
+  author: Author;
+};
 
+export default function AuthorBio({ author }: Props) {
   return (
-    <aside className="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+    <aside className="mt-12 rounded-xl border border-neutral-200 bg-neutral-50 p-6">
       <div className="flex items-start gap-4">
         <AuthorAvatar initial={author.name} size="md" />
         <div className="flex-1">
@@ -17,7 +19,7 @@ export default function AuthorBox() {
           >
             {author.displayName}
           </Link>
-          <p className="mt-0.5 text-xs text-neutral-700">{author.jobTitle}</p>
+          <p className="mt-1 text-xs text-neutral-700">{author.jobTitle}</p>
           <p className="mt-3 text-sm leading-relaxed text-neutral-700">
             {author.shortBio}
           </p>
