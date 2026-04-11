@@ -142,7 +142,7 @@ export default function HomePage() {
             最新記事
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {articles.slice(0, 6).map((article) => (
+            {articles.slice(0, 24).map((article) => (
               <ArticleCard
                 key={article.slug}
                 slug={article.slug}
@@ -152,6 +152,87 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* すべての記事一覧（カテゴリ別） */}
+      <section className="mx-auto max-w-[1200px] px-4 pb-12 lg:pb-16">
+        <h2 className="mb-8 text-xl font-bold text-primary-700 lg:text-2xl">
+          すべての記事
+        </h2>
+
+        {/* 国別記事 */}
+        {countries.map((country) => {
+          const countryArticles = articles.filter(
+            (a) => a.frontmatter.category === "country" && a.slug.startsWith(`${country.id}/`)
+          );
+          if (countryArticles.length === 0) return null;
+          return (
+            <div key={country.id} className="mb-8">
+              <h3 className="mb-3 flex items-center gap-2 text-base font-bold text-neutral-900">
+                <CountryFlag flag={country.flag} name={country.name} size="sm" />
+                {country.name}
+              </h3>
+              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                {countryArticles.map((article) => (
+                  <li key={article.slug}>
+                    <Link
+                      href={`/${article.slug}`}
+                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
+                    >
+                      → {article.frontmatter.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+
+        {/* 比較記事 */}
+        {(() => {
+          const compareArticles = articles.filter((a) => a.frontmatter.category === "compare");
+          if (compareArticles.length === 0) return null;
+          return (
+            <div className="mb-8">
+              <h3 className="mb-3 text-base font-bold text-neutral-900">比較・ランキング</h3>
+              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                {compareArticles.map((article) => (
+                  <li key={article.slug}>
+                    <Link
+                      href={`/compare/${article.slug}`}
+                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
+                    >
+                      → {article.frontmatter.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })()}
+
+        {/* ガイド記事 */}
+        {(() => {
+          const guideArticles = articles.filter((a) => a.frontmatter.category === "guide");
+          if (guideArticles.length === 0) return null;
+          return (
+            <div className="mb-8">
+              <h3 className="mb-3 text-base font-bold text-neutral-900">ガイド</h3>
+              <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                {guideArticles.map((article) => (
+                  <li key={article.slug}>
+                    <Link
+                      href={`/guide/${article.slug}`}
+                      className="block py-1 text-sm text-neutral-700 hover:text-primary-700 hover:underline"
+                    >
+                      → {article.frontmatter.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })()}
+      </section>
     </>
   );
 }

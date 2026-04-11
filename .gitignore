@@ -43,3 +43,7 @@ errors.csv
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+*sa-key*
+
+# Claude memory
+.claude-manabu/

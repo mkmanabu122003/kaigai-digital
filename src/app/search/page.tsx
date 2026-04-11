@@ -6,6 +6,7 @@ export const metadata = generateSeoMetadata({
   title: "記事検索",
   description: "海外デジタルの記事を検索できます。VPN、eSIM、海外送金など、海外渡航に役立つ情報を見つけましょう。",
   path: "/search",
+  noindex: true,
 });
 
 export default function SearchPage() {
