@@ -9,6 +9,7 @@ export async function GET() {
 
   const staticPages = [
     { url: "", lastmod: "2026-04-11" },
+    { url: "/articles", lastmod: "2026-04-11" },
     { url: "/about", lastmod: "2026-04-11" },
     { url: "/editorial-policy", lastmod: "2026-04-11" },
     { url: "/affiliate-disclosure", lastmod: "2026-04-11" },

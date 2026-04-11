@@ -4,6 +4,7 @@ import { countries } from "@/lib/countries";
 import { getAllArticles } from "@/lib/mdx";
 import ArticleCard from "@/components/article/ArticleCard";
 import CountryFlag from "@/components/ui/CountryFlag";
+import Icon from "@/components/ui/Icon";
 import StarRating from "@/components/ui/StarRating";
 import { WebSiteJsonLd } from "@/components/seo/JsonLd";
 
@@ -56,93 +57,50 @@ export default function HomePage() {
 
             {/* Intent-based CTA cards */}
             <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3 lg:mt-10">
-              <Link
-                href="/compare/best-vpn"
-                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7 text-accent-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+              {[
+                {
+                  href: "/compare/best-vpn",
+                  icon: "shield" as const,
+                  title: "VPNを選ぶ",
+                  sub: "中国・地域制限対策",
+                },
+                {
+                  href: "/compare/best-esim",
+                  icon: "mobile" as const,
+                  title: "eSIMを選ぶ",
+                  sub: "200カ国対応・約500円〜",
+                },
+                {
+                  href: "/compare/overseas-remittance",
+                  icon: "currency" as const,
+                  title: "送金を比較",
+                  sub: "Wise vs PayPal vs 銀行",
+                },
+              ].map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-                <span className="font-bold text-white">VPNを選ぶ</span>
-                <span className="text-xs text-white/70">中国・地域制限対策</span>
-              </Link>
-
-              <Link
-                href="/compare/best-esim"
-                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7 text-accent-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
-                <span className="font-bold text-white">eSIMを選ぶ</span>
-                <span className="text-xs text-white/70">200カ国対応・約500円〜</span>
-              </Link>
-
-              <Link
-                href="/compare/overseas-remittance"
-                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7 text-accent-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span className="font-bold text-white">送金を比較</span>
-                <span className="text-xs text-white/70">Wise vs PayPal vs 銀行</span>
-              </Link>
+                  <Icon name={c.icon} className="h-7 w-7 text-accent-400" />
+                  <span className="font-bold text-white">{c.title}</span>
+                  <span className="text-xs text-white/70">{c.sub}</span>
+                </Link>
+              ))}
             </div>
 
             {/* Trust signals */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-white/70 lg:mt-10 lg:text-sm">
-              <span className="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                公式・口コミを横断リサーチ
-              </span>
-              <span className="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                出典付きで信頼できる
-              </span>
-              <span className="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                独立メディア・忖度なし
-              </span>
+              {[
+                "公式・口コミを横断リサーチ",
+                "出典付きで信頼できる",
+                "独立メディア・忖度なし",
+              ].map((label) => (
+                <span key={label} className="flex items-center gap-1">
+                  <Icon name="check" className="h-4 w-4 text-accent-400" />
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -178,6 +136,50 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 目的別で探す（ペルソナ分岐） */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
+        <h2 className="mb-2 text-xl font-bold text-primary-700 lg:text-2xl">
+          目的別に探す
+        </h2>
+        <p className="mb-8 text-sm text-neutral-700">
+          あなたの渡航タイプから、必要な準備をまとめた記事へ
+        </p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              href: "/guide/smartphone-settings-before-travel",
+              icon: "plane" as const,
+              title: "初めての海外旅行",
+              desc: "出発前のスマホ設定・eSIM・通信トラブル対策をまとめてチェック",
+            },
+            {
+              href: "/compare/best-sim-number",
+              icon: "briefcase" as const,
+              title: "海外出張",
+              desc: "短期間で確実に繋がる通信手段と、日本の番号を維持する方法",
+            },
+            {
+              href: "/guide/expat-checklist",
+              icon: "home" as const,
+              title: "海外赴任・長期滞在",
+              desc: "VPN・eSIM・送金・銀行・ストリーミングまで赴任前の全準備リスト",
+            },
+          ].map((p) => (
+            <Link
+              key={p.href}
+              href={p.href}
+              className="group flex flex-col rounded-xl bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <Icon name={p.icon} className="h-8 w-8 text-primary-700" />
+              <h3 className="mt-3 font-bold text-neutral-900 group-hover:text-primary-700">
+                {p.title}
+              </h3>
+              <p className="mt-2 text-sm text-neutral-700">{p.desc}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

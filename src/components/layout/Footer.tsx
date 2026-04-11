@@ -30,6 +30,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/articles" className="hover:text-white">
+                  すべての記事
+                </Link>
+              </li>
+              <li>
                 <Link href="/search" className="hover:text-white">
                   記事検索
                 </Link>
