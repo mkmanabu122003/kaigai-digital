@@ -17,8 +17,6 @@ export type AffiliateService = {
   bestFor: string;
   category: AffiliateCategory;
   rank?: number;
-  /** 編集部による実利用期間 (E-E-A-T シグナル) */
-  editorUsage?: string;
 };
 
 export const affiliateLinks: Record<string, AffiliateService> = {
@@ -45,7 +43,6 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "コスパ最強、家族で使うならこれ",
     category: "vpn",
     rank: 2,
-    editorUsage: "編集部が検証用2年プラン契約・複数国でテスト",
   },
   kabeneko: {
     id: "kabeneko",
@@ -58,7 +55,6 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "中国駐在の日本人に最適",
     category: "vpn",
     rank: 3,
-    editorUsage: "編集部が21日間無料トライアル後継続利用",
   },
   airalo: {
     id: "airalo",
@@ -71,7 +67,6 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "海外eSIMの定番、短期旅行に最適",
     category: "esim",
     rank: 1,
-    editorUsage: "編集部が10カ国以上で実利用・速度測定済み",
   },
   trifa: {
     id: "trifa",
@@ -84,7 +79,6 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "初めての海外eSIMで日本語サポートを重視する人",
     category: "esim",
     rank: 2,
-    editorUsage: "編集部が日本語UIとサポート品質を確認",
   },
   wise: {
     id: "wise",
@@ -97,7 +91,6 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "海外送金の手数料を最安に抑えたい人",
     category: "remittance",
     rank: 1,
-    editorUsage: "編集部が3年以上利用・毎月の海外送金で実コスト検証",
   },
 };
 

@@ -5,7 +5,6 @@ import ArticleCard from "@/components/article/ArticleCard";
 import CountryFlag from "@/components/ui/CountryFlag";
 import StarRating from "@/components/ui/StarRating";
 import { WebSiteJsonLd } from "@/components/seo/JsonLd";
-import { siteConfig } from "@/lib/config";
 
 export default function HomePage() {
   const articles = getAllArticles();
@@ -15,35 +14,118 @@ export default function HomePage() {
       <WebSiteJsonLd />
 
       {/* Hero */}
-      <section className="bg-primary-700 py-16 text-white lg:py-24">
-        <div className="mx-auto max-w-[1200px] px-4 text-center">
-          <h1 className="text-2xl font-bold text-white lg:text-4xl">
-            海外のネット環境、これ1サイトで解決
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-white/80 lg:text-lg">
-            {siteConfig.description}
-          </p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/compare/best-vpn"
-              className="inline-flex h-12 items-center gap-2 rounded-lg bg-accent-500 px-8 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-accent-400 hover:shadow-lg lg:h-[52px] lg:text-lg"
-            >
-              VPN比較を見る
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+      <section className="bg-gradient-to-br from-primary-700 to-primary-800 py-12 text-white lg:py-20">
+        <div className="mx-auto max-w-[1200px] px-4">
+          <div className="text-center">
+            {/* Pre-headline badge */}
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-medium text-white/90 ring-1 ring-white/20 lg:text-sm">
+              口コミ・レビューを横断分析する独立メディア
+            </span>
+
+            {/* Main headline */}
+            <h1 className="mt-4 text-2xl font-bold leading-tight text-white lg:mt-5 lg:text-5xl">
+              海外で「ネット繋がらない」<br className="sm:hidden" />
+              「LINE使えない」<br />
+              を出発前に解決
+            </h1>
+
+            {/* Subheadline */}
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-white/85 lg:mt-6 lg:text-lg">
+              VPN・eSIM・海外送金の口コミとレビューを横断比較し、編集部が独自の見解で整理。
+              <br className="hidden sm:block" />
+              渡航先と用途で最適なサービスがすぐ見つかる、海外渡航者のための完全ガイド。
+            </p>
+
+            {/* Intent-based CTA cards */}
+            <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3 lg:mt-10">
+              <Link
+                href="/compare/best-vpn"
+                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7 text-accent-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                   strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </Link>
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+                <span className="font-bold text-white">VPNを選ぶ</span>
+                <span className="text-xs text-white/70">中国・地域制限対策</span>
+              </Link>
+
+              <Link
+                href="/compare/best-esim"
+                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7 text-accent-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+                <span className="font-bold text-white">eSIMを選ぶ</span>
+                <span className="text-xs text-white/70">200カ国対応・$3.50〜</span>
+              </Link>
+
+              <Link
+                href="/compare/overseas-remittance"
+                className="group flex flex-col items-center gap-2 rounded-xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/40"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7 text-accent-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="font-bold text-white">送金を比較</span>
+                <span className="text-xs text-white/70">手数料を最大91%削減</span>
+              </Link>
+            </div>
+
+            {/* Trust signals */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-white/70 lg:mt-10 lg:text-sm">
+              <span className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                公式・口コミを横断リサーチ
+              </span>
+              <span className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                出典付きで信頼できる
+              </span>
+              <span className="flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                独立メディア・忖度なし
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -96,7 +178,7 @@ export default function HomePage() {
             {
               href: "/compare/best-esim",
               title: "海外eSIMおすすめ5選",
-              desc: "10カ国で実測比較。料金・速度ランキングと失敗しない選び方",
+              desc: "公式情報と口コミを横断比較。料金・速度ランキングと失敗しない選び方",
             },
             {
               href: "/compare/streaming-vpn",
