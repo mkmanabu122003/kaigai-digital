@@ -4,7 +4,8 @@ export type AffiliateCategory =
   | "remittance"
   | "insurance"
   | "sim"
-  | "wifi";
+  | "wifi"
+  | "credit-card";
 
 export type AffiliateService = {
   id: string;
@@ -66,6 +67,18 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     features: ["世界200カ国対応", "日本語アプリで簡単設定", "充実の日本語サポート", "海外eSIMアプリNo.1"],
     bestFor: "海外eSIMの総合力No.1。日本語サポートで初心者でも安心",
     category: "esim",
+    rank: 1,
+  },
+  epos: {
+    id: "epos",
+    name: "エポスカード",
+    url: "https://px.a8.net/svt/ejp?a8mat=4B1ILK+5K1RWA+38L8+61C2P",
+    logo: "/images/services/epos.png",
+    price: "年会費永年無料",
+    rating: 4.5,
+    features: ["海外旅行保険が自動で充実", "疾病治療270万円（年会費無料カード最高水準）", "海外ATMキャッシング対応", "即日発行可能"],
+    bestFor: "海外渡航者のサブカードに最適。年会費無料で旅行保険が充実",
+    category: "credit-card",
     rank: 1,
   },
   wise: {
