@@ -268,6 +268,98 @@ function getAllMdxFiles(dir: string): string[] {
   return files;
 }
 
+type CooMetrics = {
+  totalPublished: number;
+  publishedLast28d: number;
+  updatedLast28d: number;
+  draftCount: number;
+  staleCount: number;
+  indexCoveragePct: number;
+  indexedPages: number;
+  orphanCount: number;
+  orphanPages: string[];
+};
+
+function computeCooMetrics(gscPages: GscRow[]): CooMetrics {
+  const dirs = ["countries", "compare", "guide"];
+  const now = new Date();
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 28);
+
+  let totalPublished = 0;
+  let publishedLast28d = 0;
+  let updatedLast28d = 0;
+  let staleCount = 0;
+  const articlePaths: string[] = [];
+  const incomingCounts = new Map<string, number>();
+  const fileBodies: string[] = [];
+
+  for (const dir of dirs) {
+    const fullDir = path.join(CONTENT_DIR, dir);
+    if (!fs.existsSync(fullDir)) continue;
+    const files = getAllMdxFiles(fullDir);
+    for (const file of files) {
+      totalPublished++;
+      const content = fs.readFileSync(file, "utf-8");
+      const { data, content: body } = matter(content);
+
+      if (data.publishedAt) {
+        const p = new Date(data.publishedAt);
+        if (p >= cutoff) publishedLast28d++;
+      }
+      if (data.updatedAt) {
+        const u = new Date(data.updatedAt);
+        if (u >= cutoff) updatedLast28d++;
+        const days = Math.floor((now.getTime() - u.getTime()) / 86400000);
+        if (days >= 90) staleCount++;
+      }
+
+      const rel = path.relative(CONTENT_DIR, file).replace(/\.mdx$/, "");
+      const urlPath = rel.startsWith("countries/")
+        ? "/" + rel.replace(/^countries\//, "")
+        : "/" + rel;
+      articlePaths.push(urlPath);
+      incomingCounts.set(urlPath, 0);
+      fileBodies.push(body);
+    }
+  }
+
+  const linkRegex = /\]\((\/[^)]+)\)/g;
+  for (const body of fileBodies) {
+    let m: RegExpExecArray | null;
+    while ((m = linkRegex.exec(body)) !== null) {
+      const target = m[1].replace(/#.*$/, "");
+      if (incomingCounts.has(target)) {
+        incomingCounts.set(target, (incomingCounts.get(target) || 0) + 1);
+      }
+    }
+  }
+
+  const orphanPages = articlePaths.filter((p) => (incomingCounts.get(p) || 0) === 0);
+
+  const draftsDir = path.join(CONTENT_DIR, "drafts");
+  const draftCount = fs.existsSync(draftsDir)
+    ? getAllMdxFiles(draftsDir).length
+    : 0;
+
+  const indexedPaths = new Set(gscPages.filter((p) => p.impressions > 0).map((p) => p.page));
+  const indexedPages = articlePaths.filter((p) => indexedPaths.has(p)).length;
+  const indexCoveragePct =
+    totalPublished > 0 ? Math.round((indexedPages / totalPublished) * 1000) / 10 : 0;
+
+  return {
+    totalPublished,
+    publishedLast28d,
+    updatedLast28d,
+    draftCount,
+    staleCount,
+    indexCoveragePct,
+    indexedPages,
+    orphanCount: orphanPages.length,
+    orphanPages: orphanPages.slice(0, 10),
+  };
+}
+
 // ─── Report Generation ───
 
 function generateReport(
@@ -392,6 +484,36 @@ function generateReport(
   const totalImpressions2 = gscPages.reduce((s, p) => s + p.impressions, 0);
   md += `【KPI】クリック${totalClicks2} / 表示${totalImpressions2} = CTR${totalImpressions2 > 0 ? ((totalClicks2 / totalImpressions2) * 100).toFixed(1) : 0}%\n`;
   md += `目標: CTR 5%以上。表示回数が増えているならSEOは機能している。CTRの改善が次の成長レバー。\n`;
+  md += "```\n\n";
+
+  // --- COO: Operations & Publishing Cadence ---
+  const coo = computeCooMetrics(gscPages);
+  md += `### COO視点: 編集オペレーション & カバレッジ\n\n`;
+  md += "```\n";
+  md += `【運用KPI】\n`;
+  md += `  公開済み記事: ${coo.totalPublished}本\n`;
+  md += `  過去28日 新規公開: ${coo.publishedLast28d}本\n`;
+  md += `  過去28日 更新: ${coo.updatedLast28d}本\n`;
+  md += `  ドラフト滞留: ${coo.draftCount}本\n`;
+  md += `  鮮度逸脱（90日超未更新）: ${coo.staleCount}本\n`;
+  md += `  孤立記事（被リンク0）: ${coo.orphanCount}本\n\n`;
+  md += `【インデックスカバレッジ】\n`;
+  md += `  GSCで露出した記事: ${coo.indexedPages} / ${coo.totalPublished}本 （${coo.indexCoveragePct}%）\n`;
+  if (coo.indexCoveragePct < 50) {
+    md += `  ⚠️ カバレッジ50%未満。未露出記事が多い。対策: 一括インデックス送信＋内部リンク強化。\n`;
+    md += `  実行: npx tsx scripts/request-indexing.ts --since $(date -v-90d +%Y-%m-%d)\n`;
+  }
+  if (coo.orphanCount > 0) {
+    md += `\n【孤立記事の解消】以下は被リンク0のためクロール対象になりにくい:\n`;
+    for (const p of coo.orphanPages) md += `  - ${p}\n`;
+    md += `\n対応: 関連記事から内部リンクを各1〜2本追加。\n`;
+  }
+  if (coo.draftCount > 0) {
+    md += `\n【ドラフト滞留】${coo.draftCount}本がdrafts/で公開待ち。promote-draft.tsで順次公開を。\n`;
+  }
+  if (coo.publishedLast28d === 0) {
+    md += `\n⚠️ 過去28日間の新規公開ゼロ。更新頻度はGoogleの鮮度シグナルに影響する。\n`;
+  }
   md += "```\n\n";
 
   // --- CTO: Technical SEO ---
