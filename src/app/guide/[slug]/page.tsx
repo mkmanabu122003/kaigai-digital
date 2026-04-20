@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getArticleBySlug, getAllSlugs, markdownToHtml } from "@/lib/mdx";
+import { getArticleBySlug, getAllSlugs, getRelatedArticles, markdownToHtml } from "@/lib/mdx";
 import { generateSeoMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/config";
 import Breadcrumb from "@/components/layout/Breadcrumb";
@@ -10,6 +10,7 @@ import AuthorBox from "@/components/article/AuthorBox";
 import LastUpdated from "@/components/article/LastUpdated";
 import PromoDisclosure from "@/components/article/PromoDisclosure";
 import ArticleRenderer from "@/components/article/ArticleRenderer";
+import RelatedArticles from "@/components/article/RelatedArticles";
 import FAQ from "@/components/ui/FAQ";
 import {
   ArticleJsonLd,
@@ -55,6 +56,7 @@ export default async function GuidePage({ params }: Props) {
   ];
 
   const htmlContent = await markdownToHtml(content);
+  const related = getRelatedArticles(article, 4);
 
   return (
     <>
@@ -121,6 +123,8 @@ export default async function GuidePage({ params }: Props) {
             <div className="mt-6">
               <BlogMuraBanner />
             </div>
+
+            <RelatedArticles articles={related} />
           </div>
 
           <Sidebar>

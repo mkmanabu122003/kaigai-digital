@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getCountryById, countries } from "@/lib/countries";
-import { getArticleBySlug, getArticlesByCountry, getAllSlugs, markdownToHtml } from "@/lib/mdx";
+import { getArticleBySlug, getAllSlugs, getRelatedArticles, markdownToHtml } from "@/lib/mdx";
 import { generateSeoMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/config";
 import Breadcrumb from "@/components/layout/Breadcrumb";
@@ -62,9 +62,7 @@ export default async function CountryArticlePage({ params }: Props) {
   const countryData = getCountryById(country);
   const { frontmatter, content } = article;
 
-  const relatedArticles = getArticlesByCountry(country).filter(
-    (a) => a.slug !== `${country}/${slug}`
-  );
+  const relatedArticles = getRelatedArticles(article, 4);
 
   const breadcrumbItems = [
     { label: countryData?.name || country, href: `/${country}` },
@@ -156,7 +154,7 @@ export default async function CountryArticlePage({ params }: Props) {
               <BlogMuraBanner />
             </div>
 
-            <RelatedArticles articles={relatedArticles.slice(0, 3)} />
+            <RelatedArticles articles={relatedArticles} />
           </div>
 
           {/* Sidebar */}

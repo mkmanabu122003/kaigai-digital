@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getArticleBySlug, getAllSlugs, markdownToHtml } from "@/lib/mdx";
+import { getArticleBySlug, getAllSlugs, getRelatedArticles, markdownToHtml } from "@/lib/mdx";
 import { generateSeoMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/config";
 import { getServiceById } from "@/lib/affiliates";
@@ -13,6 +13,7 @@ import PromoDisclosure from "@/components/article/PromoDisclosure";
 import AffiliateButton from "@/components/affiliate/AffiliateButton";
 import ComparisonTable from "@/components/affiliate/ComparisonTable";
 import ArticleRenderer from "@/components/article/ArticleRenderer";
+import RelatedArticles from "@/components/article/RelatedArticles";
 import ServiceCard from "@/components/affiliate/ServiceCard";
 import FAQ from "@/components/ui/FAQ";
 import {
@@ -62,6 +63,7 @@ export default async function ComparePage({ params }: Props) {
     .filter(Boolean) as NonNullable<ReturnType<typeof getServiceById>>[];
 
   const htmlContent = await markdownToHtml(content);
+  const related = getRelatedArticles(article, 4);
 
   return (
     <>
@@ -137,6 +139,8 @@ export default async function ComparePage({ params }: Props) {
             <div className="mt-6">
               <BlogMuraBanner />
             </div>
+
+            <RelatedArticles articles={related} />
           </div>
 
           <Sidebar>
