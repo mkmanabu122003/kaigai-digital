@@ -499,9 +499,42 @@ function generateReport(
   md += `  孤立記事（被リンク0）: ${coo.orphanCount}本\n\n`;
   md += `【インデックスカバレッジ】\n`;
   md += `  GSCで露出した記事: ${coo.indexedPages} / ${coo.totalPublished}本 （${coo.indexCoveragePct}%）\n`;
+
+  // URL Inspection APIの最新スナップショットを読み取り
+  const coverageDir = path.join(process.cwd(), "reports/data/coverage");
+  if (fs.existsSync(coverageDir)) {
+    const files = fs.readdirSync(coverageDir).filter((f) => f.endsWith(".json")).sort();
+    if (files.length > 0) {
+      const latest = JSON.parse(
+        fs.readFileSync(path.join(coverageDir, files[files.length - 1]), "utf-8")
+      );
+      const total = latest.total as number;
+      const indexed = latest.distribution["送信して登録されました"] || 0;
+      const notIndexed = latest.distribution["検出 - インデックス未登録"] || 0;
+      const unknown = latest.distribution["URL が Google に認識されていません"] || 0;
+      const indexedPct = ((indexed / total) * 100).toFixed(1);
+      md += `\n  ── URL Inspection API実測値（${files[files.length - 1].replace(".json", "")}時点）──\n`;
+      md += `  ✅ インデックス登録済み: ${indexed} / ${total}本 （${indexedPct}%）\n`;
+      md += `  ⚠️  検出・未登録: ${notIndexed}本\n`;
+      md += `  ❌ URL未認識: ${unknown}本\n`;
+
+      // WoW比較
+      if (files.length >= 2) {
+        const prev = JSON.parse(
+          fs.readFileSync(path.join(coverageDir, files[files.length - 2]), "utf-8")
+        );
+        const prevIndexed = prev.distribution["送信して登録されました"] || 0;
+        const delta = indexed - prevIndexed;
+        const sign = delta > 0 ? "+" : "";
+        md += `  📈 前回比: ${sign}${delta}件（前回 ${prevIndexed} → 今回 ${indexed}）\n`;
+      }
+    }
+  }
+
   if (coo.indexCoveragePct < 50) {
-    md += `  ⚠️ カバレッジ50%未満。未露出記事が多い。対策: 一括インデックス送信＋内部リンク強化。\n`;
-    md += `  実行: npx tsx scripts/request-indexing.ts --since $(date -v-90d +%Y-%m-%d)\n`;
+    md += `\n  ⚠️ カバレッジ50%未満。対策: 内部リンク強化＋個別記事加筆＋ハブ記事の情報密度向上。\n`;
+    md += `  診断: npx tsx scripts/check-index-coverage.ts\n`;
+    md += `  相関分析: npx tsx scripts/analyze-coverage-correlation.ts\n`;
   }
   if (coo.orphanCount > 0) {
     md += `\n【孤立記事の解消】以下は被リンク0のためクロール対象になりにくい:\n`;
