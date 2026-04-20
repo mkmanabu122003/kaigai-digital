@@ -161,11 +161,17 @@ function checkArticle(filePath: string): Issue[] {
       message: `本文が2,000字未満 (${charCount}字)`,
     });
   }
-  if (charCount > 5000) {
+  if (charCount > 10000) {
     issues.push({
       level: "ERROR",
       file: relPath,
-      message: `本文が5,000字超 (${charCount}字)`,
+      message: `本文が10,000字超 (${charCount}字) — 過度な長文は可読性低下`,
+    });
+  } else if (charCount > 7000) {
+    issues.push({
+      level: "WARN",
+      file: relPath,
+      message: `本文が7,000字超 (${charCount}字) — ハブ記事でなければ要見直し`,
     });
   }
 
