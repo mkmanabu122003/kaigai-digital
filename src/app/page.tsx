@@ -236,6 +236,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 主要比較LP */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
+        <h2 className="mb-2 text-xl font-bold text-primary-700 lg:text-2xl">
+          比較・ランキング
+        </h2>
+        <p className="mb-8 text-sm text-neutral-700">
+          用途別におすすめサービスを口コミ・公式情報から比較
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {articles
+            .filter((a) => a.frontmatter.category === "compare")
+            .slice(0, 6)
+            .map((article) => (
+              <ArticleCard
+                key={article.slug}
+                slug={article.slug}
+                frontmatter={article.frontmatter}
+              />
+            ))}
+        </div>
+      </section>
+
+      {/* ガイド記事（ハブ） */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
+        <h2 className="mb-2 text-xl font-bold text-primary-700 lg:text-2xl">
+          準備・ノウハウガイド
+        </h2>
+        <p className="mb-8 text-sm text-neutral-700">
+          赴任準備・スマホ設定・クレカ・保険・送金など渡航前の準備に役立つ記事
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {articles
+            .filter((a) => a.frontmatter.category === "guide")
+            .slice(0, 6)
+            .map((article) => (
+              <ArticleCard
+                key={article.slug}
+                slug={article.slug}
+                frontmatter={article.frontmatter}
+              />
+            ))}
+        </div>
+      </section>
+
       {/* 最新記事 */}
       {articles.length > 0 && (
         <section className="mx-auto max-w-[1200px] px-4 py-12 lg:py-16">
@@ -251,7 +295,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {articles.slice(0, 6).map((article) => (
+            {articles.slice(0, 12).map((article) => (
               <ArticleCard
                 key={article.slug}
                 slug={article.slug}
