@@ -50,6 +50,11 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "コスパ最強、家族で使うならこれ",
     category: "vpn",
     rank: 2,
+    ctaText: {
+      top: "Surfsharkを30日返金保証で試す（月額$1.99〜）",
+      middle: "Surfsharkを月額$1.99〜で始める",
+      bottom: "Surfsharkを30日返金保証で試す",
+    },
   },
   kabeneko: {
     id: "kabeneko",
@@ -74,6 +79,11 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "海外eSIMの総合力No.1。日本語サポートで初心者でも安心",
     category: "esim",
     rank: 1,
+    ctaText: {
+      top: "トリファを1GB ¥390〜で始める（日本語サポート）",
+      middle: "トリファのeSIMを購入する",
+      bottom: "トリファを1GB ¥390〜で試す",
+    },
   },
   epos: {
     id: "epos",
@@ -98,6 +108,11 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "海外送金の手数料を最安に抑えたい人",
     category: "remittance",
     rank: 1,
+    ctaText: {
+      top: "Wiseに無料登録する（紹介で最大¥11,000獲得）",
+      middle: "Wiseを無料で始める",
+      bottom: "Wise公式サイトで登録する",
+    },
   },
 };
 
