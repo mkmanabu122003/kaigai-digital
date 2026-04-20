@@ -18,6 +18,7 @@ export type AffiliateService = {
   bestFor: string;
   category: AffiliateCategory;
   rank?: number;
+  ctaText?: { top?: string; middle?: string; bottom?: string };
 };
 
 export const affiliateLinks: Record<string, AffiliateService> = {
@@ -32,6 +33,11 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     bestFor: "総合力No.1、初めてのVPNに最適",
     category: "vpn",
     rank: 1,
+    ctaText: {
+      top: "NordVPNを30日返金保証で試す（月額$3.39〜）",
+      middle: "30日返金保証で始める",
+      bottom: "NordVPNを30日返金保証で試す",
+    },
   },
   surfshark: {
     id: "surfshark",
