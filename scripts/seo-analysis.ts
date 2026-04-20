@@ -15,6 +15,8 @@ const GSC_SITE_URL = "sc-domain:kaigai-digital.com";
 const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID || "529332559";
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
 const REPORT_DIR = path.join(process.cwd(), "reports");
+const DATA_DIR = path.join(REPORT_DIR, "data");
+const PERIOD_DAYS = 28;
 
 // ─── Auth ───
 
@@ -530,11 +532,38 @@ async function main() {
   const report = generateReport(gscPages, gscQueries, ga4Clicks, ga4Views, allIssues);
 
   if (!fs.existsSync(REPORT_DIR)) fs.mkdirSync(REPORT_DIR, { recursive: true });
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
   const today = new Date().toISOString().split("T")[0];
   const reportPath = path.join(REPORT_DIR, `seo-${today}.md`);
   fs.writeFileSync(reportPath, report);
   console.log(`\n📄 レポート出力: ${reportPath}`);
+
+  // Persist raw master data for time-series analysis
+  const endDate = new Date();
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - PERIOD_DAYS);
+  const snapshot = {
+    fetchedAt: new Date().toISOString(),
+    period: {
+      days: PERIOD_DAYS,
+      startDate: startDate.toISOString().split("T")[0],
+      endDate: endDate.toISOString().split("T")[0],
+    },
+    counts: {
+      gscPages: gscPages.length,
+      gscQueries: gscQueries.length,
+      ga4AffiliateClicks: ga4Clicks.length,
+      ga4CtaViews: ga4Views.length,
+      issues: allIssues.length,
+    },
+    gsc: { pages: gscPages, queries: gscQueries },
+    ga4: { affiliateClicks: ga4Clicks, ctaViews: ga4Views },
+    issues: allIssues,
+  };
+  const dataPath = path.join(DATA_DIR, `${today}.json`);
+  fs.writeFileSync(dataPath, JSON.stringify(snapshot, null, 2));
+  console.log(`🗄️  マスタデータ保存: ${dataPath}`);
 
   if (DRY_RUN) {
     console.log("\n[DRY RUN] レポートのみ出力。PR作成はスキップ。");

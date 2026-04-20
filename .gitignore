@@ -37,7 +37,8 @@ yarn-error.log*
 .vercel
 
 # reports & errors
-/reports
+/reports/*
+!/reports/data/
 errors.csv
 
 # typescript
