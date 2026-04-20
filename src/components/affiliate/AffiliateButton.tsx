@@ -41,7 +41,7 @@ export default function AffiliateButton({
 
   if (!service) return null;
 
-  const buttonText = text || `${service.name}を見る`;
+  const buttonText = text || service.ctaText?.[placement] || `${service.name}を見る`;
 
   const handleClick = () => {
     trackAffiliateClick(service.name, articleSlug, placement, variant);
