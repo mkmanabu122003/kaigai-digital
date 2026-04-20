@@ -186,6 +186,66 @@ export function getAllSlugs(): {
   return slugs;
 }
 
+export function getRelatedArticles(current: Article, limit = 4): Article[] {
+  const all = getAllArticles();
+  const currentFullSlug =
+    current.frontmatter.category === "country"
+      ? current.slug
+      : `${current.frontmatter.category}/${current.slug}`;
+
+  const resolveSlug = (fullSlug: string): Article | null => {
+    // Country articles: "china/line-vpn" → article.slug === "china/line-vpn"
+    const direct = all.find(
+      (a) => a.frontmatter.category === "country" && a.slug === fullSlug
+    );
+    if (direct) return direct;
+    // Compare/guide: "compare/best-vpn" → category "compare" + slug "best-vpn"
+    const [cat, ...rest] = fullSlug.split("/");
+    if (cat === "compare" || cat === "guide") {
+      return (
+        all.find(
+          (a) => a.frontmatter.category === cat && a.slug === rest.join("/")
+        ) || null
+      );
+    }
+    return null;
+  };
+
+  const related: Article[] = [];
+  const seen = new Set<string>([currentFullSlug]);
+
+  // 1. Explicit relatedSlugs from frontmatter
+  for (const s of current.frontmatter.relatedSlugs || []) {
+    if (seen.has(s)) continue;
+    const a = resolveSlug(s);
+    if (a) {
+      related.push(a);
+      seen.add(s);
+      if (related.length >= limit) return related;
+    }
+  }
+
+  // 2. Fallback: same country (for country articles) or same category
+  const fallback = all.filter((a) => {
+    const fullSlug =
+      a.frontmatter.category === "country"
+        ? a.slug
+        : `${a.frontmatter.category}/${a.slug}`;
+    if (seen.has(fullSlug)) return false;
+    if (current.frontmatter.category === "country" && current.frontmatter.country) {
+      return a.frontmatter.country === current.frontmatter.country;
+    }
+    return a.frontmatter.category === current.frontmatter.category;
+  });
+
+  for (const a of fallback) {
+    if (related.length >= limit) break;
+    related.push(a);
+  }
+
+  return related;
+}
+
 export async function markdownToHtml(markdown: string): Promise<string> {
   const result = await remark()
     .use(remarkGfm)
