@@ -1,0 +1,799 @@
+{
+  "fetchedAt": "2026-04-21T22:28:46.390Z",
+  "period": {
+    "days": 28,
+    "startDate": "2026-03-24",
+    "endDate": "2026-04-21"
+  },
+  "counts": {
+    "gscPages": 11,
+    "gscQueries": 75,
+    "ga4AffiliateClicks": 4,
+    "ga4CtaViews": 7,
+    "issues": 7
+  },
+  "gsc": {
+    "pages": [
+      {
+        "page": "/guide/paypay-overseas",
+        "clicks": 3,
+        "impressions": 214,
+        "ctr": 0.014018691588785047,
+        "position": 10.41588785046729
+      },
+      {
+        "page": "/compare/best-esim",
+        "clicks": 1,
+        "impressions": 120,
+        "ctr": 0.008333333333333333,
+        "position": 35.45
+      },
+      {
+        "page": "/compare/overseas-remittance",
+        "clicks": 1,
+        "impressions": 188,
+        "ctr": 0.005319148936170213,
+        "position": 11.664893617021276
+      },
+      {
+        "page": "/thailand/sim-chiebukuro",
+        "clicks": 1,
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 4.3
+      },
+      {
+        "page": "/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 52.714285714285715
+      },
+      {
+        "page": "/articles",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 64.5
+      },
+      {
+        "page": "/china/expat-net-chiebukuro",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 8.125
+      },
+      {
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 63,
+        "ctr": 0,
+        "position": 65.66666666666667
+      },
+      {
+        "page": "/search",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 29.5
+      },
+      {
+        "page": "/taiwan/esim-chiebukuro",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6
+      }
+    ],
+    "queries": [
+      {
+        "query": "paypay 使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 1,
+        "impressions": 8,
+        "ctr": 0.125,
+        "position": 12.125
+      },
+      {
+        "query": "e-sim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "query": "esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 76.5
+      },
+      {
+        "query": "esim おすすめ 海外",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 46
+      },
+      {
+        "query": "esim アプリ おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 16.333333333333336
+      },
+      {
+        "query": "esim 比較 海外",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "esim 海外 おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "nordvpn",
+        "page": "/articles",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 118
+      },
+      {
+        "query": "nordvpn esim",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 23.6
+      },
+      {
+        "query": "pay pay どこの国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 69
+      },
+      {
+        "query": "paypal",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "paypal wise どっち",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "paypal wise 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 11.636363636363637
+      },
+      {
+        "query": "paypal アメリカから日本 送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "query": "paypal レート タイミング",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "query": "paypal 海外送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "paypay タイ",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 65
+      },
+      {
+        "query": "paypay デビットカード 海外 使えない",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "query": "paypay 海外",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "query": "paypay 海外 使える マカオ",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "paypay 海外 使える 国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "paypay 海外 使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "query": "paypay 海外で使う",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "query": "paypay 海外利用",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "paypayが使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.25
+      },
+      {
+        "query": "paypayデビット 海外",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "paypayデビットカード 海外",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "paypayデビットカード 海外利用",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "paypay使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "query": "paypay海外で使える",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "query": "wise paypal",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 25.25
+      },
+      {
+        "query": "wise paypal どっちがいい",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "wise paypal 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.75
+      },
+      {
+        "query": "wise paypal 送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "query": "wise paypal 違い",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "query": "wise 送金上限",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "query": "カナダ",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "query": "ジオブロック",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 74
+      },
+      {
+        "query": "タイ esim おすすめ 知恵袋",
+        "page": "/thailand/sim-chiebukuro",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2.8
+      },
+      {
+        "query": "ネット 海外",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 85
+      },
+      {
+        "query": "フィリピン paypay",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "ベトナム 楽天モバイル",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 96.5
+      },
+      {
+        "query": "ペイパル 海外 送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "ペイパル 送金 海外",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 35
+      },
+      {
+        "query": "ペイパルで海外送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "query": "ペイペイ 使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "ペイペイ 海外",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 29.25
+      },
+      {
+        "query": "ペイペイが使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "ペイペイ使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "楽天 sim 海外",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 82.5
+      },
+      {
+        "query": "楽天 モバイル 海外",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 71
+      },
+      {
+        "query": "楽天 海外",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 64
+      },
+      {
+        "query": "楽天モバイル シンガポール",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 77.66666666666667
+      },
+      {
+        "query": "楽天モバイル ハワイ",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 92.33333333333333
+      },
+      {
+        "query": "楽天モバイル ベトナム",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 97
+      },
+      {
+        "query": "楽天モバイル ベトナムで使う",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 92.5
+      },
+      {
+        "query": "楽天モバイル マレーシア",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 81.33333333333333
+      },
+      {
+        "query": "楽天モバイル 海外",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 62.5
+      },
+      {
+        "query": "楽天モバイル 海外で使うには",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 93
+      },
+      {
+        "query": "楽天モバイル 海外利用",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 79.875
+      },
+      {
+        "query": "楽天モバイル 海外旅行",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 97
+      },
+      {
+        "query": "楽天モバイル海外",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 46.5
+      },
+      {
+        "query": "楽天モバイル海外でも使える",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 47.5
+      },
+      {
+        "query": "海外 esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 79.16666666666667
+      },
+      {
+        "query": "海外 esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 74.5
+      },
+      {
+        "query": "海外 paypay使える",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "海外 ネット",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 87
+      },
+      {
+        "query": "海外 ペイペイ",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 46
+      },
+      {
+        "query": "海外esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 74.02941176470588
+      },
+      {
+        "query": "海外esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 78
+      },
+      {
+        "query": "海外でペイペイを使う",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "query": "海外利用 楽天モバイル",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 86.5
+      },
+      {
+        "query": "海外楽天モバイル",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "query": "海外赴任 vpn",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "query": "駐在 vpn おすすめ",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.5
+      }
+    ]
+  },
+  "ga4": {
+    "affiliateClicks": [
+      {
+        "dimension": "Airalo",
+        "count": 5
+      },
+      {
+        "dimension": "かべネコVPN",
+        "count": 3
+      },
+      {
+        "dimension": "(not set)",
+        "count": 1
+      },
+      {
+        "dimension": "トリファ",
+        "count": 1
+      }
+    ],
+    "ctaViews": [
+      {
+        "dimension": "NordVPN",
+        "count": 42
+      },
+      {
+        "dimension": "かべネコVPN",
+        "count": 40
+      },
+      {
+        "dimension": "トリファ",
+        "count": 34
+      },
+      {
+        "dimension": "Airalo",
+        "count": 17
+      },
+      {
+        "dimension": "Wise",
+        "count": 13
+      },
+      {
+        "dimension": "(not set)",
+        "count": 10
+      },
+      {
+        "dimension": "Surfshark",
+        "count": 6
+      }
+    ]
+  },
+  "issues": [
+    {
+      "type": "ctr_low",
+      "page": "/guide/paypay-overseas",
+      "detail": "CTR 1.4% (3clicks / 214imp)",
+      "severity": "high",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/guide/paypay-overseas",
+      "detail": "平均順位 10.4位 (214imp)",
+      "severity": "medium",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/best-esim",
+      "detail": "CTR 0.8% (1clicks / 120imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/overseas-remittance",
+      "detail": "CTR 0.5% (1clicks / 188imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/compare/overseas-remittance",
+      "detail": "平均順位 11.7位 (188imp)",
+      "severity": "medium",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/rakuten-mobile-overseas",
+      "detail": "CTR 0.0% (0clicks / 63imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/compare/rakuten-mobile-overseas",
+      "detail": "63回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    }
+  ]
+}
