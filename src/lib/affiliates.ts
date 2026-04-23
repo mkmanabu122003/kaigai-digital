@@ -34,9 +34,9 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     category: "vpn",
     rank: 1,
     ctaText: {
-      top: "NordVPNを30日返金保証で試す（月額$3.39〜）",
-      middle: "30日返金保証で始める",
-      bottom: "NordVPNを30日返金保証で試す",
+      top: "NordVPNを30日間リスクなしで試す",
+      middle: "30日以内なら全額返金で試す",
+      bottom: "NordVPNを試す（30日以内全額返金）",
     },
   },
   surfshark: {
