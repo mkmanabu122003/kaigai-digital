@@ -1,0 +1,352 @@
+{
+  "fetchedAt": "2026-06-10T23:16:29.306Z",
+  "period": {
+    "days": 28,
+    "startDate": "2026-05-13",
+    "endDate": "2026-06-10"
+  },
+  "counts": {
+    "gscPages": 8,
+    "gscQueries": 26,
+    "ga4AffiliateClicks": 1,
+    "ga4CtaViews": 5,
+    "issues": 5
+  },
+  "gsc": {
+    "pages": [
+      {
+        "page": "/taiwan/esim-chiebukuro",
+        "clicks": 5,
+        "impressions": 47,
+        "ctr": 0.10638297872340426,
+        "position": 4.702127659574468
+      },
+      {
+        "page": "/compare/best-esim",
+        "clicks": 1,
+        "impressions": 90,
+        "ctr": 0.011111111111111112,
+        "position": 52.5
+      },
+      {
+        "page": "/compare/overseas-remittance",
+        "clicks": 1,
+        "impressions": 88,
+        "ctr": 0.011363636363636364,
+        "position": 18.977272727272727
+      },
+      {
+        "page": "/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 26.666666666666668
+      },
+      {
+        "page": "/articles",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.666666666666668
+      },
+      {
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 22.9
+      },
+      {
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 26.5
+      },
+      {
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 34,
+        "ctr": 0,
+        "position": 8.970588235294118
+      }
+    ],
+    "queries": [
+      {
+        "query": "台湾 esim おすすめ 知恵袋",
+        "page": "/taiwan/esim-chiebukuro",
+        "clicks": 3,
+        "impressions": 19,
+        "ctr": 0.15789473684210525,
+        "position": 3
+      },
+      {
+        "query": "esim kaigai",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 25.5
+      },
+      {
+        "query": "esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "query": "esim おすすめ 海外",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "query": "esim アプリ おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 66
+      },
+      {
+        "query": "esim ランキング",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 53.333333333333336
+      },
+      {
+        "query": "esim 海外",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 57
+      },
+      {
+        "query": "esimおすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 57.5
+      },
+      {
+        "query": "esimアプリ おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 69.5
+      },
+      {
+        "query": "esimランキング",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 51
+      },
+      {
+        "query": "paypal wise 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "query": "paypal wise 送金",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "paypalとwiseの違い",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "query": "wise paypal",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 27.3
+      },
+      {
+        "query": "wise paypal 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "query": "wise paypal 違い",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "query": "wise vs 楽天銀行",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 46.125
+      },
+      {
+        "query": "おすすめ esim",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 65
+      },
+      {
+        "query": "かべネコvpn 中国",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "query": "トリファ esim 知恵袋",
+        "page": "/taiwan/esim-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "楽天モバイル 海外 2gb 足りない",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 45
+      },
+      {
+        "query": "海外 esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "海外esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 49,
+        "ctr": 0,
+        "position": 67.87755102040816
+      },
+      {
+        "query": "海外esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "海外送金 手数料 比較 個人",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 47.4
+      },
+      {
+        "query": "駐在 vpn おすすめ",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 21.5
+      }
+    ]
+  },
+  "ga4": {
+    "affiliateClicks": [
+      {
+        "dimension": "Wise",
+        "count": 1
+      }
+    ],
+    "ctaViews": [
+      {
+        "dimension": "トリファ",
+        "count": 23
+      },
+      {
+        "dimension": "Wise",
+        "count": 9
+      },
+      {
+        "dimension": "エポスカード",
+        "count": 2
+      },
+      {
+        "dimension": "NordVPN",
+        "count": 1
+      },
+      {
+        "dimension": "かべネコVPN",
+        "count": 1
+      }
+    ]
+  },
+  "issues": [
+    {
+      "type": "rank_opportunity",
+      "page": "/guide/paypay-overseas",
+      "detail": "平均順位 9.0位 (34imp)",
+      "severity": "high",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/best-esim",
+      "detail": "CTR 1.1% (1clicks / 90imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/overseas-remittance",
+      "detail": "CTR 1.1% (1clicks / 88imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/compare/overseas-remittance",
+      "detail": "平均順位 19.0位 (88imp)",
+      "severity": "medium",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/guide/paypay-overseas",
+      "detail": "34回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    }
+  ]
+}
