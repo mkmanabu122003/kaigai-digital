@@ -66,23 +66,28 @@ export default function RootLayout({
 
         {hasGA4 && (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
+            {/*
+              dataLayer と config は beforeInteractive で先に積む。
+              afterInteractive だと React の useEffect（PageviewTracker）が先に
+              走り、config より前に page_view が積まれて破棄されるため。
+              page_view は send_page_view:false のうえ ga.ts から明示送信する。
+            */}
+            <Script id="ga4-init" strategy="beforeInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${ga4Id}', {
-                  page_path: window.location.pathname,
                   ${process.env.NODE_ENV === "development" ? "debug_mode: true," : ""}
                   cookie_flags: 'SameSite=Lax;Secure',
                   send_page_view: false
                 });
               `}
             </Script>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+              strategy="afterInteractive"
+            />
             <GoogleAnalytics />
           </>
         )}

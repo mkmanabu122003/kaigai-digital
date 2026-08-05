@@ -4,7 +4,7 @@ import { siteConfig } from "./config";
 
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
     dataLayer: unknown[];
   }
 }
@@ -13,17 +13,35 @@ export const GA_ID = siteConfig.ga4Id;
 
 // ─── Core ───
 
+// gtag.js は afterInteractive で読み込まれるため、React の useEffect が
+// 先に走ると window.gtag がまだ未定義になる。その場合は dataLayer へ直接
+// 積んでおき、gtag.js のロード後にまとめて処理させる。
+function push(...args: unknown[]) {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    window.gtag(...args);
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(args);
+}
+
+// GA4 では同一測定IDへの2回目以降の gtag('config') は page_view を送出しない。
+// SPA遷移を計測するため、page_view は明示的な event として送る。
 export function pageview(url: string) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  window.gtag("config", GA_ID, { page_path: url });
+  if (typeof window === "undefined") return;
+  push("event", "page_view", {
+    page_path: url,
+    page_location: window.location.href,
+    page_title: document.title,
+  });
 }
 
 export function event(
   action: string,
   params: Record<string, string | number | boolean>
 ) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  window.gtag("event", action, params);
+  push("event", action, params);
 }
 
 // ─── Affiliate / CTA ───
@@ -123,11 +141,9 @@ export function trackError(errorType: string, message: string, page: string) {
 // ─── User Properties & Content Groups ───
 
 export function setUserProperties(props: Record<string, string>) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  window.gtag("set", "user_properties", props);
+  push("set", "user_properties", props);
 }
 
 export function setContentGroup(group: string) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  window.gtag("set", { content_group: group });
+  push("set", { content_group: group });
 }

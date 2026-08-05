@@ -174,7 +174,20 @@ function WebVitalsTracker() {
 
 function ErrorTracker() {
   useEffect(() => {
+    // Clarity など外部スクリプト由来のエラーは自サイトの不具合ではない。
+    // 送信するとGA4の site_error が第三者ノイズで埋まり、本当の不具合を
+    // 見逃すため、同一オリジンのスクリプトで起きたものだけを記録する。
+    function isSameOrigin(src?: string) {
+      if (!src) return false;
+      try {
+        return new URL(src, window.location.href).origin === window.location.origin;
+      } catch {
+        return false;
+      }
+    }
+
     function handleError(e: ErrorEvent) {
+      if (!isSameOrigin(e.filename)) return;
       trackError("js_error", e.message, window.location.pathname);
     }
 
