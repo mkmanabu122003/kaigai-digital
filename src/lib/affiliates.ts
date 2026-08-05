@@ -92,7 +92,7 @@ export const affiliateLinks: Record<string, AffiliateService> = {
     logo: "/images/services/epos.png",
     price: "年会費永年無料",
     rating: 4.5,
-    features: ["海外旅行保険が自動で充実", "疾病治療270万円（年会費無料カード最高水準）", "海外ATMキャッシング対応", "即日発行可能"],
+    features: ["海外旅行保険が充実（利用付帯）", "疾病治療270万円（年会費無料カード最高水準）", "海外ATMキャッシング対応", "即日発行可能"],
     bestFor: "海外渡航者のサブカードに最適。年会費無料で旅行保険が充実",
     category: "credit-card",
     rank: 1,
