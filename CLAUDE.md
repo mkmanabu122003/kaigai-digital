@@ -29,8 +29,9 @@ kaigai-digital.com は「海外渡航者のネット・デジタル環境を国�
 ### アフィリエイトリンク
 `src/lib/affiliates.ts` に定義済みのサービスIDのみ使用可能:
 - VPN: nordvpn, surfshark, kabeneko
-- eSIM: airalo
+- eSIM: trifa
 - 送金: wise
+- クレジットカード: epos
 
 記事内では `<CTA service="nordvpn" placement="middle" />` の形式で記述。
 カスタムテキストも指定可能: `<CTA service="kabeneko" placement="top" text="21日間無料で試す" />`
