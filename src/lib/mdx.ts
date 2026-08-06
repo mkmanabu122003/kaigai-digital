@@ -251,5 +251,10 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(remarkGfm)
     .use(remarkHtml, { sanitize: false })
     .process(markdown);
-  return result.toString();
+
+  // 外部リンクは新規タブで開く。記事を読み進めている途中で
+  // 出典（官公庁・メーカーの公式情報）へ離脱させないため。
+  return result
+    .toString()
+    .replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener noreferrer"');
 }

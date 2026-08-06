@@ -1,0 +1,12 @@
+- generic [ref=f11e2]:
+  - banner [ref=f11e3]:
+    - generic [ref=f11e4]:
+      - link [ref=f11e6] [cursor=pointer]:
+        - /url: "#"
+        - img "MOFA 外務省" [ref=f11e7]
+      - heading [level=1]
+  - generic [ref=f11e10]:
+    - heading "指定されたページが見つかりません。" [level=1] [ref=f11e11]
+    - paragraph [ref=f11e12]: ファイルが削除されているか、または存在しないアドレスへのアクセスです。
+  - contentinfo [ref=f11e13]:
+    - generic [ref=f11e14]: Copyright © Ministry of Foreign Affairs of Japan

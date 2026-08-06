@@ -1,0 +1,285 @@
+- generic [active] [ref=f1e1]:
+  - navigation "グローバル" [ref=f1e3]:
+    - list [ref=f1e5]:
+      - listitem [ref=f1e6]:
+        - link "Apple" [ref=f1e7] [cursor=pointer]:
+          - /url: https://www.apple.com/jp/
+      - listitem [ref=f1e8]:
+        - generic [ref=f1e10]:
+          - list [ref=f1e12]:
+            - listitem [ref=f1e13]:
+              - link "ストア" [ref=f1e14] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/shop/goto/store
+            - listitem:
+              - button "ストアのメニュー"
+          - list [ref=f1e17]:
+            - listitem [ref=f1e18]:
+              - link "Mac" [ref=f1e19] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/mac/
+            - listitem:
+              - button "Macのメニュー"
+          - list [ref=f1e22]:
+            - listitem [ref=f1e23]:
+              - link "iPad" [ref=f1e24] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/ipad/
+            - listitem:
+              - button "iPadのメニュー"
+          - list [ref=f1e27]:
+            - listitem [ref=f1e28]:
+              - link "iPhone" [ref=f1e29] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/iphone/
+            - listitem:
+              - button "iPhoneのメニュー"
+          - list [ref=f1e32]:
+            - listitem [ref=f1e33]:
+              - link "Watch" [ref=f1e34] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/watch/
+            - listitem:
+              - button "Watchのメニュー"
+          - list [ref=f1e37]:
+            - listitem [ref=f1e38]:
+              - link "Vision" [ref=f1e39] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/apple-vision-pro/
+            - listitem:
+              - button "Visionのメニュー"
+          - list [ref=f1e42]:
+            - listitem [ref=f1e43]:
+              - link "AirPods" [ref=f1e44] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/airpods/
+            - listitem:
+              - button "AirPodsのメニュー"
+          - list [ref=f1e47]:
+            - listitem [ref=f1e48]:
+              - link "TV & ホーム" [ref=f1e49] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/tv-home/
+                - generic [ref=f1e50]: TV & Home
+            - listitem:
+              - button "TV & ホームのメニュー"
+          - list [ref=f1e52]:
+            - listitem [ref=f1e53]:
+              - link "エンターテインメント" [ref=f1e54] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/entertainment/
+            - listitem:
+              - button "エンターテインメントのメニュー"
+          - list [ref=f1e57]:
+            - listitem [ref=f1e58]:
+              - link "アクセサリ" [ref=f1e59] [cursor=pointer]:
+                - /url: https://www.apple.com/jp/shop/goto/buy_accessories
+            - listitem:
+              - button "アクセサリのメニュー"
+          - list [ref=f1e62]:
+            - listitem [ref=f1e63]:
+              - link "サポート" [ref=f1e64] [cursor=pointer]:
+                - /url: https://support.apple.com/ja-jp/?cid=gn-ols-home-hp-tab
+            - listitem:
+              - button "サポートのメニュー"
+      - listitem [ref=f1e66]:
+        - button "サポートを検索" [ref=f1e67] [cursor=pointer]
+      - listitem [ref=f1e68]:
+        - button "ショッピングバッグ" [ref=f1e70] [cursor=pointer]
+  - generic [ref=f1e72]:
+    - main [ref=f1e73]:
+      - generic [ref=f1e74]:
+        - heading "iPhoneでeSIMを設定する" [level=1] [ref=f1e75]
+        - paragraph [ref=f1e76]: eSIMについてご説明し、iPhoneでeSIMを設定する方法や、別のiPhoneに電話番号を転送する方法をご案内します。
+        - button "ビデオを再生する" [ref=f1e78] [cursor=pointer]:
+          - figure [ref=f1e79]:
+            - img "ビデオを再生する" [ref=f1e80]
+          - generic [ref=f1e94]: 
+        - heading "eSIMとは？?" [level=2] [ref=f1e95]
+        - paragraph [ref=f1e96]: eSIMはiPhoneに組み込まれた業界標準のデジタルSIMです。この革新的な機能によって、物理的なSIMカードを使わなくても、SIMを簡単に切り替えたり、8つ以上のeSIMを管理したり、新しいプランをデジタルでアクティベートしたりできるようになります。eSIMを使えば、今まで以上に柔軟で便利になり、セキュリティも強化され、シームレスに接続できるようになるため、特に海外旅行の際に役立ちます。
+        - paragraph [ref=f1e97]:
+          - text: 海外旅行中にiPhoneでeSIMを使う方法については、
+          - link "こちらの記事" [ref=f1e98] [cursor=pointer]:
+            - /url: https://support.apple.com/ja-jp/118227
+          - text: を参照してください。
+        - heading "必要なもの" [level=2] [ref=f1e99]
+        - list [ref=f1e100]:
+          - listitem [ref=f1e101]:
+            - paragraph [ref=f1e102]: iPhone XS、iPhone XS Max、iPhone XR以降。
+          - listitem [ref=f1e103]:
+            - paragraph [ref=f1e104]:
+              - link "eSIM対応の通信事業者またはグローバルサービスプロバイダ。" [ref=f1e105] [cursor=pointer]:
+                - /url: https://support.apple.com/ja-jp/101569
+          - listitem [ref=f1e106]:
+            - paragraph [ref=f1e107]: 新しいiPhoneをWi‐Fiネットワークまたはインターネット共有に接続します。一部の国や地域のeSIM専用モデルのiPhoneは、Wi-Fiネットワークに接続していなくてもアクティベートできます。
+        - paragraph [ref=f1e109]:
+          - text: 中国本土では、iPhone 17eとiPhone AirのみがeSIMに対応しています。中国本土でのeSIMのアクティベーションについて詳しくは、
+          - link "こちらの記事" [ref=f1e110] [cursor=pointer]:
+            - /url: https://support.apple.com/ja-jp/123879
+          - text: を参照してください。香港やマカオでは、一部のモデルのiPhoneが
+          - link "2枚のnano-SIMカードを使ったデュアルSIM" [ref=f1e111] [cursor=pointer]:
+            - /url: https://support.apple.com/ja-jp/108898
+          - text: に対応しています。
+        - heading "eSIMをアクティベートする方法" [level=2] [ref=f1e112]
+        - paragraph [ref=f1e113]: eSIMを設定すれば、物理的なSIMを使わなくても、通信事業者のモバイル通信プランをアクティベートすることができます。ほとんどの場合、iPhoneの設定中または設定後にeSIMをアクティベートできます。
+        - paragraph [ref=f1e114]: 通信事業者がeSIMに対応しているかどうかに応じて、iPhoneのeSIMは以下のいずれかの方法でアクティベートできます。
+        - generic [ref=f1e116]:
+          - generic [ref=f1e117]:
+            - paragraph [ref=f1e118]:
+              - link "eSIMクイック転送を使って以前使っていたiPhoneから電話番号を転送する" [ref=f1e119] [cursor=pointer]:
+                - /url: "#QuickTransfer"
+                - text: eSIMクイック転送を使って電話番号を転送する 
+            - paragraph [ref=f1e120]:
+              - link "eSIMキャリアアクティベーションを使って、通信事業者によってiPhoneに割り当てられたeSIMをアクティベートする" [ref=f1e121] [cursor=pointer]:
+                - /url: "#carrieractivation"
+                - text: eSIMキャリアアクティベーションを使ってeSIMをアクティベートする 
+            - paragraph [ref=f1e122]:
+              - link "通信事業者から提供されたQRコードを使う" [ref=f1e123] [cursor=pointer]:
+                - /url: "#qrcode"
+                - text: QRコードを使ってeSIMを設定する 
+          - generic [ref=f1e124]:
+            - paragraph [ref=f1e125]:
+              - link "その他の方法でeSIMをアクティベートする" [ref=f1e126] [cursor=pointer]:
+                - /url: "#othermethods"
+                - text: その他の方法でeSIMをアクティベートする 
+            - paragraph [ref=f1e127]:
+              - link "Androidデバイスや、その他のApple製以外のデバイスからeSIMを転送する" [ref=f1e128] [cursor=pointer]:
+                - /url: "#transferfromandroid"
+                - text: Androidデバイスや、その他のApple製以外のデバイスからeSIMを転送する 
+        - img "iPhoneのeSIMの設定画面のスクリーンショット。モバイル通信プランを近くのiPhoneから転送するか、QRコードを使用するかのオプションが表示されているところ。" [ref=f1e130]
+        - heading "eSIMクイック転送を使って電話番号を転送する" [level=3] [ref=f1e131]
+        - paragraph [ref=f1e132]: ご契約先の通信事業者がeSIMクイック転送に対応している場合は、通信事業者に問い合わせなくても、以前使っていたiPhoneから新しいiPhoneにSIMを転送できます。通信事業者によっては、使用中の物理的なSIMカードをeSIMに変更することもできます。
+        - paragraph [ref=f1e133]: 作業を始める前に、以下を確認してください。
+        - list [ref=f1e134]:
+          - listitem [ref=f1e135]:
+            - paragraph [ref=f1e136]: Apple Accountで両方のデバイスにサインインしていること
+          - listitem [ref=f1e137]:
+            - paragraph [ref=f1e138]: デバイスのパスコードを使って以前使っていたiPhoneのロックを解除していること
+          - listitem [ref=f1e139]:
+            - paragraph [ref=f1e140]: デバイスが両方とも近くにあり、Bluetoothがオンになっていること
+          - listitem [ref=f1e141]:
+            - paragraph [ref=f1e142]: 両方のデバイスにiOS 18.4以降がインストールされていること
+        - paragraph [ref=f1e143]: 新しいiPhoneの設定中に電話番号の転送を求められた場合は、画面上の指示に従って物理的なSIMまたはeSIMを転送します。iOS 26では、新しいiPhoneに複数の電話番号を転送することができます。新しいiPhoneでモバイル通信プランがアクティベートされると、以前使っていたSIMが無効になります。
+        - paragraph [ref=f1e144]: 設定後に、次の手順で電話番号を転送することもできます。
+        - list [ref=f1e145]:
+          - listitem [ref=f1e146]:
+            - paragraph [ref=f1e147]: 新しいiPhoneで設定アプリを開きます。
+          - listitem [ref=f1e148]:
+            - paragraph [ref=f1e149]: 「モバイル通信」をタップします。
+          - listitem [ref=f1e150]:
+            - paragraph [ref=f1e151]: 「モバイル通信を設定」または「eSIMを追加」をタップします。
+          - listitem [ref=f1e152]:
+            - paragraph [ref=f1e153]: 別のiPhoneから転送するモバイル通信プランを選択します。番号のリストが表示されない場合は、「近くのiPhoneから転送」をタップします。
+          - listitem [ref=f1e154]:
+            - paragraph [ref=f1e155]: 以前使っていたiPhoneの画面に表示される案内に従います。確定するには、「転送」をタップするか、確認コードの入力を求められた場合は、新しいiPhoneに表示されるコードを入力します。
+          - listitem [ref=f1e156]:
+            - paragraph [ref=f1e157]: しばらくすると、モバイル通信プランが新しいiPhoneでアクティベートされます。新しいiPhoneのモバイル通信プランがアクティベートされると、以前使っていたSIMが無効になります。
+          - listitem [ref=f1e158]:
+            - paragraph [ref=f1e159]: 「モバイル通信プランの設定を完了する」バナーが新しいiPhoneに表示されたら、そのバナーをタップします。通信事業者のWebページにリダイレクトされるので、eSIMの転送手続きを進めます。サポートが必要な場合は、通信事業者にお問い合わせください。
+        - paragraph [ref=f1e160]:
+          - text: 通信事業者が対応している場合は、同じiPhoneの
+          - link "物理的なSIMをeSIMに変更" [ref=f1e161] [cursor=pointer]:
+            - /url: https://support.apple.com/guide/iphone/set-up-cellular-service-iph3f11fba92/ios#iph0a3aa7407
+          - text: することができます。
+        - img "iPhoneのeSIM設定画面のスクリーンショット。モバイル通信プランを別のiPhoneから転送するオプションが表示されているところ。" [ref=f1e163]
+        - heading "eSIMキャリアアクティベーションを使ってeSIMをアクティベートする" [level=3] [ref=f1e164]
+        - paragraph [ref=f1e165]: eSIMキャリアアクティベーションは、通常、通信事業者で購入し、モバイル通信プランの詳細を提供することで実施されます。iPhoneの購入時に通信事業者からeSIMが割り当てられている場合は、iPhoneの電源を入れ、設定中に画面に表示される案内にそって操作するだけで、eSIMをアクティベートできます。
+        - paragraph [ref=f1e166]: iPhoneを設定した後でeSIMについて通信事業者に問い合わせ、eSIMキャリアアクティベーションを通じて通信事業者からeSIMがデジタル形式で送信されてきた場合は、以下の手順に従ってください。
+        - list [ref=f1e167]:
+          - listitem [ref=f1e168]:
+            - paragraph [ref=f1e169]: 画面に「モバイル通信プランのインストールの準備ができました」という通知が表示されたら、その通知をタップします。
+          - listitem [ref=f1e170]:
+            - paragraph [ref=f1e171]: 設定アプリで、「モバイル通信プランのインストールの準備ができました」をタップします。
+          - listitem [ref=f1e172]:
+            - paragraph [ref=f1e173]: 画面の下部の「続ける」をタップします。
+          - listitem [ref=f1e174]:
+            - paragraph [ref=f1e175]: iPhoneで電話をかけてみて、モバイル通信に接続できるか確かめます。電話をかけられない場合は、通信事業者にお問い合わせください。
+          - listitem [ref=f1e176]:
+            - paragraph [ref=f1e177]: アクティベートしたプランを物理的なSIMのプランの代わりに使う場合は、物理的なSIMを取り外します。その後、iPhoneを再起動してください。
+        - heading "QRコードを使ってeSIMを設定する" [level=3] [ref=f1e178]
+        - paragraph [ref=f1e179]: 通信事業者からQRコードが提供されている場合は、そのコードを使ってiPhoneでeSIMを設定できます。
+        - paragraph [ref=f1e180]: iPhoneの設定中にeSIMをアクティベートするには、以下の手順を実行してください。
+        - list [ref=f1e181]:
+          - listitem [ref=f1e182]:
+            - paragraph [ref=f1e183]: iPhoneの電源を入れて設定します。
+          - listitem [ref=f1e184]:
+            - paragraph [ref=f1e185]: 「モバイル通信を設定」画面が表示されたら、「QRコードを使用」をタップします。
+          - listitem [ref=f1e186]:
+            - paragraph [ref=f1e187]: 画面の指示に従います。
+        - paragraph [ref=f1e188]: iPhoneの設定後にeSIMをアクティベートするには、通信事業者に問い合わせてQRコードを入手します。
+        - list [ref=f1e189]:
+          - listitem [ref=f1e190]:
+            - paragraph [ref=f1e191]: カメラアプリを開いてQRコードをスキャンします。「モバイル通信プランが検出されました」という通知が表示されたら、その通知をタップします。
+          - listitem [ref=f1e192]:
+            - paragraph [ref=f1e193]: iOS 17.4以降を搭載したiPhoneをお使いで、通信事業者からデフォルトのメールアプリまたはブラウザ経由でQRコードを入手した場合は、QRコードを長押しします。次に「eSIMを追加」をタップします。
+          - listitem [ref=f1e194]:
+            - paragraph [ref=f1e195]: 画面の下部の「続ける」をタップします。
+          - listitem [ref=f1e196]:
+            - paragraph [ref=f1e197]: 「モバイル通信プランを追加」をタップします。
+          - listitem [ref=f1e198]:
+            - paragraph [ref=f1e199]: eSIMをアクティベートするために確認コードの入力を求められた場合は、通信事業者から提供された番号を入力してください。
+        - heading "その他の方法でeSIMをアクティベートする" [level=3] [ref=f1e200]
+        - paragraph [ref=f1e201]: 上記以外の方法には、通信事業者のリンクや通信事業者のアプリを使う、eSIM情報を手動で入力する、Apple製以外のデバイスからeSIMを転送する、などがあります。
+        - heading "通信事業者のリンクを使ってeSIMをアクティベートする" [level=4] [ref=f1e202]
+        - paragraph [ref=f1e203]: 通信事業者からQRコードではなくリンクが送信される場合があります。リンクを受け取ったら、次の手順を実行します。
+        - list [ref=f1e204]:
+          - listitem [ref=f1e205]:
+            - paragraph [ref=f1e206]: iOS 17.4以降を搭載したiPhoneで、リンクをタップしてeSIMを設定します。
+          - listitem [ref=f1e207]:
+            - paragraph [ref=f1e208]: 新しいeSIMのアクティベートに関する通知が表示されたら、「許可」をタップします。
+          - listitem [ref=f1e209]:
+            - paragraph [ref=f1e210]: 画面の下部の「続ける」をタップします。
+        - heading "通信事業者のアプリを使ってeSIMをアクティベートする" [level=4] [ref=f1e211]
+        - paragraph [ref=f1e212]: 通信事業者がアプリを使ったeSIMのアクティベーションに対応している場合は、App Storeから通信事業者のアプリをダウンロードしてeSIMを設定します。通信事業者によっては、アプリを使って、以前使っていた電話から新しいiPhoneに電話番号を転送できる場合があります。
+        - heading "eSIM情報を手動で入力する" [level=4] [ref=f1e213]
+        - paragraph [ref=f1e214]: 通信事業者から入手したeSIM情報を手動で入力する必要がある場合は、以下の手順を実行します。
+        - list [ref=f1e215]:
+          - listitem [ref=f1e216]:
+            - paragraph [ref=f1e217]: 設定アプリを開きます。
+          - listitem [ref=f1e218]:
+            - paragraph [ref=f1e219]: 「モバイル通信」または「モバイルデータ通信」をタップします。
+          - listitem [ref=f1e220]:
+            - paragraph [ref=f1e221]: 「モバイル通信プランを追加」をタップします。
+          - listitem [ref=f1e222]:
+            - paragraph [ref=f1e223]: 画面の下部にある「詳細情報を手動で入力」をタップします。
+        - heading "Androidデバイスや、その他のApple製以外のデバイスからeSIMを転送する" [level=3] [ref=f1e224]
+        - paragraph [ref=f1e225]:
+          - text: Apple製以外のデバイスからiPhoneへeSIMを転送する場合は、通信事業者にお問い合わせください。通信事業者は、eSIMキャリアアクティベーションを使うか、QRコードを提供することで、電話番号を転送します。iOS 26では、一部の通信事業者とスマートフォンメーカーが、AndroidとiPhoneの間のeSIMの転送に対応しています。AndroidまたはiPhoneからのeSIMの転送について、詳しくは
+          - link "こちらの記事" [ref=f1e226] [cursor=pointer]:
+            - /url: https://support.apple.com/ja-jp/123878
+          - text: を参照してください。
+        - heading "問題がある場合" [level=2] [ref=f1e227]
+        - paragraph [ref=f1e228]:
+          - text: eSIMを設定できない場合の対処法については、
+          - link "こちらの記事" [ref=f1e229] [cursor=pointer]:
+            - /url: https://support.apple.com/ja-jp/102478
+          - text: を参照してください。
+        - generic [ref=f1e230]:
+          - text: 公開日：
+          - time [ref=f1e231]: 2026 年 03 月 24 日
+    - generic [ref=f1e233]:
+      - group "役に立ちましたか？" [ref=f1e235]:
+        - generic [ref=f1e237]:
+          - button "はい" [ref=f1e238] [cursor=pointer]
+          - button "いいえ" [ref=f1e239] [cursor=pointer]
+      - text: 
+  - contentinfo [ref=f1e242]:
+    - generic [ref=f1e243]:
+      - heading "Apple Footer" [level=2] [ref=f1e244]
+      - navigation "Breadcrumbs" [ref=f1e245]:
+        - link "Apple" [ref=f1e246] [cursor=pointer]:
+          - /url: https://www.apple.com/jp/
+          - generic [ref=f1e247]: 
+        - generic [ref=f1e249]:
+          - list:
+            - listitem [ref=f1e250]:
+              - link "サポート" [ref=f1e252] [cursor=pointer]:
+                - /url: https://support.apple.com/ja-jp
+            - listitem [ref=f1e253]: iPhoneでeSIMを設定する
+      - generic [ref=f1e254]:
+        - link "Japan. Choose your country or region" [ref=f1e257] [cursor=pointer]:
+          - /url: https://support.apple.com/ja-jp/118669/localeselector
+          - text: 日本
+        - generic [ref=f1e258]:
+          - generic [ref=f1e259]: Copyright © 2026 Apple Inc. All rights reserved.
+          - generic [ref=f1e260]:
+            - link "プライバシーポリシー" [ref=f1e261] [cursor=pointer]:
+              - /url: https://www.apple.com/legal/privacy/jp/
+            - link "利用規約" [ref=f1e262] [cursor=pointer]:
+              - /url: https://www.apple.com/jp/legal/internet-services/terms/site.html
+            - link "販売条件" [ref=f1e263] [cursor=pointer]:
+              - /url: https://www.apple.com/jp/shop/goto/help/sales_refunds
+            - link "サイトマップ" [ref=f1e264] [cursor=pointer]:
+              - /url: https://www.apple.com/jp/sitemap/
+  - status [ref=f1e265]

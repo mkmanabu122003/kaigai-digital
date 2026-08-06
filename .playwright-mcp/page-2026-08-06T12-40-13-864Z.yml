@@ -1,0 +1,241 @@
+- generic:
+  - link "メイン コンテンツにスキップ" [ref=f2e1] [cursor=pointer]:
+    - /url: "#search-form"
+  - generic [ref=f2e3]:
+    - banner [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - button "メインメニュー" [ref=f2e8] [cursor=pointer]
+        - generic [ref=f2e11]:
+          - link "Google Pixel ヘルプ" [ref=f2e14] [cursor=pointer]:
+            - /url: /pixelphone
+          - search [ref=f2e16]:
+            - combobox "ヘルプセンターを検索" [ref=f2e18]
+            - button "ヘルプセンターを検索" [ref=f2e19] [cursor=pointer]
+        - generic [ref=f2e24]:
+          - button "Google アプリ" [ref=f2e28] [cursor=pointer]
+          - 'button "Google アカウント: Manabu Kawahara (mkmanabu122003@gmail.com)" [ref=f2e34] [cursor=pointer]'
+    - generic [ref=f2e44]:
+      - navigation "Support page navigation bar" [ref=f2e47]:
+        - generic [ref=f2e48]:
+          - generic "Helpcenter sections" [ref=f2e49]:
+            - list [ref=f2e50]:
+              - listitem [ref=f2e51]:
+                - link "ヘルプ センター" [ref=f2e52] [cursor=pointer]:
+                  - /url: /pixelphone/?hl=ja
+              - listitem [ref=f2e53]:
+                - link "コミュニティ" [ref=f2e54] [cursor=pointer]:
+                  - /url: /pixelphone/community?hl=ja&help_center_link=CM3ewAQSNkdvb2dsZSBQaXhlbCDjgafjg4fjg6XjgqLjg6sgU0lNIOOCkuS9v-eUqOOBmeOCi-aWueazlQ
+              - listitem [ref=f2e55]:
+                - link "Google Pixel の修理を開始する" [ref=f2e56] [cursor=pointer]:
+                  - /url: /pixelphone/announcements/16443575
+          - generic [ref=f2e57]:
+            - generic [ref=f2e60]:
+              - button "Google Pixel の通知" [ref=f2e68] [cursor=pointer]
+              - generic [ref=f2e77]:
+                - alert [ref=f2e78]: 新しい通知が 1 件あります
+                - button "閉じる" [ref=f2e83] [cursor=pointer]
+            - link "Google Pixel (新しいウィンドウで開く)" [ref=f2e92] [cursor=pointer]:
+              - /url: https://store.google.com/us/category/phones
+              - text: Google Pixel
+      - navigation "Breadcrumbs" [ref=f2e96]:
+        - list [ref=f2e97]:
+          - listitem [ref=f2e98]:
+            - link "Google Pixel スタートガイド" [ref=f2e99] [cursor=pointer]:
+              - /url: /pixelphone/topic/7083311?hl=ja&ref_topic=7078250
+          - listitem [ref=f2e102]:
+            - link "Google Pixel をモバイル ネットワークに接続する" [ref=f2e103] [cursor=pointer]:
+              - /url: /pixelphone/topic/7084391?hl=ja&ref_topic=7083311
+          - listitem [ref=f2e106]:
+            - link "Google Pixel でデュアル SIM を使用する方法" [ref=f2e107] [cursor=pointer]:
+              - /url: /pixelphone/answer/9449293
+    - region "Genie module"
+    - generic [ref=f2e108]:
+      - main [ref=f2e109]:
+        - generic [ref=f2e111]:
+          - generic [ref=f2e112]:
+            - article [ref=f2e113]:
+              - generic [ref=f2e114]:
+                - heading "Google Pixel でデュアル SIM を使用する方法" [level=1] [ref=f2e115]
+                - generic [ref=f2e116]:
+                  - generic [ref=f2e117]:
+                    - generic [ref=f2e118]:
+                      - paragraph [ref=f2e119]: Pixel 3a 以降の Google Pixel では、物理的な SIM カードと eSIM の 2 つの SIM を使用できます。テキスト メッセージの送受信や通話など、どの操作にどちらの SIM を使うかを選択できます。この機能は、デュアル SIM デュアル スタンバイ（DSDS）と呼ばれます。
+                      - generic [ref=f2e121]:
+                        - text: ×
+                        - iframe [active] [ref=f2e122] [cursor=pointer]:
+                          - generic [ref=f3e1]:
+                            - generic "YouTube 動画プレーヤー" [ref=f3e3]
+                            - generic [ref=f3e5]:
+                              - generic:
+                                - generic:
+                                  - button "動画を再生" [ref=f3e10] [cursor=pointer]
+                                  - button "プレーヤー コントロールを非表示にする" [ref=f3e14] [cursor=pointer]
+                                  - generic [ref=f3e16]:
+                                    - generic [ref=f3e21]:
+                                      - generic [ref=f3e22]:
+                                        - link "eSIM について" [ref=f3e23] [cursor=pointer]:
+                                          - /url: https://www.youtube.com/watch?v=Gbxgx4W-zDA
+                                        - link "Google Help" [ref=f3e24] [cursor=pointer]:
+                                          - /url: /channel/UC3x6qC4h-NyuvQBSZYaPKrQ
+                                      - generic [ref=f3e26]:
+                                        - button [ref=f3e27] [cursor=pointer]:
+                                          - img "thumbnail-image" [ref=f3e28]
+                                        - generic [ref=f3e30]:
+                                          - generic: Google Help
+                                          - generic: チャンネル登録者数 283万人
+                                    - generic [ref=f3e31]:
+                                      - generic [ref=f3e32]:
+                                        - button "共有" [ref=f3e34] [cursor=pointer]
+                                        - button "後で見る" [ref=f3e43] [cursor=pointer]
+                                      - link "YouTube で見る" [ref=f3e54] [cursor=pointer]:
+                                        - /url: https://www.youtube.com/watch?v=Gbxgx4W-zDA
+                                        - generic [ref=f3e55]: 見る
+                        - text: 音声による説明付きの動画は、こちらをご覧ください。
+                        - link "eSIM について Opens in new window" [ref=f2e123] [cursor=pointer]:
+                          - /url: https://youtu.be/2pHeme8QZlA
+                      - paragraph [ref=f2e124]:
+                        - strong [ref=f2e125]: "重要 [米国のみ]:"
+                        - text: Google Pixel 10 以降（Google Pixel 10 Pro Fold を除く）をお使いの場合は、eSIM のみを使用できます。
+                      - paragraph [ref=f2e126]: 次の場合は、2 つの eSIM プロファイルを同時に使用できます。
+                      - list [ref=f2e127]:
+                        - listitem [ref=f2e128]: • Google Pixel 7、Google Pixel 7 Pro 以降のスマートフォンをお持ちの場合。
+                        - listitem [ref=f2e129]: • 携帯通信会社がこの機能を許可している場合。
+                      - paragraph [ref=f2e130]: デバイスと携帯通信会社によっては、2 つの eSIM または 1 つの eSIM と 1 つの物理的な SIM を使用できます。
+                      - paragraph [ref=f2e131]: DSDS と eSIM は一部の携帯通信会社で利用できます。お使いのスマートフォンで利用できるかどうかは、ご契約の携帯通信会社にお問い合わせください。日本で購入した Google Pixel 3a では、2 つの SIM を使用することはできません。
+                      - paragraph [ref=f2e132]: デュアル SIM モードの Google Pixel 4a (5G) 以降のスマートフォンは、5G ネットワークに接続可能です。
+                      - generic [ref=f2e133]:
+                        - paragraph [ref=f2e135]:
+                          - strong [ref=f2e136]: "重要:"
+                          - text: Google Pixel では、この手順の一部は Android 11 以降でのみ動作します。
+                          - link "お使いの Android のバージョンをご確認ください" [ref=f2e137] [cursor=pointer]:
+                            - /url: /android/answer/7680439
+                          - text: 。
+                        - paragraph
+                      - button "eSIM を 2 つ目の SIM として追加する" [ref=f2e139] [cursor=pointer]
+                      - button "2 つの eSIM プロファイルを使用する" [ref=f2e141] [cursor=pointer]
+                      - button "SIM カードを 2 つ目の SIM として追加する" [ref=f2e143] [cursor=pointer]
+                      - heading "Google Pixel でデュアル SIM の設定を変更する" [level=2] [ref=f2e144]
+                      - generic [ref=f2e145]:
+                        - paragraph [ref=f2e147]:
+                          - strong [ref=f2e148]: "重要:"
+                          - text: Google Pixel では、この手順の一部は Android 11 以降でのみ動作します。
+                          - link "お使いの Android のバージョンをご確認ください" [ref=f2e149] [cursor=pointer]:
+                            - /url: /android/answer/7680439
+                          - text: 。
+                        - paragraph
+                      - paragraph [ref=f2e150]: データ通信、通話、テキスト メッセージの送受信などの各操作に、どちらの SIM を使用するかを指定できます。用途ごとに、指定された SIM が自動的に使用されます。
+                      - button "データ通信、通話、テキスト メッセージの送受信に使用するデフォルトの SIM を設定する" [ref=f2e152] [cursor=pointer]
+                      - generic: • • • • •
+                      - button "通話中に 2 つ目の SIM を使用する（Google Pixel 8、Google Pixel 8 Pro 以前）" [ref=f2e154] [cursor=pointer]
+                      - button "通話中に 2 つ目の SIM を使用する（Google Pixel 8a 以降）" [ref=f2e156] [cursor=pointer]
+                      - generic: • • • •
+                      - heading "SIM の使用をオフまたは停止にする" [level=2] [ref=f2e157]
+                      - generic [ref=f2e158]:
+                        - paragraph [ref=f2e160]:
+                          - strong [ref=f2e161]: "重要:"
+                          - text: Google Pixel では、この手順の一部は Android 11 以降でのみ動作します。
+                          - link "お使いの Android のバージョンをご確認ください" [ref=f2e162] [cursor=pointer]:
+                            - /url: /android/answer/7680439
+                          - text: 。
+                        - paragraph
+                      - button "SIM を一時的にオフにする" [ref=f2e164] [cursor=pointer]
+                      - button "eSIM を削除する、eSIM の削除にパスワードを要求するように設定する" [ref=f2e166] [cursor=pointer]
+                      - button "SIM カードの使用を停止する" [ref=f2e168] [cursor=pointer]
+                      - heading "デュアル SIM の問題を解決する" [level=2] [ref=f2e169]
+                      - generic [ref=f2e170]:
+                        - paragraph [ref=f2e172]:
+                          - strong [ref=f2e173]: "重要:"
+                          - text: Google Pixel では、この手順の一部は Android 11 以降でのみ動作します。
+                          - link "お使いの Android のバージョンをご確認ください" [ref=f2e174] [cursor=pointer]:
+                            - /url: /android/answer/7680439
+                          - text: 。
+                        - paragraph
+                      - paragraph [ref=f2e176]: SIM ネットワークの組み合わせによっては、正常に機能しない場合があります。「音声が利用できません」や「音声割り込み」という通知が表示された場合は、両 SIM のネットワークの連携に問題が発生しています。詳しくは、ご契約の携帯通信会社にお問い合わせください。
+                      - heading "スマートフォンの識別番号を確認する" [level=2] [ref=f2e177]
+                      - paragraph [ref=f2e178]:
+                        - text: 携帯通信会社にお問い合わせになる際は、IMEI 1、IMEI 2、EID 番号などの Pixel の ID 番号の提供が必要になる可能性があります。
+                        - link "Google Pixel の ID 番号を確認する方法" [ref=f2e179] [cursor=pointer]:
+                          - /url: /pixelphone/answer/10402530
+                        - text: についての説明をご覧ください。
+                      - heading "関連資料" [level=2] [ref=f2e180]
+                      - list [ref=f2e181]:
+                        - listitem [ref=f2e182]:
+                          - text: •
+                          - link "SIM を入手して Pixel スマートフォンに追加する" [ref=f2e183] [cursor=pointer]:
+                            - /url: /pixelphone/answer/7086887
+                        - listitem [ref=f2e184]:
+                          - text: •
+                          - link "IMEI などの Google Pixel の ID 番号を確認する" [ref=f2e185] [cursor=pointer]:
+                            - /url: /pixelphone/answer/10402530
+                        - listitem [ref=f2e186]:
+                          - text: •
+                          - link "Pixel スマートフォンを任意の携帯通信会社で使用する" [ref=f2e187] [cursor=pointer]:
+                            - /url: /pixelphone/answer/2926415
+                        - listitem [ref=f2e188]:
+                          - text: •
+                          - link "モバイル ネットワークの設定を変更する" [ref=f2e189] [cursor=pointer]:
+                            - /url: /pixelphone/answer/2926415
+                    - generic [ref=f2e190]: このページには、AI 技術を使用して翻訳されたコンテンツが含まれている場合があります。AI 翻訳には誤りが含まれている可能性があります。
+                  - button "この記事に関するフィードバックをお寄せください" [ref=f2e194] [cursor=pointer]
+            - generic [ref=f2e204]:
+              - generic [ref=f2e205]:
+                - heading "さらにサポートが必要な場合" [level=2] [ref=f2e206]
+                - heading "次の手順をお試しください。" [level=3] [ref=f2e207]
+              - generic [ref=f2e208]:
+                - link "ヘルプ コミュニティに投稿する コミュニティ メンバーから回答を得る" [ref=f2e209] [cursor=pointer]:
+                  - /url: /pixelphone/community?hl=ja&help_center_link=CM3ewAQSNkdvb2dsZSBQaXhlbCDjgafjg4fjg6XjgqLjg6sgU0lNIOOCkuS9v-eUqOOBmeOCi-aWueazlQ
+                  - generic [ref=f2e215]:
+                    - text: ヘルプ コミュニティに投稿する
+                    - generic [ref=f2e216]: コミュニティ メンバーから回答を得る
+                - link "お問い合わせ 詳しい情報をお知らせください。解決に向けてサポートいたします。" [ref=f2e217] [cursor=pointer]:
+                  - /url: /pixelphone/gethelp
+                  - generic [ref=f2e223]:
+                    - text: お問い合わせ
+                    - generic [ref=f2e224]: 詳しい情報をお知らせください。解決に向けてサポートいたします。
+          - navigation [ref=f2e228]:
+            - generic [ref=f2e229]:
+              - heading [level=2] [ref=f2e230]:
+                - link "Google Pixel をモバイル ネットワークに接続する" [ref=f2e231] [cursor=pointer]:
+                  - /url: /pixelphone/topic/7084391?hl=ja&ref_topic=7083311
+              - list [ref=f2e232]:
+                - listitem [ref=f2e233]:
+                  - link "SIM または eSIM を入手して Google Pixel に追加する" [ref=f2e234] [cursor=pointer]:
+                    - /url: /pixelphone/answer/7086887?hl=ja&ref_topic=7084391
+                - listitem [ref=f2e238]:
+                  - link "Google Pixel でモバイル ネットワークに接続する" [ref=f2e239] [cursor=pointer]:
+                    - /url: /pixelphone/answer/2926415?hl=ja&ref_topic=7084391
+                - listitem [ref=f2e243]:
+                  - link "Google Pixel を任意の携帯通信会社で使用する" [ref=f2e244] [cursor=pointer]:
+                    - /url: /pixelphone/answer/7107188?hl=ja&ref_topic=7084391
+                - listitem [ref=f2e248]:
+                  - link "Google Pixel でデュアル SIM を使用する方法" [ref=f2e249] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f2e253]:
+                  - link "eSIM を設定して有効にする" [ref=f2e254] [cursor=pointer]:
+                    - /url: /pixelphone/topic/16143593?hl=ja&ref_topic=7084391
+                - listitem [ref=f2e258]:
+                  - link "世界各国の eSIM 対応の携帯通信会社とサービス プロバイダを探す" [ref=f2e259] [cursor=pointer]:
+                    - /url: /pixelphone/answer/16399741?hl=ja&ref_topic=7084391
+      - contentinfo [ref=f2e264]:
+        - generic [ref=f2e266]:
+          - generic [ref=f2e267]:
+            - generic [ref=f2e268]: ©2026 Google
+            - list [ref=f2e269]:
+              - text: "-"
+              - listitem [ref=f2e270]:
+                - link "プライバシー ポリシー" [ref=f2e271] [cursor=pointer]:
+                  - /url: //www.google.com/intl/ja/privacy.html
+              - listitem [ref=f2e272]:
+                - text: "-"
+                - link "利用規約" [ref=f2e273] [cursor=pointer]:
+                  - /url: https://www.google.com/accounts/TOS
+              - listitem [ref=f2e274]:
+                - text: "-"
+                - link "障がいサポート" [ref=f2e275] [cursor=pointer]:
+                  - /url: https://support.google.com/accessibility/answer/7641084
+          - generic "言語を選択" [ref=f2e276]:
+            - generic [ref=f2e277]: 言語
+            - listbox "言語を選択 (日本語‎)" [ref=f2e278] [cursor=pointer]:
+              - generic [ref=f2e279]: 日本語‎
+          - button "ダークモードを有効にする" [ref=f2e283] [cursor=pointer]
+  - dialog "この選択肢を報告する理由を選択してください"
