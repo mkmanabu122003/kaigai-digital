@@ -1,13 +1,13 @@
 {
-  "fetchedAt": "2026-08-07T01:26:29.875Z",
+  "fetchedAt": "2026-08-07T22:22:02.945Z",
   "period": {
     "days": 28,
     "startDate": "2026-07-10",
     "endDate": "2026-08-07"
   },
   "counts": {
-    "gscPages": 17,
-    "gscQueries": 28,
+    "gscPages": 18,
+    "gscQueries": 31,
     "ga4AffiliateClicks": 0,
     "ga4CtaViews": 6,
     "issues": 58
@@ -17,9 +17,9 @@
       {
         "page": "/taiwan/esim-chiebukuro",
         "clicks": 3,
-        "impressions": 30,
-        "ctr": 0.1,
-        "position": 5.533333333333333
+        "impressions": 31,
+        "ctr": 0.0967741935483871,
+        "position": 5.483870967741935
       },
       {
         "page": "/china/vpn-chiebukuro",
@@ -31,16 +31,16 @@
       {
         "page": "/compare/best-esim",
         "clicks": 1,
-        "impressions": 27,
-        "ctr": 0.037037037037037035,
-        "position": 37.629629629629626
+        "impressions": 35,
+        "ctr": 0.02857142857142857,
+        "position": 43.25714285714286
       },
       {
         "page": "/",
         "clicks": 0,
-        "impressions": 7,
+        "impressions": 8,
         "ctr": 0,
-        "position": 54.714285714285715
+        "position": 56.75
       },
       {
         "page": "/affiliate-disclosure",
@@ -94,37 +94,44 @@
       {
         "page": "/compare/best-vpn",
         "clicks": 0,
-        "impressions": 15,
+        "impressions": 16,
         "ctr": 0,
-        "position": 25.933333333333334
+        "position": 30.25
       },
       {
         "page": "/compare/overseas-remittance",
         "clicks": 0,
-        "impressions": 43,
+        "impressions": 47,
         "ctr": 0,
-        "position": 24.976744186046513
+        "position": 24.95744680851064
       },
       {
         "page": "/compare/rakuten-mobile-overseas",
         "clicks": 0,
-        "impressions": 13,
+        "impressions": 15,
         "ctr": 0,
-        "position": 34.07692307692308
+        "position": 30.666666666666668
       },
       {
         "page": "/guide/paypay-overseas",
         "clicks": 0,
-        "impressions": 54,
+        "impressions": 58,
         "ctr": 0,
-        "position": 9.462962962962964
+        "position": 9.189655172413794
       },
       {
         "page": "/guide/travel-insurance-credit-card-chiebukuro",
         "clicks": 0,
-        "impressions": 37,
+        "impressions": 38,
         "ctr": 0,
-        "position": 14.972972972972974
+        "position": 14.973684210526315
+      },
+      {
+        "page": "/taiwan/netflix-chiebukuro",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
       },
       {
         "page": "/thailand/sim-chiebukuro",
@@ -135,6 +142,14 @@
       }
     ],
     "queries": [
+      {
+        "query": "abema 台湾から",
+        "page": "/taiwan/netflix-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
       {
         "query": "esim おすすめ",
         "page": "/compare/best-esim",
@@ -155,17 +170,17 @@
         "query": "instarem wise 比較",
         "page": "/compare/overseas-remittance",
         "clicks": 0,
-        "impressions": 10,
+        "impressions": 11,
         "ctr": 0,
-        "position": 34.5
+        "position": 34.81818181818182
       },
       {
         "query": "paypal wise 比較",
         "page": "/compare/overseas-remittance",
         "clicks": 0,
-        "impressions": 4,
+        "impressions": 5,
         "ctr": 0,
-        "position": 19.75
+        "position": 20
       },
       {
         "query": "paypal wise 送金",
@@ -230,6 +245,14 @@
         "impressions": 1,
         "ctr": 0,
         "position": 18
+      },
+      {
+        "query": "ギガ ファイル 便 海外",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 71
       },
       {
         "query": "クレジットカード 中国",
@@ -320,6 +343,14 @@
         "position": 98
       },
       {
+        "query": "海外 旅行 vpn",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 95
+      },
+      {
         "query": "海外esim",
         "page": "/compare/best-esim",
         "clicks": 0,
@@ -331,17 +362,17 @@
         "query": "海外esim おすすめ",
         "page": "/compare/best-esim",
         "clicks": 0,
-        "impressions": 2,
+        "impressions": 7,
         "ctr": 0,
-        "position": 97
+        "position": 92.42857142857143
       },
       {
         "query": "海外旅行保険 入るべきか 知恵袋",
         "page": "/guide/travel-insurance-credit-card-chiebukuro",
         "clicks": 0,
-        "impressions": 24,
+        "impressions": 25,
         "ctr": 0,
-        "position": 16.958333333333336
+        "position": 16.880000000000003
       },
       {
         "query": "海外赴任 vpn",
@@ -378,7 +409,7 @@
       },
       {
         "dimension": "エポスカード",
-        "count": 11
+        "count": 12
       },
       {
         "dimension": "Wise",
@@ -394,49 +425,49 @@
     {
       "type": "rank_opportunity",
       "page": "/taiwan/esim-chiebukuro",
-      "detail": "平均順位 5.5位 (30imp)",
+      "detail": "平均順位 5.5位 (31imp)",
       "severity": "high",
       "suggestion": "コンテンツ強化で上位表示の可能性"
     },
     {
       "type": "rank_opportunity",
       "page": "/guide/paypay-overseas",
-      "detail": "平均順位 9.5位 (54imp)",
+      "detail": "平均順位 9.2位 (58imp)",
       "severity": "high",
       "suggestion": "コンテンツ強化で上位表示の可能性"
     },
     {
       "type": "no_clicks",
       "page": "/compare/overseas-remittance",
-      "detail": "43回表示、クリック0",
+      "detail": "47回表示、クリック0",
       "severity": "medium",
       "suggestion": "titleの訴求力を改善"
     },
     {
       "type": "ctr_low",
       "page": "/guide/paypay-overseas",
-      "detail": "CTR 0.0% (0clicks / 54imp)",
+      "detail": "CTR 0.0% (0clicks / 58imp)",
       "severity": "medium",
       "suggestion": "title/descriptionの最適化でCTR改善余地あり"
     },
     {
       "type": "no_clicks",
       "page": "/guide/paypay-overseas",
-      "detail": "54回表示、クリック0",
+      "detail": "58回表示、クリック0",
       "severity": "medium",
       "suggestion": "titleの訴求力を改善"
     },
     {
       "type": "rank_opportunity",
       "page": "/guide/travel-insurance-credit-card-chiebukuro",
-      "detail": "平均順位 15.0位 (37imp)",
+      "detail": "平均順位 15.0位 (38imp)",
       "severity": "medium",
       "suggestion": "コンテンツ強化で上位表示の可能性"
     },
     {
       "type": "no_clicks",
       "page": "/guide/travel-insurance-credit-card-chiebukuro",
-      "detail": "37回表示、クリック0",
+      "detail": "38回表示、クリック0",
       "severity": "medium",
       "suggestion": "titleの訴求力を改善"
     },
