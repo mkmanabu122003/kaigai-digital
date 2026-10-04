@@ -1,0 +1,1037 @@
+{
+  "fetchedAt": "2026-10-04T00:09:33.853Z",
+  "period": {
+    "days": 28,
+    "startDate": "2026-09-06",
+    "endDate": "2026-10-04"
+  },
+  "counts": {
+    "gscPages": 20,
+    "gscQueries": 60,
+    "ga4AffiliateClicks": 1,
+    "ga4CtaViews": 5,
+    "issues": 52
+  },
+  "gsc": {
+    "pages": [
+      {
+        "page": "/china/kabeneko-trouble",
+        "clicks": 7,
+        "impressions": 126,
+        "ctr": 0.05555555555555555,
+        "position": 8.880952380952381
+      },
+      {
+        "page": "/taiwan/vpn-chiebukuro",
+        "clicks": 5,
+        "impressions": 114,
+        "ctr": 0.043859649122807015,
+        "position": 7.114035087719298
+      },
+      {
+        "page": "/taiwan/esim-chiebukuro",
+        "clicks": 4,
+        "impressions": 48,
+        "ctr": 0.08333333333333333,
+        "position": 5.270833333333333
+      },
+      {
+        "page": "/guide/paypay-overseas",
+        "clicks": 1,
+        "impressions": 33,
+        "ctr": 0.030303030303030304,
+        "position": 8.484848484848484
+      },
+      {
+        "page": "/",
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 15.555555555555555
+      },
+      {
+        "page": "/affiliate-disclosure",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "page": "/china/credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 30,
+        "ctr": 0,
+        "position": 61.733333333333334
+      },
+      {
+        "page": "/china/kabeneko-vs-nordvpn",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 14.176470588235293
+      },
+      {
+        "page": "/china/short-trip",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.666666666666668
+      },
+      {
+        "page": "/china/vpn-chiebukuro",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 7.333333333333333
+      },
+      {
+        "page": "/china/vpn-comparison",
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 8.454545454545453
+      },
+      {
+        "page": "/china/vpn-legal-chiebukuro",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5.75
+      },
+      {
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 125,
+        "ctr": 0,
+        "position": 49.696
+      },
+      {
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 24.058823529411764
+      },
+      {
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 59,
+        "ctr": 0,
+        "position": 15.813559322033898
+      },
+      {
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 24.8
+      },
+      {
+        "page": "/guide/kabeneko-review",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 15.833333333333334
+      },
+      {
+        "page": "/guide/travel-insurance-credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 32,
+        "ctr": 0,
+        "position": 25.15625
+      },
+      {
+        "page": "/taiwan/netflix-chiebukuro",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "page": "/uae/esim-chiebukuro",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 30
+      }
+    ],
+    "queries": [
+      {
+        "query": "abema 台湾から",
+        "page": "/taiwan/netflix-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 63.42857142857143
+      },
+      {
+        "query": "esim おすすめ 海外",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 71.4
+      },
+      {
+        "query": "esim ランキング",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 55
+      },
+      {
+        "query": "esim 人気",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 90
+      },
+      {
+        "query": "esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 46.42857142857143
+      },
+      {
+        "query": "esimランキング",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 96
+      },
+      {
+        "query": "esim比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 61.333333333333336
+      },
+      {
+        "query": "kabeneko",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      },
+      {
+        "query": "nordvpn 中国",
+        "page": "/china/kabeneko-vs-nordvpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 50
+      },
+      {
+        "query": "paypal wise 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 12.142857142857142
+      },
+      {
+        "query": "paypay 中国で使える",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "query": "paypay 使える国",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "query": "paypay 海外 使えない",
+        "page": "/guide/paypay-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "uae 旅行 esim",
+        "page": "/uae/esim-chiebukuro",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 23.333333333333332
+      },
+      {
+        "query": "vpn おすすめ 海外 から",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 57
+      },
+      {
+        "query": "vpnネコ 中国",
+        "page": "/china/vpn-comparison",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "vpnネコ 繋がらない",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 12.25
+      },
+      {
+        "query": "wise",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "query": "wise paypal",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 27.666666666666668
+      },
+      {
+        "query": "wise評判",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "query": "かべねこ",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 34
+      },
+      {
+        "query": "かべねこvpn",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "query": "かべねこvpn 中国",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 22.5
+      },
+      {
+        "query": "かべねこvpn 中国",
+        "page": "/guide/kabeneko-review",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "かべねこvpn 評判",
+        "page": "/guide/kabeneko-review",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26
+      },
+      {
+        "query": "かべネコvpn 中国",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 29
+      },
+      {
+        "query": "かべネコvpn 中国",
+        "page": "/china/kabeneko-vs-nordvpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 50
+      },
+      {
+        "query": "かべネコvpn 評判",
+        "page": "/china/kabeneko-vs-nordvpn",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 25.5
+      },
+      {
+        "query": "かべネコvpn 評判",
+        "page": "/china/vpn-comparison",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "かべネコvpn 評判",
+        "page": "/guide/kabeneko-review",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "カベネコ",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 44
+      },
+      {
+        "query": "カベネコ vpn",
+        "page": "/china/kabeneko-trouble",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "クレジットカード おすすめ 中国",
+        "page": "/china/credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "query": "クレジットカード 中国",
+        "page": "/china/credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 76.16666666666667
+      },
+      {
+        "query": "ドバイ esim",
+        "page": "/uae/esim-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 79
+      },
+      {
+        "query": "ノマド vpn おすすめ",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 97
+      },
+      {
+        "query": "中国 vpnネコ",
+        "page": "/china/vpn-comparison",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "中国 クレジット カード",
+        "page": "/china/credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 97
+      },
+      {
+        "query": "北京 atm キャッシング",
+        "page": "/china/credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 48.5
+      },
+      {
+        "query": "楽天 モバイル 中国",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 91
+      },
+      {
+        "query": "楽天 モバイル 台湾",
+        "page": "/compare/rakuten-mobile-overseas",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 75
+      },
+      {
+        "query": "海外 esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 47.666666666666664
+      },
+      {
+        "query": "海外 esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 87
+      },
+      {
+        "query": "海外 esim 比較 サイト",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 86
+      },
+      {
+        "query": "海外 esimアプリ おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "query": "海外 旅行 esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 32.83333333333333
+      },
+      {
+        "query": "海外 旅行 保険 いらない",
+        "page": "/guide/travel-insurance-credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 83
+      },
+      {
+        "query": "海外 送金 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 48
+      },
+      {
+        "query": "海外esim おすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 36,
+        "ctr": 0,
+        "position": 62.916666666666664
+      },
+      {
+        "query": "海外esimおすすめ",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 62.5
+      },
+      {
+        "query": "海外旅行 esim 比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 47
+      },
+      {
+        "query": "海外旅行 ネット",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 89
+      },
+      {
+        "query": "海外旅行esim比較",
+        "page": "/compare/best-esim",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 32
+      },
+      {
+        "query": "海外旅行保険 いらない",
+        "page": "/guide/travel-insurance-credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 85
+      },
+      {
+        "query": "海外旅行保険 入るべきか 知恵袋",
+        "page": "/guide/travel-insurance-credit-card-chiebukuro",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 15.384615384615385
+      },
+      {
+        "query": "海外送金 手数料 比較 個人",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "海外送金 比較",
+        "page": "/compare/overseas-remittance",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 46.2
+      },
+      {
+        "query": "駐在 vpn おすすめ",
+        "page": "/compare/best-vpn",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 29.2
+      },
+      {
+        "query": "駐在員 クレジットカード おすすめ 国別 比較",
+        "page": "/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      }
+    ]
+  },
+  "ga4": {
+    "affiliateClicks": [
+      {
+        "dimension": "かべネコVPN",
+        "count": 1
+      }
+    ],
+    "ctaViews": [
+      {
+        "dimension": "NordVPN",
+        "count": 23
+      },
+      {
+        "dimension": "かべネコVPN",
+        "count": 16
+      },
+      {
+        "dimension": "トリファ",
+        "count": 13
+      },
+      {
+        "dimension": "エポスカード",
+        "count": 2
+      },
+      {
+        "dimension": "Surfshark",
+        "count": 1
+      }
+    ]
+  },
+  "issues": [
+    {
+      "type": "rank_opportunity",
+      "page": "/china/kabeneko-trouble",
+      "detail": "平均順位 8.9位 (126imp)",
+      "severity": "high",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/taiwan/vpn-chiebukuro",
+      "detail": "平均順位 7.1位 (114imp)",
+      "severity": "high",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/taiwan/esim-chiebukuro",
+      "detail": "平均順位 5.3位 (48imp)",
+      "severity": "high",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/guide/paypay-overseas",
+      "detail": "平均順位 8.5位 (33imp)",
+      "severity": "high",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/china/credit-card-chiebukuro",
+      "detail": "30回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/best-esim",
+      "detail": "CTR 0.0% (0clicks / 125imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/compare/best-esim",
+      "detail": "125回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    },
+    {
+      "type": "ctr_low",
+      "page": "/compare/overseas-remittance",
+      "detail": "CTR 0.0% (0clicks / 59imp)",
+      "severity": "medium",
+      "suggestion": "title/descriptionの最適化でCTR改善余地あり"
+    },
+    {
+      "type": "rank_opportunity",
+      "page": "/compare/overseas-remittance",
+      "detail": "平均順位 15.8位 (59imp)",
+      "severity": "medium",
+      "suggestion": "コンテンツ強化で上位表示の可能性"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/compare/overseas-remittance",
+      "detail": "59回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    },
+    {
+      "type": "no_clicks",
+      "page": "/guide/travel-insurance-credit-card-chiebukuro",
+      "detail": "32回表示、クリック0",
+      "severity": "medium",
+      "suggestion": "titleの訴求力を改善"
+    },
+    {
+      "type": "stale",
+      "page": "/china/business-trip-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/chatgpt-vpn",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/esim-comparison",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/expat-digital-prep",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/expat-net-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/free-wifi",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/google-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/instagram-twitter-vpn",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/map-apps",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/nordvpn-trouble",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/vpn-free-trial",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/youtube-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/china/zoom-teams",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/korea/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/korea/netflix-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/korea/vpn-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/taiwan/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/thailand/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/thailand/netflix-vpn",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/thailand/vpn-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/uae/esim-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/uae/line-call-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/uae/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/uae/whatsapp-line",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/vietnam/esim-comparison",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/vietnam/net-guide",
+      "detail": "最終更新: 2026-04-20 (167日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/vietnam/sim-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/vietnam/vpn-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/compare/airalo-vs-trifa",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/compare/best-sim-number",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/esim-setup-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/expat-checklist",
+      "detail": "最終更新: 2026-04-13 (174日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/japan-radio-abroad",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/kabeneko-review",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/kabeneko-setup",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/nordvpn-setup",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/overseas-remittance-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/smartphone-settings-before-travel",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/surfshark-setup",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    },
+    {
+      "type": "stale",
+      "page": "/guide/wifi-rental-chiebukuro",
+      "detail": "最終更新: 2026-04-11 (176日前)",
+      "severity": "medium",
+      "suggestion": "updatedAt更新 + コンテンツ鮮度チェック"
+    }
+  ]
+}
