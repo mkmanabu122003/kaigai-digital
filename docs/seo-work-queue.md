@@ -48,10 +48,12 @@
   - 候補：年代別・渡航先別の判断表、家族帯同時の考え方、実際の請求事例の類型
   - 完了条件：本文6,500字以上
 
-- [ ] **A-4 `/china/kabeneko-trouble` を強化**（10.8位・imp11・「vpnネコ 繋がらない」で10位）
+- [x] **A-4 `/china/kabeneko-trouble` を強化**（10.8位・imp11・「vpnネコ 繋がらない」で10位）
   - 指名検索なので上位を取りやすい。現状2,891字と薄い
   - 候補：エラーメッセージ別の対処表、OS別の手順、問い合わせ前に確認すべきこと
   - 完了条件：本文4,500字以上
+  - 完了日：2026-10-11
+  - 結果：本文2,591字→5,003字（quality-checkの算出方法）、FAQ 4→6。上位クエリ（vpnネコ 繋がらない／kabeneko vpn／かべねこvpn 中国）に答える見出しを追加。公式情報に合わせて接続方式の記述を修正（OpenConnect・VLESS+vision・Trojan-GFW・IKEv2・PPTP・L2TP）。「VPNネコ」は別アプリ（App Store掲載のVPN Cat）である旨を明記。CTAを top:NordVPN（予備）/ middle:かべネコ（無料トライアル）/ bottom:NordVPN に変更。着手時点は8.5位・imp140／28日（2026-10-11 GSC）
 
 - [ ] **A-5 `/taiwan/netflix-chiebukuro` を強化**（8.4位・imp7・3,070字）
   - 完了条件：本文4,500字以上
@@ -95,4 +97,4 @@ korea / uae / vietnam は12本すべて未登録、表示0。ハブを厚くし�
 
 | 日時 | タスク | 結果 |
 |---|---|---|
-| — | — | — |
+| 2026-10-11 | A-4 kabeneko-trouble 強化 | 5,003字・FAQ6・CTA再構成。quality-check Errors 0／リンク切れ0／build成功。push・インデックス申請は未実施（確認待ち） |
