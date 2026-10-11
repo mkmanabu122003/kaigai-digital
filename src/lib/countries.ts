@@ -6,6 +6,12 @@ export type Country = {
   region: string;
   internetRestriction: number; // 1-5 (5=最も厳しい)
   description: string;
+  vpnNotice?: {
+    heading: string;
+    body: string;
+    serviceId: string;
+    ctaText?: string;
+  };
 };
 
 export const countries: Country[] = [
@@ -18,6 +24,12 @@ export const countries: Country[] = [
     internetRestriction: 5,
     description:
       "グレートファイアウォールにより、Google・LINE・YouTube等が規制。VPN必須。",
+    vpnNotice: {
+      heading: "中国ではVPNが必須",
+      body: "中国ではLINE・Google・YouTubeなどが規制されている。渡航前にVPNを準備しよう。かべネコVPNなら21日間無料で試せる（クレカ不要・自動課金なし）。",
+      serviceId: "kabeneko",
+      ctaText: "かべネコVPNを21日間無料で試す（クレカ不要）",
+    },
   },
   {
     id: "thailand",
@@ -67,6 +79,11 @@ export const countries: Country[] = [
     internetRestriction: 4,
     description:
       "VoIP通話（LINE通話等）が規制。VPNで回避可能だが法的グレーゾーン。",
+    vpnNotice: {
+      heading: "UAEでは通話アプリに注意",
+      body: "UAEではLINE・WhatsAppなどの音声・ビデオ通話（VoIP）が規制されている。メッセージ送信やWeb閲覧は基本的に利用できる。VPNの利用には法的なグレーゾーンがあるため、現地の規制を確認したうえで準備しよう。",
+      serviceId: "nordvpn",
+    },
   },
 ];
 

@@ -62,18 +62,18 @@ export default async function CountryPage({ params }: Props) {
         </div>
 
         {/* VPN recommendation for high-restriction countries */}
-        {country.internetRestriction >= 4 && (
+        {country.vpnNotice && (
           <section className="mb-8 rounded-xl border border-accent-200 bg-accent-50 p-6">
             <h2 className="text-lg font-bold text-primary-700">
-              {country.name}ではVPNが必須
+              {country.vpnNotice.heading}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-700">
-              {country.name}ではLINE・Google・YouTubeなどが規制されている。渡航前にVPNを準備しよう。かべネコVPNなら21日間無料で試せる（クレカ不要・自動課金なし）。
+              {country.vpnNotice.body}
             </p>
             <AffiliateButton
-              serviceId="kabeneko"
+              serviceId={country.vpnNotice.serviceId}
               placement="top"
-              text="かべネコVPNを21日間無料で試す（クレカ不要）"
+              text={country.vpnNotice.ctaText}
               articleSlug={countryId}
             />
           </section>
